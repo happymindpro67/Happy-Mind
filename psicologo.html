@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal del Psicólogo | Mi Cuenta</title>
+  
+  <!-- Tipografía Google Fonts & Íconos Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- ESTILOS CSS -->
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --star: #f59e0b;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding-bottom: 40px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .navbar h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .user-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Layout */
+    .dashboard-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Perfil Resumen */
+    .profile-header {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .avatar-large-container {
+      position: relative;
+    }
+
+    .avatar-large {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .edit-photo-btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: var(--primary);
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .profile-title h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .specialty {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-req {
+      display: inline-block;
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .rating-overview {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: var(--star);
+    }
+
+    .score {
+      font-weight: 700;
+    }
+
+    .reviews-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Formulario */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group textarea {
+      padding: 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .form-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Botones */
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Horarios Grid */
+    .schedule-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .schedule-day {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .day-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+    }
+
+    .time-slots {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .slot {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .slot input {
+      padding: 0.3rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .no-work {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Reseñas */
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .review-item {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .avatar-initials {
+      width: 36px;
+      height: 36px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .review-date {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN SUPERIOR -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <i class="fa-solid fa-user-doctor brand-icon"></i>
+      <div>
+        <h1>Portal del Psicólogo</h1>
+        <span class="subtitle">Gestión Profesional y Horarios</span>
+      </div>
+    </div>
+    <div class="user-profile">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=200" alt="Foto Psicóloga" class="avatar" />
+      <div class="user-info">
+        <span class="user-name">Dra. Valeria Gómez</span>
+        <span class="user-role">Psicóloga Clínica</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="dashboard-container">
+    
+    <!-- TARJETA PERFIL Y RESUMEN DE REPUTACIÓN -->
+    <section class="card profile-card">
+      <div class="profile-header">
+        <div class="avatar-large-container">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300" alt="Foto de perfil" class="avatar-large" />
+          <button class="btn-icon edit-photo-btn" title="Cambiar foto"><i class="fa-solid fa-camera"></i></button>
+        </div>
+        <div class="profile-title">
+          <h2>Dra. Valeria Gómez</h2>
+          <p class="specialty">Psicología Clínica & Terapia Cognitivo-Conductual</p>
+          <span class="badge-req">RF-PSI-06 | Calificaciones</span>
+          <div class="rating-overview">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="score">4.9</span>
+            <span class="reviews-count">(48 evaluaciones de pacientes)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN POR PESTAÑAS -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-horarios', this)">
+        <i class="fa-regular fa-clock"></i> Mi Horario (RF-PSI-05)
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-perfil', this)">
+        <i class="fa-regular fa-user"></i> Editar Perfil (RF-PSI-03)
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-resenas', this)">
+        <i class="fa-regular fa-star"></i> Mis Calificaciones (RF-PSI-06)
+      </button>
+    </div>
+
+    <!-- PESTAÑA 1: GESTIÓN DE HORARIOS (RF-PSI-05) -->
+    <section id="tab-horarios" class="tab-content active card">
+      <div class="card-header">
+        <div>
+          <h3>Registrar y Configurar Horarios de Atención</h3>
+          <p class="description">Define tus franjas de disponibilidad semanal para la recepción de citas.</p>
+        </div>
+        <button class="btn btn-primary" onclick="showToast('Horarios actualizados correctamente')">
+          <i class="fa-solid fa-floppy-disk"></i> Guardar Horarios
+        </button>
+      </div>
+
+      <div class="schedule-grid">
+
+        <!-- Lunes -->
+        <div class="schedule-day">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-lunes" checked />
+            <label for="check-lunes">Lunes</label>
+          </div>
+          <div class="time-slots">
+            <div class="slot">
+              <input type="time" value="08:00" /> <span>a</span> <input type="time" value="12:00" />
+            </div>
+            <div class="slot">
+              <input type="time" value="14:00" /> <span>a</span> <input type="time" value="18:00" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Martes -->
+        <div class="schedule-day">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-martes" checked />
+            <label for="check-martes">Martes</label>
+          </div>
+          <div class="time-slots">
+            <div class="slot">
+              <input type="time" value="08:00" /> <span>a</span> <input type="time" value="12:00" />
+            </div>
+            <div class="slot">
+              <input type="time" value="14:00" /> <span>a</span> <input type="time" value="18:00" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Miércoles -->
+        <div class="schedule-day">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-miercoles" checked />
+            <label for="check-miercoles">Miércoles</label>
+          </div>
+          <div class="time-slots">
+            <div class="slot">
+              <input type="time" value="09:00" /> <span>a</span> <input type="time" value="13:00" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Jueves -->
+        <div class="schedule-day">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-jueves" checked />
+            <label for="check-jueves">Jueves</label>
+          </div>
+          <div class="time-slots">
+            <div class="slot">
+              <input type="time" value="08:00" /> <span>a</span> <input type="time" value="12:00" />
+            </div>
+            <div class="slot">
+              <input type="time" value="14:00" /> <span>a</span> <input type="time" value="18:00" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Viernes -->
+        <div class="schedule-day">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-viernes" checked />
+            <label for="check-viernes">Viernes</label>
+          </div>
+          <div class="time-slots">
+            <div class="slot">
+              <input type="time" value="08:00" /> <span>a</span> <input type="time" value="14:00" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Sábado -->
+        <div class="schedule-day disabled">
+          <div class="day-toggle">
+            <input type="checkbox" id="check-sabado" />
+            <label for="check-sabado">Sábado</label>
+          </div>
+          <div class="time-slots">
+            <span class="no-work">No disponible</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PESTAÑA 2: ACTUALIZAR MI INFORMACIÓN (RF-PSI-03) -->
+    <section id="tab-perfil" class="tab-content card">
+      <div class="card-header">
+        <div>
+          <h3>Actualizar Información del Psicólogo</h3>
+          <p class="description">Edita tus datos profesionales visibles para los pacientes.</p>
+        </div>
+      </div>
+
+      <form id="profile-form" onsubmit="event.preventDefault(); showToast('Perfil actualizado correctamente');">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" value="Valeria Gómez" required />
+          </div>
+          <div class="form-group">
+            <label>Tarjeta / Registro Profesional</label>
+            <input type="text" value="PSI-89421-CO" required />
+          </div>
+          <div class="form-group">
+            <label>Especialidades</label>
+            <input type="text" value="Terapia Cognitivo-Conductual, Ansiedad, Depresión" required />
+          </div>
+          <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" value="valeria.gomez@psicoalud.com" required />
+          </div>
+          <div class="form-group">
+            <label>Teléfono de Contacto</label>
+            <input type="tel" value="+57 300 123 4567" required />
+          </div>
+          <div class="form-group">
+            <label>Precio por Consulta (COP)</label>
+            <input type="number" value="120000" step="10000" />
+          </div>
+          <div class="form-group full-width">
+            <label>Perfil Profesional / Biografía</label>
+            <textarea rows="4">Psicóloga especializada en manejo del estrés, trastornos de ansiedad y desarrollo personal. Más de 8 años de experiencia en consulta clínica privada y virtual.</textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-arrows-rotate"></i> Actualizar Datos
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- PESTAÑA 3: VER CALIFICACIONES (RF-PSI-06) -->
+    <section id="tab-resenas" class="tab-content card">
+      <div class="card-header">
+        <div>
+          <h3>Visualizar Calificaciones y Reseñas</h3>
+          <p class="description">Comentarios y puntuaciones dejadas por pacientes que han completado consulta contigo.</p>
+        </div>
+      </div>
+
+      <div class="reviews-list">
+        
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer">
+              <span class="avatar-initials">C.M.</span>
+              <div>
+                <strong>Carlos Mendoza</strong>
+                <span class="review-date">Hace 2 días</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">Excelentes sesiones. La Dra. Valeria escucha muy bien y me ha dado herramientas prácticas que me han ayudado enormemente con el estrés laboral.</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer">
+              <span class="avatar-initials">A.R.</span>
+              <div>
+                <strong>Andrea Restrepo</strong>
+                <span class="review-date">Hace 1 semana</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">Muy profesional y empática en sus explicaciones. Los horarios de atención se cumplieron puntualmente.</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer">
+              <span class="avatar-initials">J.L.</span>
+              <div>
+                <strong>Jorge López</strong>
+                <span class="review-date">Hace 3 semanas</span>
+              </div>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="review-text">Totalmente recomendada, sus estrategias cognitivo-conductuales han cambiado mi enfoque día a día.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NOTIFICACIÓN TOAST -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-message">Cambios guardados con éxito</span>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function switchTab(tabId, element) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      element.classList.add('active');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').innerText = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

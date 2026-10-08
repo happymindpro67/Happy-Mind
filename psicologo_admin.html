@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Psicólogos - Sistema de Salud</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #bd0d37; }
+        .star-rating .fa-star { cursor: pointer; transition: color 0.15s ease-in-out; }
+    </style>
+</head>
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased bg-slate-50">
+
+    <!-- TOP NAVIGATION HEADER -->
+    <header class="bg-teal-800 text-white shadow-md sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-teal-700 p-2 rounded-lg text-teal-200">
+                    <i class="fa-solid fa-user-doctor text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">Portal de Gestiones Médicas</h1>
+                    <p class="text-xs text-teal-200">Módulo de Administración de Psicólogos</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <span class="bg-teal-700/60 text-teal-100 text-xs px-3 py-1 rounded-full border border-teal-600/50 hidden sm:inline-block">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> Panel Clínico
+                </span>
+                <div class="flex items-center space-x-2 border-l border-teal-700 pl-4">
+                    <img class="w-8 h-8 rounded-full ring-2 ring-teal-400" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Admin">
+                    <span class="text-sm font-medium hidden md:inline">Dra. Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER AREA -->
+    <div class="flex-1 flex overflow-hidden">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="w-64 bg-white border-r border-slate-200 hidden lg:flex flex-col justify-between p-4">
+            <div class="space-y-6">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">Menú Principal</p>
+                    <nav class="space-y-1">
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 transition">
+                            <i class="fa-solid fa-chart-pie w-5 text-slate-400"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 transition">
+                            <i class="fa-regular fa-calendar-check w-5 text-slate-400"></i>
+                            <span>Citas Médicas</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium text-teal-700 bg-teal-50 font-semibold rounded-lg">
+                            <i class="fa-solid fa-user-nurse w-5 text-teal-600"></i>
+                            <span>Psicólogos</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 transition">
+                            <i class="fa-solid fa-hospital-user w-5 text-slate-400"></i>
+                            <span>Pacientes</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">Requisitos Mapeados</p>
+                    <div class="space-y-1 text-xs">
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-01: Registrar</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-02: Buscar / Leer</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-03: Actualizar</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-04: Eliminar</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-05: Horarios</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-06: Ver Calificación</div>
+                        <div class="px-3 py-1.5 bg-slate-100 rounded text-slate-600 font-mono">RF-PSI-07: Registrar Calificación</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-200 pt-3">
+                <div class="bg-teal-50 p-3 rounded-lg border border-teal-100">
+                    <p class="text-xs text-teal-800 font-medium"><i class="fa-solid fa-circle-info mr-1"></i> Estado del Módulo</p>
+                    <p class="text-xs text-teal-600 mt-1">Todos los endpoints simulados localmente.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN DASHBOARD CONTENT -->
+        <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto space-y-6">
+                
+                <!-- BREADCRUMB & HEADER ACTION -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                        <nav class="text-xs text-slate-500 mb-1 flex items-center space-x-2">
+                            <span>Inicio</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            <span>Psicología</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            <span class="text-teal-700 font-semibold">Directorio</span>
+                        </nav>
+                        <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                            Directorio de Psicólogos
+                            <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-normal">
+                                Módulo Activo
+                            </span>
+                        </h2>
+                    </div>
+
+                    <!-- RF-PSI-01 ACTION BUTTON -->
+                    <div>
+                        <button onclick="openRegisterModal()" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-medium text-sm px-4 py-2.5 rounded-lg shadow-sm transition-all shadow-teal-600/20">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Registrar Psicólogo</span>
+                            <span class="bg-teal-800/60 text-teal-100 text-[10px] px-1.5 py-0.5 rounded uppercase font-mono ml-1">RF-PSI-01</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SEARCH AND FILTERS BAR (RF-PSI-02) -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex flex-col md:flex-row gap-3 items-center justify-between">
+                        <!-- Search Box -->
+                        <div class="relative w-full md:w-96">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                            <input type="text" id="searchInput" oninput="filterPsychologists()" 
+                                placeholder="Buscar por nombre, especialidad o tarjeta..." 
+                                class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+
+                        <!-- Filters & Stats -->
+                        <div class="flex items-center justify-between md:justify-end gap-3 w-full md:w-auto">
+                            <select id="filterSpecialty" onchange="filterPsychologists()" class="border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                <option value="">Todas las especialidades</option>
+                                <option value="Psicología Clínica">Psicología Clínica</option>
+                                <option value="Psicoterapia Cognitiva">Psicoterapia Cognitiva</option>
+                                <option value="Psicología Infantil">Psicología Infantil</option>
+                                <option value="Neuropsicología">Neuropsicología</option>
+                            </select>
+
+                            <span class="inline-flex items-center gap-1 text-xs text-slate-500 bg-slate-100 px-3 py-2 rounded-lg font-mono">
+                                <span class="bg-slate-300 text-slate-700 text-[10px] px-1 rounded">RF-PSI-02</span>
+                                Total: <strong id="totalCount" class="text-slate-800">0</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN TABLE CONTAINER (RF-PSI-02, RF-PSI-03, RF-PSI-04, RF-PSI-06) -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                                    <th class="py-3.5 px-4">Psicólogo / Tarjeta</th>
+                                    <th class="py-3.5 px-4">Especialidad</th>
+                                    <th class="py-3.5 px-4">Contacto</th>
+                                    <th class="py-3.5 px-4">Calificación <span class="text-[10px] text-teal-600 lowercase font-mono font-normal">(RF-PSI-06)</span></th>
+                                    <th class="py-3.5 px-4">Horarios <span class="text-[10px] text-teal-600 lowercase font-mono font-normal">(RF-PSI-05)</span></th>
+                                    <th class="py-3.5 px-4 text-right">Acciones Modulo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="psychologistsTableBody" class="divide-y divide-slate-200 text-sm">
+                                <!-- Dynamic Rows JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State -->
+                    <div id="emptyState" class="hidden py-12 text-center">
+                        <i class="fa-solid fa-user-slash text-4xl text-slate-300 mb-3"></i>
+                        <p class="text-slate-500 font-medium">No se encontraron psicólogos con los criterios seleccionados.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL 1: REGISTRAR / EDITAR PSICÓLOGO (RF-PSI-01 y RF-PSI-03) -->
+    <div id="modalForm" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-xl w-full overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span id="modalFormRfBadge" class="bg-teal-100 text-teal-800 text-xs font-mono font-bold px-2 py-0.5 rounded">
+                        RF-PSI-01
+                    </span>
+                    <h3 id="modalFormTitle" class="text-lg font-bold text-slate-800">Registrar Nuevo Psicólogo</h3>
+                </div>
+                <button onclick="closeModal('modalForm')" class="text-slate-400 hover:text-slate-600 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <form id="psychologistForm" onsubmit="savePsychologist(event)" class="p-6 space-y-4 overflow-y-auto flex-1">
+                <input type="hidden" id="psychologistId">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Nombre Completo *</label>
+                        <input type="text" id="inputName" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Ej. Dra. Carmen Ruiz">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Tarjeta Profesional (TP) *</label>
+                        <input type="text" id="inputTp" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="Ej. TP-89201">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Especialidad *</label>
+                        <select id="inputSpecialty" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                            <option value="">Seleccione especialidad</option>
+                            <option value="Psicología Clínica">Psicología Clínica</option>
+                            <option value="Psicoterapia Cognitiva">Psicoterapia Cognitiva</option>
+                            <option value="Psicología Infantil">Psicología Infantil</option>
+                            <option value="Neuropsicología">Neuropsicología</option>
+                            <option value="Psicología Organizacional">Psicología Organizacional</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Teléfono de Contacto</label>
+                        <input type="tel" id="inputPhone" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="+57 300 123 4567">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-700 mb-1">Correo Electrónico *</label>
+                    <input type="email" id="inputEmail" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="psicologo@clinica.com">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-700 mb-1">URL Foto de Perfil (Opcional)</label>
+                    <input type="url" id="inputAvatar" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="https://images.unsplash.com/...">
+                </div>
+
+                <div class="pt-4 border-t border-slate-200 flex justify-end space-x-3">
+                    <button type="button" onclick="closeModal('modalForm')" class="px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg text-sm font-medium shadow-sm flex items-center gap-1">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>Guardar Psicólogo</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: GESTIÓN DE HORARIOS DE ATENCIÓN (RF-PSI-05) -->
+    <div id="modalSchedules" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-mono font-bold px-2 py-0.5 rounded">
+                        RF-PSI-05
+                    </span>
+                    <h3 class="text-lg font-bold text-slate-800">Horarios de Atención</h3>
+                </div>
+                <button onclick="closeModal('modalSchedules')" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-4 overflow-y-auto flex-1">
+                <div class="flex items-center space-x-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <img id="scheduleDoctorAvatar" class="w-10 h-10 rounded-full object-cover" src="" alt="">
+                    <div>
+                        <p id="scheduleDoctorName" class="font-bold text-sm text-slate-800">Dr. Name</p>
+                        <p id="scheduleDoctorTp" class="text-xs text-slate-500">TP: ---</p>
+                    </div>
+                </div>
+
+                <p class="text-xs text-slate-500">Configura la disponibilidad para agendamiento de citas:</p>
+
+                <div id="schedulesContainer" class="space-y-3">
+                    <!-- Dynamic Day Rows JS -->
+                </div>
+            </div>
+
+            <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex justify-end">
+                <button onclick="saveSchedules()" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg text-sm font-medium">
+                    Guardar Cambios de Horario
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: VER Y REGISTRAR CALIFICACIONES (RF-PSI-06 y RF-PSI-07) -->
+    <div id="modalRatings" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-xl w-full overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-mono font-bold px-2 py-0.5 rounded">
+                        RF-PSI-06 / RF-PSI-07
+                    </span>
+                    <h3 class="text-lg font-bold text-slate-800">Calificaciones y Reseñas</h3>
+                </div>
+                <button onclick="closeModal('modalRatings')" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6 overflow-y-auto flex-1">
+                <!-- Header Stats -->
+                <div class="flex items-center justify-between bg-amber-50/50 p-4 rounded-xl border border-amber-200">
+                    <div>
+                        <p id="ratingDoctorName" class="font-bold text-slate-900">Dr. Name</p>
+                        <p class="text-xs text-slate-500">Valoraciones de pacientes atendidos</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="flex items-center space-x-1 justify-end text-amber-400 text-lg" id="ratingAverageStars">
+                            <!-- Dynamic Stars -->
+                        </div>
+                        <p class="text-xs text-slate-600 font-medium mt-0.5" id="ratingAverageText">4.8 / 5.0 (0 opiniones)</p>
+                    </div>
+                </div>
+
+                <!-- ADD RATING FORM (RF-PSI-07) -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 space-y-3">
+                    <p class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center justify-between">
+                        <span>Registrar Nueva Calificación</span>
+                        <span class="text-[10px] text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded font-mono">RF-PSI-07</span>
+                    </p>
+
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-slate-600">Puntuación:</span>
+                        <div id="starInputGroup" class="star-rating text-slate-300 text-lg flex space-x-1">
+                            <i class="fa-solid fa-star" onclick="setStarRating(1)"></i>
+                            <i class="fa-solid fa-star" onclick="setStarRating(2)"></i>
+                            <i class="fa-solid fa-star" onclick="setStarRating(3)"></i>
+                            <i class="fa-solid fa-star" onclick="setStarRating(4)"></i>
+                            <i class="fa-solid fa-star" onclick="setStarRating(5)"></i>
+                        </div>
+                    </div>
+
+                    <input type="text" id="inputPatientName" placeholder="Tu nombre o Anónimo" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white">
+                    <textarea id="inputComment" rows="2" placeholder="Escribe tu opinión sobre la atención del psicólogo..." class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm bg-white"></textarea>
+
+                    <button onclick="submitRating()" class="w-full py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-xs font-bold transition">
+                        Publicar Calificación
+                    </button>
+                </div>
+
+                <!-- REVIEWS LIST (RF-PSI-06) -->
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Historial de Reseñas (RF-PSI-06)</p>
+                    <div id="reviewsList" class="space-y-3">
+                        <!-- Dynamic Reviews -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: VER PROFILE DETAIL (RF-PSI-02) -->
+    <div id="modalView" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full overflow-hidden">
+            <div class="bg-teal-700 text-white p-6 text-center relative">
+                <button onclick="closeModal('modalView')" class="absolute top-4 right-4 text-teal-200 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <img id="viewAvatar" class="w-20 h-20 rounded-full border-4 border-white mx-auto object-cover shadow-md" src="" alt="">
+                <h3 id="viewName" class="text-lg font-bold mt-2">Dra. Nombre</h3>
+                <p id="viewSpecialty" class="text-xs text-teal-200">Especialidad</p>
+                <span class="inline-block mt-2 bg-teal-800/80 text-teal-100 text-[10px] px-2 py-0.5 rounded font-mono">RF-PSI-02: Visualización de información</span>
+            </div>
+            <div class="p-6 space-y-3 text-sm">
+                <div class="flex items-center space-x-3 text-slate-600">
+                    <i class="fa-solid fa-id-card w-5 text-teal-600"></i>
+                    <span><strong>Tarjeta Prof:</strong> <span id="viewTp">---</span></span>
+                </div>
+                <div class="flex items-center space-x-3 text-slate-600">
+                    <i class="fa-solid fa-envelope w-5 text-teal-600"></i>
+                    <span id="viewEmail">---</span>
+                </div>
+                <div class="flex items-center space-x-3 text-slate-600">
+                    <i class="fa-solid fa-phone w-5 text-teal-600"></i>
+                    <span id="viewPhone">---</span>
+                </div>
+                <div class="pt-3 border-t border-slate-200">
+                    <p class="text-xs font-semibold text-slate-400 mb-1">Estado en la Plataforma</p>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-medium inline-flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Activo / Habilitado
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-3">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage" class="text-sm font-medium">Operación realizada con éxito</span>
+    </div>
+
+    <!-- APPLICATION JAVASCRIPT LOGIC -->
+    <script>
+        // Initial mock state array representing requirements RF-PSI-01 to RF-PSI-07
+        let psychologists = [
+            {
+                id: 1,
+                name: "Dra. Sofía Mendoza",
+                tp: "TP-102938",
+                specialty: "Psicología Clínica",
+                email: "sofia.mendoza@salud.com",
+                phone: "+57 311 456 7890",
+                avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300",
+                schedules: [
+                    { day: "Lunes", active: true, start: "08:00", end: "16:00" },
+                    { day: "Miércoles", active: true, start: "08:00", end: "16:00" },
+                    { day: "Viernes", active: true, start: "08:00", end: "14:00" }
+                ],
+                ratings: [
+                    { patient: "Carlos R.", stars: 5, comment: "Excelente atención y empatía en la sesión.", date: "2026-03-12" },
+                    { patient: "Mariana G.", stars: 4, comment: "Muy profesional y puntual.", date: "2026-03-20" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Dr. Alejandro Rios",
+                tp: "TP-456123",
+                specialty: "Psicoterapia Cognitiva",
+                email: "a.rios@psicologia.org",
+                phone: "+57 300 987 6543",
+                avatar: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300",
+                schedules: [
+                    { day: "Martes", active: true, start: "10:00", end: "18:00" },
+                    { day: "Jueves", active: true, start: "10:00", end: "18:00" }
+                ],
+                ratings: [
+                    { patient: "Andrés M.", stars: 5, comment: "Muy buenas herramientas dinámicas.", date: "2026-02-18" }
+                ]
+            },
+            {
+                id: 3,
+                name: "Dra. Elena Gómez",
+                tp: "TP-789456",
+                specialty: "Psicología Infantil",
+                email: "elena.gomez@pediatria.com",
+                phone: "+57 320 555 1234",
+                avatar: "https://images.unsplash.com/photo-1594824813566-78a9a468d609?auto=format&fit=crop&q=80&w=300",
+                schedules: [
+                    { day: "Lunes", active: true, start: "09:00", end: "12:00" },
+                    { day: "Sábado", active: true, start: "08:00", end: "13:00" }
+                ],
+                ratings: []
+            }
+        ];
+
+        let selectedDoctorId = null;
+        let selectedStars = 0;
+
+        // Render Table Rows (RF-PSI-02)
+        function renderTable(data = psychologists) {
+            const tbody = document.getElementById('psychologistsTableBody');
+            const emptyState = document.getElementById('emptyState');
+            const totalCount = document.getElementById('totalCount');
+
+            tbody.innerHTML = '';
+            totalCount.textContent = data.length;
+
+            if (data.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            data.forEach(p => {
+                const avgStars = calcAverage(p.ratings);
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50/80 transition-colors border-b border-slate-100";
+                
+                tr.innerHTML = `
+                    <td class="py-3.5 px-4">
+                        <div class="flex items-center space-x-3">
+                            <img class="w-10 h-10 rounded-full object-cover border border-slate-200" src="${p.avatar || 'https://placehold.co/100x100/e2e8f0/64748b?text=PSI'}" alt="${p.name}">
+                            <div>
+                                <p class="font-semibold text-slate-800">${p.name}</p>
+                                <p class="text-xs font-mono text-slate-400">${p.tp}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <span class="inline-block bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded-md font-medium border border-teal-100">
+                            ${p.specialty}
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-4 text-xs text-slate-600">
+                        <div><i class="fa-regular fa-envelope text-slate-400 mr-1"></i>${p.email}</div>
+                        <div><i class="fa-solid fa-phone text-slate-400 mr-1"></i>${p.phone || 'N/A'}</div>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <button onclick="openRatingsModal(${p.id})" class="text-left group hover:opacity-80 transition">
+                            <div class="flex items-center space-x-1 text-amber-400 text-xs">
+                                ${renderStarsHTML(avgStars)}
+                                <span class="text-slate-700 font-bold ml-1">${avgStars.toFixed(1)}</span>
+                            </div>
+                            <span class="text-[11px] text-slate-400 group-hover:underline">
+                                (${p.ratings.length} opiniones)
+                            </span>
+                        </button>
+                    </td>
+                    <td class="py-3.5 px-4">
+                        <button onclick="openSchedulesModal(${p.id})" class="inline-flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs px-2.5 py-1.5 rounded-lg font-medium transition">
+                            <i class="fa-regular fa-clock text-teal-600"></i>
+                            <span>Ver (${p.schedules.filter(s => s.active).length} días)</span>
+                        </button>
+                    </td>
+                    <td class="py-3.5 px-4 text-right space-x-1">
+                        <!-- RF-PSI-02: Leer -->
+                        <button onclick="openViewModal(${p.id})" title="Ver Ficha Detallada (RF-PSI-02)" class="p-2 text-slate-500 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                        <!-- RF-PSI-03: Actualizar -->
+                        <button onclick="openEditModal(${p.id})" title="Editar Psicólogo (RF-PSI-03)" class="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
+                        <!-- RF-PSI-04: Eliminar -->
+                        <button onclick="deletePsychologist(${p.id})" title="Eliminar Psicólogo (RF-PSI-04)" class="p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Calculate Ratings Average (RF-PSI-06)
+        function calcAverage(ratings) {
+            if (!ratings || ratings.length === 0) return 0;
+            const sum = ratings.reduce((acc, r) => acc + r.stars, 0);
+            return sum / ratings.length;
+        }
+
+        // Star Icons Renderer
+        function renderStarsHTML(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= Math.round(rating)) {
+                    html += `<i class="fa-solid fa-star"></i>`;
+                } else {
+                    html += `<i class="fa-regular fa-star text-slate-300"></i>`;
+                }
+            }
+            return html;
+        }
+
+        // Search & Filter Handler (RF-PSI-02)
+        function filterPsychologists() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const specialty = document.getElementById('filterSpecialty').value;
+
+            const filtered = psychologists.filter(p => {
+                const matchesQuery = p.name.toLowerCase().includes(query) || 
+                                     p.tp.toLowerCase().includes(query) || 
+                                     p.specialty.toLowerCase().includes(query);
+                const matchesSpecialty = specialty === "" || p.specialty === specialty;
+                return matchesQuery && matchesSpecialty;
+            });
+
+            renderTable(filtered);
+        }
+
+        // MODAL HELPERS
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Open Register Form (RF-PSI-01)
+        function openRegisterModal() {
+            document.getElementById('psychologistForm').reset();
+            document.getElementById('psychologistId').value = "";
+            document.getElementById('modalFormTitle').textContent = "Registrar Nuevo Psicólogo";
+            document.getElementById('modalFormRfBadge').textContent = "RF-PSI-01";
+            document.getElementById('modalForm').classList.remove('hidden');
+        }
+
+        // Open Edit Form (RF-PSI-03)
+        function openEditModal(id) {
+            const p = psychologists.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('psychologistId').value = p.id;
+            document.getElementById('inputName').value = p.name;
+            document.getElementById('inputTp').value = p.tp;
+            document.getElementById('inputSpecialty').value = p.specialty;
+            document.getElementById('inputEmail').value = p.email;
+            document.getElementById('inputPhone').value = p.phone || "";
+            document.getElementById('inputAvatar').value = p.avatar || "";
+
+            document.getElementById('modalFormTitle').textContent = "Actualizar Información de Psicólogo";
+            document.getElementById('modalFormRfBadge').textContent = "RF-PSI-03";
+            document.getElementById('modalForm').classList.remove('hidden');
+        }
+
+        // Save Form (RF-PSI-01 & RF-PSI-03)
+        function savePsychologist(e) {
+            e.preventDefault();
+            const id = document.getElementById('psychologistId').value;
+            const name = document.getElementById('inputName').value;
+            const tp = document.getElementById('inputTp').value;
+            const specialty = document.getElementById('inputSpecialty').value;
+            const email = document.getElementById('inputEmail').value;
+            const phone = document.getElementById('inputPhone').value;
+            const avatar = document.getElementById('inputAvatar').value;
+
+            if (id) {
+                // Update (RF-PSI-03)
+                const index = psychologists.findIndex(p => p.id == id);
+                if (index !== -1) {
+                    psychologists[index] = { ...psychologists[index], name, tp, specialty, email, phone, avatar };
+                    showToast("Información actualizada exitosamente (RF-PSI-03)");
+                }
+            } else {
+                // Create (RF-PSI-01)
+                const newDoctor = {
+                    id: Date.now(),
+                    name, tp, specialty, email, phone, avatar,
+                    schedules: [
+                        { day: "Lunes", active: true, start: "08:00", end: "16:00" },
+                        { day: "Martes", active: true, start: "08:00", end: "16:00" }
+                    ],
+                    ratings: []
+                };
+                psychologists.push(newDoctor);
+                showToast("Psicólogo registrado exitosamente (RF-PSI-01)");
+            }
+
+            closeModal('modalForm');
+            filterPsychologists();
+        }
+
+        // Delete Psychologist (RF-PSI-04)
+        function deletePsychologist(id) {
+            const p = psychologists.find(item => item.id === id);
+            if (!p) return;
+
+            if (confirm(`¿Está seguro de eliminar al psicólogo ${p.name}? (RF-PSI-04)`)) {
+                psychologists = psychologists.filter(item => item.id !== id);
+                filterPsychologists();
+                showToast("Psicólogo eliminado del sistema (RF-PSI-04)", "rose");
+            }
+        }
+
+        // Open View Modal (RF-PSI-02)
+        function openViewModal(id) {
+            const p = psychologists.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('viewName').textContent = p.name;
+            document.getElementById('viewSpecialty').textContent = p.specialty;
+            document.getElementById('viewTp').textContent = p.tp;
+            document.getElementById('viewEmail').textContent = p.email;
+            document.getElementById('viewPhone').textContent = p.phone || "No registrado";
+            document.getElementById('viewAvatar').src = p.avatar || "https://placehold.co/100x100/e2e8f0/64748b?text=PSI";
+
+            document.getElementById('modalView').classList.remove('hidden');
+        }
+
+        // MODAL HORARIOS (RF-PSI-05)
+        function openSchedulesModal(id) {
+            selectedDoctorId = id;
+            const p = psychologists.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('scheduleDoctorName').textContent = p.name;
+            document.getElementById('scheduleDoctorTp').textContent = "TP: " + p.tp;
+            document.getElementById('scheduleDoctorAvatar').src = p.avatar || "https://placehold.co/100x100";
+
+            const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            const container = document.getElementById('schedulesContainer');
+            container.innerHTML = '';
+
+            days.forEach(day => {
+                const existing = p.schedules.find(s => s.day === day) || { active: false, start: "08:00", end: "16:00" };
+                const dayDiv = document.createElement('div');
+                dayDiv.className = "flex flex-col sm:flex-row sm:items-center justify-between p-3 border border-slate-200 rounded-lg bg-white gap-2";
+                dayDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <input type="checkbox" id="chk_${day}" ${existing.active ? 'checked' : ''} class="w-4 h-4 text-teal-600 rounded focus:ring-teal-500">
+                        <label for="chk_${day}" class="font-medium text-sm text-slate-700 w-24">${day}</label>
+                    </div>
+                    <div class="flex items-center space-x-2 text-xs">
+                        <span>De:</span>
+                        <input type="time" id="start_${day}" value="${existing.start}" class="border border-slate-300 rounded px-2 py-1">
+                        <span>A:</span>
+                        <input type="time" id="end_${day}" value="${existing.end}" class="border border-slate-300 rounded px-2 py-1">
+                    </div>
+                `;
+                container.appendChild(dayDiv);
+            });
+
+            document.getElementById('modalSchedules').classList.remove('hidden');
+        }
+
+        function saveSchedules() {
+            const p = psychologists.find(item => item.id === selectedDoctorId);
+            if (!p) return;
+
+            const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            p.schedules = days.map(day => {
+                const active = document.getElementById(`chk_${day}`).checked;
+                const start = document.getElementById(`start_${day}`).value;
+                const end = document.getElementById(`end_${day}`).value;
+                return { day, active, start, end };
+            });
+
+            closeModal('modalSchedules');
+            filterPsychologists();
+            showToast("Horarios de atención actualizados (RF-PSI-05)");
+        }
+
+        // MODAL CALIFICACIONES (RF-PSI-06 y RF-PSI-07)
+        function openRatingsModal(id) {
+            selectedDoctorId = id;
+            const p = psychologists.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('ratingDoctorName').textContent = p.name;
+            const avg = calcAverage(p.ratings);
+            document.getElementById('ratingAverageStars').innerHTML = renderStarsHTML(avg);
+            document.getElementById('ratingAverageText').textContent = `${avg.toFixed(1)} / 5.0 (${p.ratings.length} opiniones)`;
+
+            // Reset Form (RF-PSI-07)
+            setStarRating(0);
+            document.getElementById('inputPatientName').value = '';
+            document.getElementById('inputComment').value = '';
+
+            // Render Reviews List (RF-PSI-06)
+            const list = document.getElementById('reviewsList');
+            list.innerHTML = '';
+
+            if (p.ratings.length === 0) {
+                list.innerHTML = `<p class="text-xs text-slate-400 italic">No hay calificaciones registradas aún.</p>`;
+            } else {
+                p.ratings.forEach(r => {
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs space-y-1";
+                    card.innerHTML = `
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-slate-700">${r.patient || 'Anónimo'}</span>
+                            <span class="text-slate-400 font-mono text-[10px]">${r.date}</span>
+                        </div>
+                        <div class="text-amber-400 text-xs">${renderStarsHTML(r.stars)}</div>
+                        <p class="text-slate-600 mt-1">${r.comment}</p>
+                    `;
+                    list.appendChild(card);
+                });
+            }
+
+            document.getElementById('modalRatings').classList.remove('hidden');
+        }
+
+        // Star Interactive Picker (RF-PSI-07)
+        function setStarRating(rating) {
+            selectedStars = rating;
+            const stars = document.querySelectorAll('#starInputGroup i');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.className = "fa-solid fa-star text-amber-400";
+                } else {
+                    star.className = "fa-solid fa-star text-slate-300";
+                }
+            });
+        }
+
+        // Submit Rating (RF-PSI-07)
+        function submitRating() {
+            if (selectedStars === 0) {
+                alert("Por favor selecciona una puntuación de 1 a 5 estrellas.");
+                return;
+            }
+
+            const p = psychologists.find(item => item.id === selectedDoctorId);
+            if (!p) return;
+
+            const patient = document.getElementById('inputPatientName').value.trim() || "Anónimo";
+            const comment = document.getElementById('inputComment').value.trim() || "Sin comentario.";
+            const date = new Date().toISOString().split('T')[0];
+
+            p.ratings.unshift({ patient, stars: selectedStars, comment, date });
+
+            openRatingsModal(selectedDoctorId); // Refresh modal view
+            filterPsychologists(); // Refresh main table
+            showToast("Calificación registrada con éxito (RF-PSI-07)");
+        }
+
+        function showToast(message, color = "teal") {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMessage.textContent = message;
+            
+            if (color === "rose") {
+                toastIcon.className = "fa-solid fa-circle-xmark text-rose-400";
+            } else {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400";
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initial Load
+        window.onload = function() {
+            filterPsychologists();
+        };
+    </script>
+</body>
+</html>
