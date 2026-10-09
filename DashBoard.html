@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mind Panel de navegación</title>
+  <link rel="stylesheet" href="estiloDashBoard.css">
+</head>
+
+<body>
+  <div class="ContenedorDb">
+
+    <aside class="barraIzq">
+      <div class="logo">
+        <div class="logo-placeholder">HM</div>
+        <h1>Happy Mind</h1>
+        <span>Panel de Administración</span>
+      </div>
+
+      <nav class="navegacionIzq">
+        <ul>
+          <li class="activo"><a href="#">Panel de Control</a></li>
+          <li><a href="#">Pacientes</a></li>
+          <li><a href="#">Psicólogos</a></li>
+          <li><a href="#">Citas</a></li>
+          <li><a href="#">Análisis</a></li>
+          <li><a href="#">Ajustes</a></li>
+        </ul>
+      </nav>
+
+      <div class="perfilUsuario">
+        <div class="avatar-placeholder">K</div>
+        <div class="info-usuario">
+          <span class="nombre">Kevin Arroyave</span>
+          <span class="rol">El Admin</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="principal">
+            
+        <header class="superior">
+            <div class="barraBusqueda">
+                <input type="text" placeholder="Buscar pacientes, psicólogos, IDs...">
+            </div>
+            
+            <div class="perfilAdm">
+                <div class="infoAdm">
+                    <span class="tituloAdm">Administrador</span>
+                </div>
+                <div class="avatar-placeholder admin">A</div>
+            </div>
+        </header>
+
+        <div class="cuerpoDb">
+            <!-- La columna central ahora toma todo el ancho -->
+            <section class="columna-central">
+                <div class="bienvenida">
+                    <h2>Panel de Control</h2>
+                    <p>Bienvenido de nuevo. Aquí tienes un resumen del estado de Happy Mind hoy.</p>
+                </div>
+
+                <!-- TARJETAS DE MÉTRICAS -->
+                <div class="grid-metricas">
+                    <article class="tarjeta-metrica">
+                        <span class="icono" style="color: var(--azul-500);">👤</span>
+                        <span class="tendencia-positiva">0%</span>
+                        <h3>Pacientes registrados</h3>
+                        <p class="valor">1,284</p>
+                    </article>
+
+                    <article class="tarjeta-metrica">
+                        <span class="icono" style="color: var(--morado-500);">🧠</span>
+                        <h3>Psicólogos registrados</h3>
+                        <p class="valor">48</p>
+                    </article>
+
+                    <article class="tarjeta-metrica">
+                        <span class="icono" style="color: var(--naranja-500);">📅</span>
+                        <h3>Citas pendientes</h3>
+                        <p class="valor">24</p>
+                    </article>
+
+                    <article class="tarjeta-metrica">
+                        <span class="icono" style="color: var(--azul-500);">☑️</span>
+                        <h3>Citas realizadas</h3>
+                        <p class="valor">892</p>
+                    </article>
+                </div>
+
+                <!-- GRÁFICOS CON LA NUEVA PALETA -->
+                <div class="grid-graficos">
+                    <article class="tarjeta-grafico">
+                        <header class="cabecera-grafico">
+                            <h3>Citas por día</h3>
+                            <button class="btn-filtro">Últimos 7 días</button>
+                        </header>
+                        <div class="contenedor-grafico-barras">
+                            <div class="barra" style="--altura: 30%;"></div>
+                            <div class="barra" style="--altura: 50%;"></div>
+                            <div class="barra" style="--altura: 80%;"></div>
+                            <div class="barra" style="--altura: 40%;"></div>
+                            <div class="barra activa" style="--altura: 90%;"></div>
+                            <div class="barra" style="--altura: 20%;"></div>
+                            <div class="barra" style="--altura: 60%;"></div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-grafico">
+                        <h3>Estado de las Citas</h3>
+                        <div class="contenedor-grafico-dona">
+                            <div class="centro-dona">
+                                <span class="porcentaje">70%</span>
+                                <span class="etiqueta">EFECTIVIDAD</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-dona">
+                            <ul>
+                                <li><span class="punto bg-azul"></span>Realizadas (70%)</li>
+                                <li><span class="punto bg-naranja"></span>Canceladas (15%)</li>
+                                <li><span class="punto bg-morado"></span>Ausentes (15%)</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- TABLA DE CITAS CON BOTONES DE ACCIÓN -->
+                <section class="seccion-tabla">
+                    <header class="cabecera-tabla">
+                        <h3>Próximas citas del día</h3>
+                        <a href="#" class="enlace-ver-todas">Ver todas →</a>
+                    </header>
+                    <div style="overflow-x: auto;">
+                        <table class="tabla-citas">
+                            <thead>
+                                <tr>
+                                    <th>PACIENTE</th>
+                                    <th>PSICÓLOGO</th>
+                                    <th>FECHA Y HORA</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="iniciales">RM</span>
+                                        Ricardo Mendoza
+                                    </td>
+                                    <td>Dra. Clara Soto</td>
+                                    <td>Hoy, 24 May - 09:00 AM</td>
+                                    <td><span class="etiqueta-estado confirmada">CONFIRMADA</span></td>
+                                    <td>
+                                        <div class="grupo-acciones">
+                                            <a href="#modal-ver" class="btn-accion ver">Ver</a>
+                                            <a href="#modal-editar" class="btn-accion editar">Editar</a>
+                                            <a href="#modal-eliminar" class="btn-accion eliminar">Eliminar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="iniciales">EL</span>
+                                        Elena Luna
+                                    </td>
+                                    <td>Dr. Marcos Ruiz</td>
+                                    <td>Hoy, 24 May - 11:30 AM</td>
+                                    <td><span class="etiqueta-estado espera">EN ESPERA</span></td>
+                                    <td>
+                                        <div class="grupo-acciones">
+                                            <a href="#modal-ver" class="btn-accion ver">Ver</a>
+                                            <a href="#modal-editar" class="btn-accion editar">Editar</a>
+                                            <a href="#modal-eliminar" class="btn-accion eliminar">Eliminar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+  </div>
+
+  <!-- ==================== MODALES (CSS PURO) ==================== -->
+
+  <!-- MODAL: VER -->
+  <div id="modal-ver" class="modal">
+      <div class="modal-contenido">
+          <a href="#" class="cerrar-modal">&times;</a>
+          <h3>Detalles de la Cita</h3>
+          <div class="info-modal">
+              <p><strong>Paciente:</strong> Ricardo Mendoza</p>
+              <p><strong>Psicólogo:</strong> Dra. Clara Soto</p>
+              <p><strong>Fecha y Hora:</strong> 24 May 2024, 09:00 AM</p>
+              <p><strong>Estado Actual:</strong> Confirmada</p>
+              <p><strong>Notas:</strong> Primera sesión de evaluación inicial.</p>
+          </div>
+          <a href="#" class="btn-accion ver modal-btn-centrado">Cerrar Información</a>
+      </div>
+  </div>
+
+  <!-- MODAL: EDITAR -->
+  <div id="modal-editar" class="modal">
+      <div class="modal-contenido">
+          <a href="#" class="cerrar-modal">&times;</a>
+          <h3>Editar Cita</h3>
+          <form class="formulario-modal">
+              <div class="campo">
+                  <label>Fecha de la Cita</label>
+                  <input type="date">
+              </div>
+              <div class="campo">
+                  <label>Hora</label>
+                  <input type="time">
+              </div>
+              <div class="campo">
+                  <label>Estado</label>
+                  <select>
+                      <option>Confirmada</option>
+                      <option>En Espera</option>
+                      <option>Reprogramada</option>
+                      <option>Cancelada</option>
+                  </select>
+              </div>
+              <!-- Al confirmar también cerramos el modal enviando al # -->
+              <a href="#" class="btn-accion editar modal-btn-centrado">Confirmar Cambios</a>
+          </form>
+      </div>
+  </div>
+
+  <!-- MODAL: ELIMINAR -->
+  <div id="modal-eliminar" class="modal">
+      <div class="modal-contenido">
+          <a href="#" class="cerrar-modal">&times;</a>
+          <h3>¿Eliminar Cita?</h3>
+          <p style="margin-bottom: 20px; color: var(--negro-900);">Estás a punto de eliminar esta cita de forma permanente. Esta acción no se puede deshacer.</p>
+          <div class="grupo-acciones-modal">
+              <a href="#" class="btn-accion neutro">Cancelar</a>
+              <a href="#" class="btn-accion eliminar">Confirmar</a>
+          </div>
+      </div>
+  </div>
+
+</body>
+</html>
