@@ -1,0 +1,478 @@
+/* --- VARIABLES DE COLOR (Figma) --- */
+:root {
+    --azul-100: #bad1fd;
+    --azul-500: #3076f9;
+    --naranja-500: #ff9800;
+    --azul2-500: #dbf1fe;
+    --morado-500: #7351ea;
+    --morado-100: #d0c5f8;
+    --negro-900: #010101;
+    --blanco-100: #ffffff;
+    
+    --fondo-sitio: #f8fafc;
+    --borde: #e2e8f0;
+}
+
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-sitio);
+    color: var(--negro-900);
+}
+
+.ContenedorDb {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- BARRA LATERAL IZQUIERDA --- */
+.barraIzq {
+    width: 260px;
+    background-color: var(--blanco-100);
+    border-right: 1px solid var(--borde);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: var(--azul-500);
+    color: var(--blanco-100);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 10px;
+}
+
+.navegacionIzq ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navegacionIzq a {
+    text-decoration: none;
+    color: var(--negro-900);
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: block;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.navegacionIzq a:hover {
+    background-color: var(--azul-100);
+}
+
+.navegacionIzq .activo a {
+    background-color: var(--azul2-500);
+    color: var(--azul-500);
+    font-weight: bold;
+}
+
+.perfilUsuario {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borde);
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: var(--morado-100);
+    color: var(--morado-500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.avatar-placeholder.admin {
+    background-color: var(--azul-100);
+    color: var(--azul-500);
+}
+
+.info-usuario .nombre {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+.principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blanco-100);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 24px;
+}
+
+.barraBusqueda input {
+    width: 350px;
+    padding: 10px 16px;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    background-color: var(--fondo-sitio);
+    outline: none;
+}
+
+.perfilAdm {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* CUERPO DASHBOARD (Sin columna derecha) */
+.cuerpoDb {
+    display: flex;
+}
+
+.columna-central {
+    flex: 1; /* Ocupa todo el ancho disponible */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.bienvenida h2 {
+    font-size: 1.5rem;
+    color: var(--negro-900);
+}
+
+.bienvenida p {
+    color: #666;
+}
+
+/* TARJETAS DE MÉTRICAS */
+.grid-metricas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-metrica {
+    background: var(--blanco-100);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tarjeta-metrica .icono {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tarjeta-metrica h3 {
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #666;
+}
+
+.tarjeta-metrica .valor {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* GRÁFICOS Y COLORES NUEVOS */
+.grid-graficos {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Barras más grande que la dona */
+    gap: 24px;
+}
+
+.tarjeta-grafico {
+    background: var(--blanco-100);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera-grafico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.btn-filtro {
+    border: 1px solid var(--borde);
+    background: var(--blanco-100);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* BARRAS CON AZULES Y MORADOS */
+.contenedor-grafico-barras {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 20px;
+    border-bottom: 2px solid var(--borde);
+}
+
+.barra {
+    flex: 1;
+    background-color: var(--azul-100); /* Azul claro de base */
+    border-radius: 4px 4px 0 0;
+    height: var(--altura);
+    transition: background-color 0.3s;
+}
+
+.barra:hover, .barra.activa {
+    background-color: var(--azul-500); /* Azul intenso */
+}
+
+/* DONA CON LA PALETA DE FIGMA */
+.contenedor-grafico-dona {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    /* Utiliza Azul, Naranja y Morado de tu paleta */
+    background: conic-gradient(
+        var(--azul-500) 0% 70%, 
+        var(--naranja-500) 70% 85%, 
+        var(--morado-500) 85% 100%
+    );
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro-dona {
+    width: 110px;
+    height: 110px;
+    background: var(--blanco-100);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro-dona .porcentaje {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--azul-500);
+}
+
+.leyenda-dona ul {
+    list-style: none;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+.bg-azul { background-color: var(--azul-500); }
+.bg-naranja { background-color: var(--naranja-500); }
+.bg-morado { background-color: var(--morado-500); }
+
+
+/* TABLA Y BOTONES (Ver, Editar, Eliminar) */
+.seccion-tabla {
+    background: var(--blanco-100);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tabla-citas {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-citas th {
+    font-size: 0.75rem;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borde);
+    color: #666;
+}
+
+.tabla-citas td {
+    padding: 12px 10px 12px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--fondo-sitio);
+    vertical-align: middle;
+}
+
+.etiqueta-estado {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.confirmada { background: var(--azul2-500); color: var(--azul-500); }
+.espera { background: var(--morado-100); color: var(--morado-500); }
+
+/* ESTILO DE LOS NUEVOS BOTONES DE ACCIÓN */
+.grupo-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-accion {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Colores de los botones extraídos de Figma */
+.btn-accion.ver { 
+    background-color: var(--azul2-500); 
+    color: var(--azul-500); 
+}
+.btn-accion.editar { 
+    background-color: var(--morado-100); 
+    color: var(--morado-500); 
+}
+.btn-accion.eliminar { 
+    background-color: #fff0eb; /* Fondo suave para resaltar el naranja/rojo */
+    color: var(--naranja-500); 
+}
+.btn-accion.neutro {
+    background-color: var(--fondo-sitio);
+    color: var(--negro-900);
+}
+
+
+/* ==================== SISTEMA DE MODALES (PURO CSS) ==================== */
+/* El modal inicia oculto */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(1, 1, 1, 0.6); /* Color basado en tu Negro 900 con transparencia */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuando la URL coincide con el ID del modal (ej: #modal-editar), se hace visible (flex) */
+.modal:target {
+    display: flex; 
+}
+
+.modal-contenido {
+    background: var(--blanco-100);
+    width: 90%;
+    max-width: 450px;
+    padding: 24px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.modal-contenido h3 {
+    margin-bottom: 20px;
+    color: var(--negro-900);
+    border-bottom: 1px solid var(--borde);
+    padding-bottom: 10px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #999;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.cerrar-modal:hover {
+    color: var(--negro-900);
+}
+
+/* Estilos de información y formulario en el Modal */
+.info-modal p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.formulario-modal .campo {
+    margin-bottom: 16px;
+}
+
+.formulario-modal label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.formulario-modal input, 
+.formulario-modal select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: var(--fondo-sitio);
+    outline: none;
+}
+
+.modal-btn-centrado {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.grupo-acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
