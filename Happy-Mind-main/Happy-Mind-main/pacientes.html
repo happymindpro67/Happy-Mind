@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Pacientes - Happy Mind</title>
+  
+  <!-- Carga de Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Hoja de Estilos Externa -->
+  <link rel="stylesheet" href="./css/pacientes.css">
+</head>
+<body>
+
+  <div class="ContenedorDb">
+    <!-- BARRA LATERAL -->
+    <aside class="barraIzq">
+      <div class="logo">
+        <div class="logo-placeholder">HM</div>
+        <h1>Happy Mind</h1>
+        <span>Panel de Administración</span>
+      </div>
+
+      <nav class="navegacionIzq">
+        <ul>
+          <li><a href="dashboard.html">Panel de Control</a></li>
+          <li class="activo"><a href="pacientes.html">Pacientes</a></li>
+          <li><a href="psicologos.html">Psicólogos</a></li>
+          <li><a href="citas.html">Citas</a></li>
+          <li><a href="#">Análisis</a></li>
+          <li><a href="#">Ajustes</a></li>
+        </ul>
+      </nav>
+
+      <div class="perfilUsuario">
+        <div class="avatar-placeholder">K</div>
+        <div class="info-usuario">
+          <span class="nombre">Kevin Arroyave</span>
+          <span class="rol">Administrador</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="principal">
+      
+      <!-- CABECERA SUPERIOR IDENTICA A LA IMAGEN -->
+      <header class="superior">
+        <div class="barraBusqueda">
+          <input type="text" placeholder="Buscar pacientes, psicólogos, IDs...">
+        </div>
+        <div class="perfilAdm">
+          <span class="tituloAdm">Administrador</span>
+          <div class="avatar-placeholder admin">K</div>
+        </div>
+      </header>
+
+      <!-- CABECERA DEL MÓDULO -->
+      <section class="cabecera-modulo">
+        <div>
+          <h2>Gestión de Pacientes</h2>
+          <p>Consulta, programa y administra la información de los pacientes.</p>
+        </div>
+        <!-- RF-PAC-01: Botón de Registro -->
+        <a href="#modal-registrar-paciente" class="btn-primario">
+          + Nuevo Paciente
+        </a>
+      </section>
+
+      <!-- SECCIÓN DE TABLA (RF-PAC-02: Leer/mostrar información) -->
+      <section class="seccion-tabla">
+        <div class="filtros-tabla">
+          <select class="select-filtro">
+            <option value="">Todos los estados</option>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+          <input type="date" class="input-fecha-filtro">
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="tabla-citas">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>PACIENTE</th>
+                <th>DOCUMENTO</th>
+                <th>TELÉFONO / CORREO</th>
+                <th>PSICÓLOGO ASIGNADO</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cita">PAC-001</td>
+                <td><strong>Laura Sofía Pérez</strong></td>
+                <td>CC 1.020.304.050</td>
+                <td>300 123 4567<br><small class="text-sec">laura@email.com</small></td>
+                <td>Dra. Clara Soto</td>
+                <td><span class="etiqueta-estado confirmada">ACTIVO</span></td>
+                <td>
+                  <div class="grupo-acciones">
+                    <a href="#modal-ver-paciente" class="btn-texto-accion ver">Ver</a>
+                    <a href="#modal-editar-paciente" class="btn-texto-accion editar">Editar</a>
+                    <a href="#modal-registrar-avance" class="btn-texto-accion notificar">Avance</a>
+                    <a href="#modal-historial-avances" class="btn-texto-accion ver">Historial</a>
+                    <a href="#modal-eliminar-paciente" class="btn-texto-accion eliminar">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="id-cita">PAC-002</td>
+                <td><strong>Juan David Morales</strong></td>
+                <td>CC 1.098.765.432</td>
+                <td>311 987 6543<br><small class="text-sec">juan.morales@email.com</small></td>
+                <td>Dr. Marcos Ruiz</td>
+                <td><span class="etiqueta-estado espera">INACTIVO</span></td>
+                <td>
+                  <div class="grupo-acciones">
+                    <a href="#modal-ver-paciente" class="btn-texto-accion ver">Ver</a>
+                    <a href="#modal-editar-paciente" class="btn-texto-accion editar">Editar</a>
+                    <a href="#modal-registrar-avance" class="btn-texto-accion notificar">Avance</a>
+                    <a href="#modal-historial-avances" class="btn-texto-accion ver">Historial</a>
+                    <a href="#modal-eliminar-paciente" class="btn-texto-accion eliminar">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==================== MODALES (CSS PURO) ==================== -->
+
+  <!-- MODAL: RF-PAC-01 - Registrar Paciente -->
+  <div id="modal-registrar-paciente" class="modal">
+    <div class="modal-contenido">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Registrar Nuevo Paciente</h3>
+      <form class="formulario-modal" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Nombres</label>
+            <input type="text" placeholder="Ej: Ana María" required>
+          </div>
+          <div class="campo">
+            <label>Apellidos</label>
+            <input type="text" placeholder="Ej: Restrepo Gómez" required>
+          </div>
+        </div>
+
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Tipo Documento</label>
+            <select required>
+              <option value="CC">Cédula de Ciudadanía</option>
+              <option value="TI">Tarjeta de Identidad</option>
+              <option value="CE">Cédula de Extranjería</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label>Número Documento</label>
+            <input type="text" placeholder="1020304050" required>
+          </div>
+        </div>
+
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="3001234567" required>
+          </div>
+          <div class="campo">
+            <label>Fecha de Nacimiento</label>
+            <input type="date" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="correo@ejemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label>Psicólogo Asignado</label>
+          <select required>
+            <option value="">Seleccione un Psicólogo</option>
+            <option value="1">Dra. Clara Soto</option>
+            <option value="2">Dr. Marcos Ruiz</option>
+          </select>
+        </div>
+
+        <div class="grupo-acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Guardar Paciente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: RF-PAC-02 - Leer / Ver Detalle del Paciente -->
+  <div id="modal-ver-paciente" class="modal">
+    <div class="modal-contenido">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Detalles del Paciente</h3>
+      <div class="info-modal">
+        <p><strong>ID:</strong> PAC-001</p>
+        <p><strong>Nombre:</strong> Laura Sofía Pérez</p>
+        <p><strong>Documento:</strong> CC 1.020.304.050</p>
+        <p><strong>Teléfono:</strong> 300 123 4567</p>
+        <p><strong>Correo:</strong> laura@email.com</p>
+        <p><strong>Psicólogo Asignado:</strong> Dra. Clara Soto</p>
+        <p><strong>Estado:</strong> <span class="etiqueta-estado confirmada">Activo</span></p>
+      </div>
+      <div class="grupo-acciones-modal mt-10">
+        <a href="#" class="btn-secundario">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RF-PAC-03 - Actualizar Paciente -->
+  <div id="modal-editar-paciente" class="modal">
+    <div class="modal-contenido">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Actualizar Información del Paciente</h3>
+      <form class="formulario-modal" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Nombres</label>
+            <input type="text" value="Laura Sofía" required>
+          </div>
+          <div class="campo">
+            <label>Apellidos</label>
+            <input type="text" value="Pérez" required>
+          </div>
+        </div>
+
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Teléfono</label>
+            <input type="tel" value="3001234567" required>
+          </div>
+          <div class="campo">
+            <label>Estado</label>
+            <select>
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Correo Electrónico</label>
+          <input type="email" value="laura@email.com" required>
+        </div>
+
+        <div class="grupo-acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Actualizar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: RF-PAC-04 - Eliminar Paciente -->
+  <div id="modal-eliminar-paciente" class="modal">
+    <div class="modal-contenido modal-pequeno text-center">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3 style="color: var(--naranja-500);">¿Eliminar Paciente?</h3>
+      <p style="color: var(--texto-secundario); margin-bottom: 20px; font-size: 0.9rem;">
+        Esta acción eliminará la información del paciente y no se podrá deshacer.
+      </p>
+      <div class="grupo-acciones-modal" style="justify-content: center;">
+        <a href="#" class="btn-secundario">Cancelar</a>
+        <button type="submit" class="btn-eliminar-confirmar">Sí, Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RF-PAC-05 - Registrar Avance del Tratamiento -->
+  <div id="modal-registrar-avance" class="modal">
+    <div class="modal-contenido">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Registrar Avance de Tratamiento</h3>
+      <p class="sub-modal">Paciente: <strong>Laura Sofía Pérez</strong></p>
+      
+      <form class="formulario-modal mt-10" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Fecha de Sesión</label>
+            <input type="date" required>
+          </div>
+          <div class="campo">
+            <label>N° de Sesión</label>
+            <input type="number" min="1" placeholder="Ej: 3" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Objetivo de la Sesión</label>
+          <input type="text" placeholder="Ej: Manejo de técnicas de respiración" required>
+        </div>
+
+        <div class="campo">
+          <label>Evolución / Observaciones del Avance</label>
+          <textarea rows="4" placeholder="Describa los avances presentados por el paciente..." required></textarea>
+        </div>
+
+        <div class="campo">
+          <label>Nivel de Avance Estimado</label>
+          <select required>
+            <option value="inicial">Inicial / Bajo</option>
+            <option value="en_proceso" selected>En Proceso / Medio</option>
+            <option value="satisfactorio">Satisfactorio / Alto</option>
+          </select>
+        </div>
+
+        <div class="grupo-acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Guardar Avance</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: RF-PAC-06 - Ver Historial de Avances (Historia Clínica) -->
+  <div id="modal-historial-avances" class="modal">
+    <div class="modal-contenido" style="max-width: 650px;">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Historial de Avances Clínicos</h3>
+      <p class="sub-modal">Paciente: <strong>Laura Sofía Pérez</strong> (CC 1.020.304.050)</p>
+
+      <div class="contenedor-historial mt-10">
+        <!-- Tarjeta de Avance 1 -->
+        <div class="tarjeta-avance">
+          <div class="cabecera-avance">
+            <span class="sesion-tag">Sesión #2</span>
+            <span class="fecha-avance">10 de Octubre, 2026</span>
+          </div>
+          <p class="objetivo-avance"><strong>Objetivo:</strong> Identificación de disparadores de ansiedad.</p>
+          <p class="desc-avance">La paciente logró reconocer situaciones estresantes en el ámbito laboral y aplicó la técnica de reestructuración cognitiva.</p>
+          <span class="etiqueta-estado confirmada">Avance Medio</span>
+        </div>
+
+        <!-- Tarjeta de Avance 2 -->
+        <div class="tarjeta-avance">
+          <div class="cabecera-avance">
+            <span class="sesion-tag">Sesión #1</span>
+            <span class="fecha-avance">28 de Septiembre, 2026</span>
+          </div>
+          <p class="objetivo-avance"><strong>Objetivo:</strong> Evaluación inicial y establecimiento de rapport.</p>
+          <p class="desc-avance">Se realizó entrevista inicial. Paciente presenta síntomas leves de insomnio y ansiedad generalizada.</p>
+          <span class="etiqueta-estado espera">Avance Inicial</span>
+        </div>
+      </div>
+
+      <div class="grupo-acciones-modal mt-10">
+        <a href="#" class="btn-secundario">Cerrar Historial</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap');
+
+:root {
+  /* Variables del Dashboard */
+  --azul-100: #bad1fd;
+  --azul-500: #3076f9;
+  --naranja-500: #ff9800;
+  --naranja-100: #fff4e6;
+  --azul2-500: #dbf1fe;
+  --morado-500: #7351ea;
+  --morado-100: #d0c5f8;
+  --negro-900: #010101;
+  --blanco-100: #ffffff;
+  --fondo-sitio: #f8fafc;
+  --borde: #e2e8f0;
+  --texto-secundario: #64748b;
+
+  --font-titulo: 'Arvo', serif;
+  --font-subtitulo: 'Puritan', sans-serif;
+  --font-regular: 'Pragati Narrow', sans-serif;
+  --font-descripcion: 'Pridi', serif;
+  --font-anuncio: 'Montserrat', sans-serif;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: var(--font-regular); 
+  font-size: 1rem; 
+}
+
+body { 
+  background-color: var(--fondo-sitio); 
+  color: var(--negro-900); 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { text-decoration: none; }
+h2 { font-family: var(--font-subtitulo); font-size: 1.9rem; }
+h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
+
+/* --- BARRA LATERAL (Sidebar) --- */
+.ContenedorDb { display: flex; height: 100vh; overflow: hidden; }
+.barraIzq { width: 260px; background-color: var(--blanco-100); border-right: 1px solid var(--borde); display: flex; flex-direction: column; padding: 24px; }
+.logo { text-align: center; margin-bottom: 40px; }
+.logo-placeholder { width: 50px; height: 50px; background-color: var(--azul-500); color: var(--blanco-100); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-anuncio); font-size: 1.5rem; margin: 0 auto 10px; }
+.logo h1 { font-family: var(--font-titulo); font-size: 1.5rem; color: var(--negro-900); }
+.logo span { font-family: var(--font-descripcion); font-size: 0.8rem; color: var(--texto-secundario); }
+
+.navegacionIzq ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.navegacionIzq a { font-size: 1.1rem; color: var(--texto-secundario); padding: 12px 16px; border-radius: 8px; display: block; transition: all 0.2s; }
+.navegacionIzq a:hover { background-color: var(--azul-100); color: var(--azul-500); }
+.navegacionIzq .activo a { background-color: var(--azul2-500); color: var(--azul-500); font-weight: bold; }
+
+.perfilUsuario { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--borde); }
+.avatar-placeholder { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: var(--font-anuncio); background-color: var(--azul-100); color: var(--azul-500); font-weight: bold; }
+.info-usuario .nombre { font-size: 1.1rem; font-weight: bold; display: block; color: var(--negro-900); }
+.info-usuario .rol { font-family: var(--font-descripcion); font-size: 0.8rem; color: var(--texto-secundario); }
+
+/* --- ÁREA PRINCIPAL --- */
+.principal { flex: 1; display: flex; flex-direction: column; padding: 24px; overflow-y: auto; }
+
+/* --- CABECERA SUPERIOR (ESTILO TARJETA REDONDEADA) --- */
+.superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blanco-100);
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--borde);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  margin-bottom: 28px;
+}
+
+.barraBusqueda {
+  flex: 1;
+  max-width: 320px;
+}
+
+.barraBusqueda input {
+  width: 100%;
+  padding: 10px 18px;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  font-family: var(--font-regular);
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #f8fafc;
+  color: var(--texto-secundario);
+}
+
+.barraBusqueda input::placeholder {
+  color: #94a3b8;
+}
+
+.perfilAdm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tituloAdm {
+  font-family: var(--font-subtitulo);
+  color: var(--morado-500);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.avatar-placeholder.admin {
+  width: 38px;
+  height: 38px;
+  background-color: #a5c7fe;
+  color: #1e40af;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* --- MÓDULO Y TABLA --- */
+.cabecera-modulo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.cabecera-modulo h2 { font-family: var(--font-titulo); font-size: 2.4rem; color: var(--negro-900); }
+.cabecera-modulo p { font-family: var(--font-descripcion); font-size: 0.95rem; color: var(--texto-secundario); }
+
+.seccion-tabla { background: var(--blanco-100); padding: 24px; border-radius: 16px; border: 1px solid var(--borde); box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+.filtros-tabla { display: flex; gap: 12px; margin-bottom: 20px; }
+.select-filtro, .input-fecha-filtro { padding: 8px 12px; border: 1px solid var(--borde); border-radius: 8px; font-family: var(--font-regular); font-size: 1rem; outline: none; background: var(--fondo-sitio); color: var(--negro-900); }
+
+.tabla-citas { width: 100%; border-collapse: collapse; text-align: left; }
+.tabla-citas th { font-family: var(--font-descripcion); font-size: 0.85rem; padding-bottom: 16px; border-bottom: 2px solid var(--borde); color: var(--texto-secundario); text-transform: uppercase; }
+.tabla-citas td { font-family: var(--font-regular); font-size: 1.1rem; padding: 16px 10px; border-bottom: 1px solid var(--fondo-sitio); vertical-align: middle; }
+.id-cita { font-family: var(--font-descripcion); font-size: 0.9rem; color: var(--texto-secundario); }
+
+.etiqueta-estado { font-family: var(--font-descripcion); font-size: 0.75rem; padding: 6px 16px; border-radius: 16px; font-weight: bold; text-transform: uppercase; display: inline-block; }
+.confirmada { background: var(--azul2-500); color: var(--azul-500); }
+.espera { background: var(--naranja-100); color: var(--naranja-500); }
+
+/* BOTONES DE ACCIÓN */
+.grupo-acciones { display: flex; gap: 6px; }
+.btn-texto-accion { font-family: var(--font-regular); padding: 6px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid var(--borde); transition: 0.2s; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.btn-texto-accion.ver { color: var(--texto-secundario); background: var(--fondo-sitio); }
+.btn-texto-accion.editar { color: var(--naranja-500); background: var(--naranja-100); border-color: transparent; }
+.btn-texto-accion.eliminar { color: #ef4444; background: #fee2e2; border-color: transparent; }
+.btn-texto-accion.notificar { color: var(--morado-500); background: var(--morado-100); border-color: transparent; }
+
+.btn-texto-accion.ver:hover { border-color: var(--azul-500); color: var(--azul-500); }
+.btn-texto-accion.editar:hover { background: var(--naranja-500); color: var(--blanco-100); }
+.btn-texto-accion.eliminar:hover { background: #ef4444; color: var(--blanco-100); }
+.btn-texto-accion.notificar:hover { background: var(--morado-500); color: var(--blanco-100); }
+
+.btn-primario { background-color: var(--azul-500); color: var(--blanco-100); padding: 10px 20px; border-radius: 8px; font-family: var(--font-regular); font-size: 1.1rem; font-weight: bold; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-secundario { background-color: var(--fondo-sitio); color: var(--negro-900); padding: 10px 20px; border-radius: 8px; font-family: var(--font-regular); font-size: 1.1rem; border: 1px solid var(--borde); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.btn-eliminar-confirmar { background-color: #fee2e2; color: #ef4444; padding: 10px 20px; border-radius: 8px; font-family: var(--font-regular); font-size: 1.1rem; font-weight: bold; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.ancho-completo { width: 100%; display: block; box-sizing: border-box; }
+.text-center { text-align: center; }
+.mt-10 { margin-top: 16px; }
+.text-sec { color: var(--texto-secundario); }
+
+/* --- MODALES CON CSS PURO --- */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(1, 1, 1, 0.5); z-index: 1000; justify-content: center; align-items: center; }
+.modal:target { display: flex; }
+.modal-contenido { background: var(--blanco-100); width: 90%; max-width: 500px; padding: 32px; border-radius: 16px; position: relative; }
+.modal-pequeno { max-width: 400px; }
+.cerrar-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: var(--texto-secundario); font-weight: bold; }
+.modal-contenido h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; margin-bottom: 24px; color: var(--negro-900); }
+.formulario-modal .campo { margin-bottom: 16px; }
+.grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.formulario-modal label { font-family: var(--font-descripcion); font-size: 0.9rem; font-weight: bold; display: block; margin-bottom: 8px; color: var(--negro-900); }
+.formulario-modal input, .formulario-modal select, .formulario-modal textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--borde); border-radius: 8px; font-family: var(--font-regular); font-size: 1.1rem; outline: none; background: var(--fondo-sitio); color: var(--negro-900); }
+.info-modal p { font-family: var(--font-regular); font-size: 1.1rem; margin-bottom: 12px; color: var(--texto-secundario); }
+.info-modal strong { color: var(--negro-900); }
+.grupo-acciones-modal { display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px; }
+
+/* --- HISTORIAL DE AVANCES --- */
+.sub-modal {
+  font-family: var(--font-descripcion);
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+}
+
+.contenedor-historial {
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 6px;
+}
+
+.tarjeta-avance {
+  background-color: var(--fondo-sitio);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.cabecera-avance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sesion-tag {
+  font-family: var(--font-subtitulo);
+  font-weight: bold;
+  color: var(--morado-500);
+}
+
+.fecha-avance {
+  font-family: var(--font-descripcion);
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+.objetivo-avance {
+  font-family: var(--font-regular);
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--negro-900);
+}
+
+.desc-avance {
+  font-family: var(--font-descripcion);
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-bottom: 10px;
+}

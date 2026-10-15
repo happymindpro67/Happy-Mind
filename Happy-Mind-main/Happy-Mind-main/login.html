@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Mind - Iniciar Sesión</title>
+  
+  <!-- Carga de Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome para Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Hoja de Estilos Externa -->
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO / BARRA DE NAVEGACIÓN -->
+  <header>
+    <!-- Logo HM -->
+    <a href="#" class="brand-container">
+      <div class="brand-badge">HM</div>
+      <span class="brand-name">Happy Mind</span>
+    </a>
+
+    <!-- Enlaces Centrales -->
+    <nav class="nav-central">
+      <a href="#" class="activo">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Psicólogos</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <!-- Botones de Acción -->
+    <div class="nav-actions">
+      <a href="#" class="btn-link">Iniciar sesión</a>
+      <a href="#" class="btn-orange-nav">Registrarse</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <div class="login-card">
+      
+      <!-- Panel Izquierdo: Ilustración Vectorial -->
+      <div class="illustration-panel">
+        <svg viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+        </svg>
+      </div>
+
+      <!-- Panel Derecho: Formulario de Login -->
+      <div class="form-panel">
+        <h1>Bienvenido</h1>
+        <p class="subtitle">Un espacio seguro para tu crecimiento personal.</p>
+
+        <form action="#" method="POST">
+          
+          <!-- Campo Usuario -->
+          <div class="campo-login">
+            <label for="username">Usuario</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user icon-left"></i>
+              <input type="text" id="username" placeholder="tu_usuario" required>
+            </div>
+          </div>
+
+          <!-- Campo Contraseña -->
+          <div class="campo-login">
+            <label for="password">Contraseña</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock icon-left"></i>
+              <input type="password" id="password" value="........" required>
+              <i class="fa-regular fa-eye icon-right"></i>
+            </div>
+          </div>
+
+          <!-- Olvidaste tu contraseña -->
+          <div class="forgot-link">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <!-- Botón Iniciar Sesión -->
+          <button type="submit" class="btn-submit-login">
+            Iniciar sesión <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- Separador -->
+        <div class="divider">
+          <span>Continue con</span>
+        </div>
+
+        <!-- Redes Sociales Funcionales -->
+        <div class="social-login">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="social-btn google" title="Google">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="social-btn github" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <!-- Registro -->
+        <div class="register-text">
+          ¿No tienes una cuenta? <a href="#">Crear una cuenta</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div>© 2026 Happy Mind. Claridad empática para el crecimiento mental.</div>
+    <div class="footer-links">
+      <a href="#">Privacidad</a>
+      <a href="#">Términos</a>
+      <a href="#">Soporte</a>
+      <a href="#">Accesibilidad</a>
+    </div>
+  </footer>
+
+</body>
+</html>

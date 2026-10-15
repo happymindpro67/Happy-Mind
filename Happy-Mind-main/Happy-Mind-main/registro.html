@@ -1,0 +1,188 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mind - Crear Cuenta</title>
+    <link rel="stylesheet" href="./css/registro.css">
+</head>
+<body>
+    <header class="cabecera-principal">
+        <div class="logo">
+            <span class="logo-icono">HM</span>
+            <span class="logo-texto">Happy Mind</span>
+        </div>
+        
+        <nav class="navegacion">
+            <ul>
+                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Psicólogos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="acciones-auth">
+            <a href="#" class="enlace-login">Iniciar sesión</a>
+            <a href="registro.html" class="btn-naranja">Registrarse</a>
+        </div>
+    </header>
+
+    <main class="contenedor-principal">
+        <div class="contenedor-formulario">
+            
+            <!-- Contenedor central para tu imagen -->
+            <div class="contenedor-imagen">
+                <img src="./Imagenes/HMfondo.jpg" alt="Meditación Happy Mind" class="imagen-formulario">
+            </div>
+
+            <div class="textos-cabecera">
+                <h2>Crear cuenta</h2>
+                <p>Registra tus datos para comenzar tu proceso de acompañamiento psicológico.</p>
+            </div>
+
+            <!-- El atributo required en los inputs evita que el form avance si están vacíos -->
+            <form action="#" class="formulario">
+                
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre completo</label>
+                    <div class="input-con-icono">
+                        <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                        <span class="icono-check">&#10004;</span>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="tipo_doc">Tipo de documento</label>
+                    <select id="tipo_doc" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="cc">Cédula de Ciudadanía</option>
+                        <option value="ti">Tarjeta de Identidad</option>
+                        <option value="ce">Cédula de Extranjería</option>
+                        <option value="pa">Pasaporte</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="num_doc">Número de documento</label>
+                    <input type="text" id="num_doc" placeholder="1234567890" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="fecha_nac">Fecha de nacimiento</label>
+                    <input type="date" id="fecha_nac" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="genero">Género</label>
+                    <select id="genero" required>
+                        <option value="" disabled selected>Selecciona tu género</option>
+                        <option value="f">Femenino</option>
+                        <option value="m">Masculino</option>
+                        <option value="o">Otro</option>
+                        <option value="p">Prefiero no decirlo</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="celular">Celular</label>
+                    <input type="tel" id="celular" placeholder="+57 300 000 0000" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" placeholder="Bogotá, Medellín..." required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="Calle 123 #45-67" required>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Contraseña</label>
+                    <div class="input-con-icono">
+                        <!-- Hack CSS: Checkbox oculto que controla la visibilidad -->
+                        <input type="checkbox" id="toggle-pass" class="checkbox-ojito">
+                        <!-- Input tipo text para poder manipularlo con CSS -->
+                        <input type="text" id="pass" class="input-pass" value="12345678" required>
+                        <!-- El label funciona como botón para el checkbox -->
+                        <label for="toggle-pass" class="icono-ojo">&#128065;</label>
+                    </div>
+                    <!-- Barra de seguridad de contraseña -->
+                    <div class="medidor-password">
+                        <div class="barra-progreso media"></div>
+                        <span class="etiqueta-nivel">Media</span>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label>Confirmar contraseña</label>
+                    <div class="input-con-icono">
+                        <input type="checkbox" id="toggle-pass-conf" class="checkbox-ojito">
+                        <input type="text" id="pass_conf" class="input-pass" placeholder="Confirmar contraseña" required>
+                        <label for="toggle-pass-conf" class="icono-ojo">&#128065;</label>
+                    </div>
+                </div>
+
+                <div class="grupo-checkbox">
+                    <input type="checkbox" id="terminos" required>
+                    <label for="terminos">
+                        Acepto términos y condiciones y el tratamiento de mis datos personales según la política de privacidad.
+                    </label>
+                </div>
+
+                <div class="grupo-botones">
+                    <button type="submit" class="btn-primario">Crear cuenta</button>
+                    <a href="#" class="btn-secundario">Volver al inicio de sesión</a>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <footer class="pie-pagina">
+        <div class="footer-grid">
+            <div class="footer-columna marca">
+                <div class="logo">
+                    <span class="logo-texto-morado">HM Happy Mind</span>
+                </div>
+                <p>Conectamos a las personas con el psicólogo que mejor se adapte a sus necesidades para contribuir a su bienestar emocional.</p>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Compañía</h4>
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columna">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columna contacto">
+                <h4>Contáctanos</h4>
+                <div class="item-contacto">
+                    <span>✉️</span> <a href="#">happymindpro67@gmail.com</a>
+                </div>
+                <div class="item-contacto">
+                    <span>📱</span> <a href="#">+57 300 000 0000</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
