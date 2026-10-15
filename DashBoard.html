@@ -198,49 +198,47 @@
 
     <!-- MODAL: EDITAR -->
     <div id="modal-editar" class="modal">
-      <div class="modal-contenido">
-        <a href="#" class="cerrar-modal">&times;</a>
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
         <h3>Editar Cita</h3>
         <form class="formulario-modal">
-          <div class="campo">
-            <label>Fecha de la Cita</label>
-            <input type="date" />
-          </div>
-          <div class="campo">
-            <label>Hora</label>
-            <input type="time" />
-          </div>
-          <div class="campo">
-            <label>Estado</label>
-            <select>
-              <option>Confirmada</option>
-              <option>En Espera</option>
-              <option>Reprogramada</option>
-              <option>Cancelada</option>
-            </select>
-          </div>
-          <!-- Al confirmar también cerramos el modal enviando al # -->
-          <a href="#" class="btn-accion editar modal-btn-centrado"
-            >Confirmar Cambios</a
-          >
+            <div class="campo">
+                <label>Fecha de la Cita</label>
+                <input type="date" />
+            </div>
+            <div class="campo">
+                <label>Hora</label>
+                <input type="time" />
+            </div>
+            <div class="campo">
+                <label>Estado</label>
+                <select>
+                    <option>Confirmada</option>
+                    <option>En Espera</option>
+                    <option>Reprogramada</option>
+                    <option>Cancelada</option>
+                </select>
+            </div>
+
+            <a href="#" class="btn-accion editar modal-btn-centrado">Confirmar Cambios</a>
         </form>
-      </div>
+        </div>
     </div>
 
     <!-- MODAL: ELIMINAR -->
     <div id="modal-eliminar" class="modal">
-      <div class="modal-contenido">
+        <div class="modal-contenido">
         <a href="#" class="cerrar-modal">&times;</a>
         <h3>¿Eliminar Cita?</h3>
         <p style="margin-bottom: 20px; color: var(--negro-900)">
-          Estás a punto de eliminar esta cita de forma permanente. Esta acción
-          no se puede deshacer.
+        Estás a punto de eliminar esta cita de forma permanente. Esta acción
+        no se puede deshacer.
         </p>
         <div class="grupo-acciones-modal">
-          <a href="#" class="btn-accion neutro">Cancelar</a>
-          <a href="#" class="btn-accion eliminar">Confirmar</a>
+            <a href="#" class="btn-accion neutro">Cancelar</a>
+            <a href="#" class="btn-accion eliminar">Confirmar</a>
         </div>
-      </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>

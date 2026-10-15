@@ -26,7 +26,7 @@ h2 { font-family: var(--font-subtitulo); font-size: 1.9rem; }
 h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
 p { font-family: var(--font-regular); }
 
-/* Cabecera */
+/* navbar */
 .cabecera-principal { display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; background-color: var(--blanco-100); box-shadow: 0 2px 10px rgba(0,0,0,0.02); position: sticky; top: 0; z-index: 100; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-icono { background-color: var(--azul-500); color: var(--blanco-100); padding: 6px 10px; border-radius: 8px; font-family: var(--font-anuncio); font-size: 1rem; }
@@ -67,11 +67,13 @@ p { font-family: var(--font-regular); }
 .contenedor-centrado { text-align: center; }
 .btn-ancho { padding: 14px 40px; font-size: 1.2rem; }
 
-/* Banner y Footer */
+/* Banner */
 .seccion-banner { padding: 0 5% 80px; background-color: var(--gris-fondo); }
 .banner-imagen { background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('./Imagenes/HMfondo3.jpg'); background-size: cover; border-radius: 24px; padding: 60px 80px; color: var(--blanco-100); display: flex; align-items: center; min-height: 550px; }
 .banner-contenido h2 { font-family: var(--font-titulo); font-size: 2.4rem; margin-bottom: 10px; color: var(--blanco-100); }
 .pie-pagina { background-color: var(--blanco-100); padding: 60px 5% 40px; border-top: 1px solid #e2e8f0; }
+
+/* Footer */
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
 .logo-texto-morado { font-family: var(--font-anuncio); color: var(--morado-500); font-size: 1.3rem; }
 .footer-columna p, .footer-columna a, .item-contacto a { font-family: var(--font-descripcion); color: var(--texto-secundario); font-size: 0.9rem; }

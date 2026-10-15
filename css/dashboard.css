@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap');
 
 :root {
-    /* Variables unificadas para todo el panel */
+    /* Variables del figma*/
     --azul-100: #bad1fd;
     --azul-500: #3076f9;
     --naranja-500: #ff9800;
@@ -28,7 +28,7 @@ a { text-decoration: none; }
 h2 { font-family: var(--font-subtitulo); font-size: 1.9rem; }
 h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
 
-/* --- BARRA LATERAL (Idéntica) --- */
+/* --- BARRA LATERAL  --- */
 .ContenedorDb { display: flex; height: 100vh; overflow: hidden; }
 .barraIzq { width: 260px; background-color: var(--blanco-100); border-right: 1px solid var(--borde); display: flex; flex-direction: column; padding: 24px; }
 .logo { text-align: center; margin-bottom: 40px; }
