@@ -1,11 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil Psicólogo - Happy Mind</title>
+    <!-- Aquí vinculamos el archivo CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class="ContenedorDb">
+
+        <!-- BARRA LATERAL IZQUIERDA -->
+        <aside class="barraIzq">
+            <div class="logo">
+                <div class="logo-placeholder"><img src="img/LogoHM.jpeg" alt="Logo Happy mind"></div>
+                <h1>Happy Mind</h1>
+                <span>Panel Profesional</span>
+            </div>
+
+            <nav class="navegacionIzq">
+                <ul>
+                    <li><a href="#">Inicio / Dashboard</a></li>
+                    <li><a href="#">Mis Citas</a></li>
+                    <li><a href="#">Mis Pacientes</a></li>
+                    <li class="activo"><a href="#">Mi Perfil</a></li>
+                    <li><a href="#">Horarios y Agenda</a></li>
+                </ul>
+            </nav>
+
+            <div class="perfilUsuario">
+                <div class="avatar-placeholder">JM</div>
+                <div class="info-usuario">
+                    <span class="nombre">Dr. Juan Martínez</span>
+                    <span class="rol">Psicólogo Clínico</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="principal">
+
+            <!-- Contenedor interno para centrar y dar espaciado -->
+            <div class="contenedor-interno">
+
+                <!-- Barra Superior -->
+                <header class="superior">
+                    <div class="barraBusqueda">
+                        <input type="text" placeholder="Buscar pacientes, notas o citas...">
+                    </div>
+                    <div class="perfilAdm">
+                        <div class="infoAdm">
+                            <span class="tituloAdm">Hola, Dr. Juan</span>
+                        </div>
+                        <div class="avatar-placeholder"
+                            style="background-color: var(--morado-100); color: var(--morado-500);">JM</div>
+                    </div>
+                </header>
+
+                <!-- Cabecera del Módulo -->
+                <div class="cabecera-modulo">
+                    <div>
+                        <h2>Mi Perfil Profesional</h2>
+                        <p>Así es como te ven los pacientes en la plataforma.</p>
+                    </div>
+                    <div class="botones-modulo">
+                        <button class="btn-secundario">Vista Previa</button>
+                        <button class="btn-primario">Editar Perfil</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Información del Perfil -->
+                <section class="seccion-tabla">
+                    <div class="grid-perfil">
+                        <div class="info-basica">
+                            <div class="info-item">
+                                <strong>Especialidad</strong>
+                                <p>Terapia Cognitivo-Conductual (TCC)</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Años de experiencia</strong>
+                                <p>8 años</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Modalidad de atención</strong>
+                                <p>Online y Presencial</p>
+                            </div>
+                            <div class="info-item">
+                                <strong>Valor por sesión</strong>
+                                <p>$80.000 COP</p>
+                            </div>
+                        </div>
+
+                        <div class="info-bio">
+                            <h3>Sobre mí</h3>
+                            <p>Soy psicólogo clínico con amplia experiencia en el manejo de trastornos de ansiedad,
+                                estrés laboral y depresión. Mi enfoque se basa en brindar un espacio seguro y libre de
+                                juicios, proporcionando herramientas prácticas para que mis pacientes puedan mejorar su
+                                calidad de vida emocional y mental a corto y largo plazo.</p>
+
+                            <h3>Educación y Certificaciones</h3>
+                            <ul>
+                                <li>Psicólogo - Universidad Nacional de Colombia</li>
+                                <li>Especialización en Terapia Cognitivo-Conductual</li>
+                                <li>Registro Nacional en Salud (Rethus): 12345678</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tabla de Citas -->
+                <section class="seccion-tabla">
+                    <div class="filtros-tabla">
+                        <h3>Mis Citas de Hoy</h3>
+                        <div class="filtros-acciones">
+                            <select class="select-filtro">
+                                <option>Todas las citas</option>
+                                <option>Confirmadas</option>
+                                <option>En espera</option>
+                            </select>
+                            <input type="date" class="input-fecha-filtro">
+                        </div>
+                    </div>
+
+                    <table class="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>ID Cita</th>
+                                <th>Paciente</th>
+                                <th>Hora</th>
+                                <th>Modalidad</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="id-cita">#HM-1024</td>
+                                <td>Ana Lucía Gómez</td>
+                                <td>10:00 AM - 11:00 AM</td>
+                                <td>Videollamada</td>
+                                <td><span class="etiqueta-estado confirmada">Confirmada</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <button class="btn-texto-accion ver">Ver Historial</button>
+                                        <button class="btn-texto-accion notificar">Confirmar</button>
+                                        <button class="btn-texto-accion reprogramar">Reprogramar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="id-cita">#HM-1025</td>
+                                <td>Carlos Ramírez</td>
+                                <td>02:30 PM - 03:30 PM</td>
+                                <td>Presencial</td>
+                                <td><span class="etiqueta-estado espera">En Espera</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <button class="btn-texto-accion ver">Ver Historial</button>
+                                        <button class="btn-texto-accion notificar">Confirmar</button>
+                                        <button class="btn-texto-accion reprogramar">Reprogramar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div> <!-- Fin contenedor interno -->
+        </main>
+    </div>
+
 </body>
+
 </html>
