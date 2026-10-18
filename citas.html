@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas - Happy Mind</title>
+    <!-- Aquí vinculamos el estilo global-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Aquí vinculamos el estilo espeficico del modulo psicologo -->
+    <link rel="stylesheet" href="css/citas.css">
+</head>
+
+<body>
+
+    <div class="ContenedorDb">
+
+        <!-- BARRA LATERAL IZQUIERDA -->
+        <aside class="barraIzq">
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="img/LogoHM.jpeg" alt="Logo Happy mind">
+                </div>
+                <h1>Happy Mind</h1>
+                <span>Panel Profesional</span>
+            </div>
+
+            <nav class="navegacionIzq">
+                <ul>
+                    <li><a href="#">Inicio / Dashboard</a></li>
+                    <!-- Opcion Activa -->
+                    <li class="activo"><a href="citas.html">Mis Citas</a></li>
+                    <li><a href="#">Mis Pacientes</a></li>
+                    <li><a href="index.html">Mi Perfil</a></li>
+                    <li><a href="#">Horarios y Agenda</a></li>
+                </ul>
+            </nav>
+
+            <div class="perfilUsuario">
+                <div class="avatar-placeholder">JM</div>
+                <div class="info-usuario">
+                    <span class="nombre">Dr. Juan Martínez</span>
+                    <span class="rol">Psicólogo Clínico</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="principal">
+            <div class="contenedor-interno">
+
+                <!-- Barra Superior -->
+                <header class="superior">
+                    <div class="barraBusqueda">
+                        <input type="text" placeholder="Buscar pacientes, notas o citas...">
+                    </div>
+                    <div class="perfilAdm">
+                        <div class="infoAdm">
+                            <span class="tituloAdm">Hola, Dr. Juan</span>
+                        </div>
+                        <div class="avatar-placeholder"
+                            style="background-color: var(--morado-100); color: var(--morado-500);">JM</div>
+                    </div>
+                </header>
+
+                <!-- Cabecera del Módulo -->
+                <div class="cabecera-modulo">
+                    <div>
+                        <h2>Gestión de Citas</h2>
+                        <p>Administra tu agenda, confirma sesiones y revisa tu historial de pacientes.</p>
+                    </div>
+                    <div class="botones-modulo">
+                        <!-- Reemplazamos el <button> por un <a> -->
+                        <a href="#modal-nueva-cita" class="btn-primario">+ Nueva Cita Manual</a>
+                    </div>
+                </div>
+
+                <!-- Layout: Calendario Izquierda, Tabla Derecha -->
+                <div class="grid-citas-layout">
+
+                    <!-- CALENDARIO -->
+                    <section class="contenedor-calendario">
+                        <div class="cabecera-calendario">
+                            <button class="btn-mes">&lt;</button>
+                            <h3>Octubre 2026</h3>
+                            <button class="btn-mes">&gt;</button>
+                        </div>
+
+                        <div class="dias-semana">
+                            <div>DO</div>
+                            <div>LU</div>
+                            <div>MA</div>
+                            <div>MI</div>
+                            <div>JU</div>
+                            <div>VI</div>
+                            <div>SA</div>
+                        </div>
+
+                        <div class="cuadricula-dias">
+                            <!-- Días inactivos (mes anterior) -->
+                            <div class="dia-calendario dia-inactivo">27</div>
+                            <div class="dia-calendario dia-inactivo">28</div>
+                            <div class="dia-calendario dia-inactivo">29</div>
+                            <div class="dia-calendario dia-inactivo">30</div>
+
+                            <!-- Días del mes actual -->
+                            <div class="dia-calendario">1</div>
+                            <div class="dia-calendario">2</div>
+                            <div class="dia-calendario">3</div>
+                            <div class="dia-calendario">4</div>
+                            <div class="dia-calendario">5</div>
+                            <div class="dia-calendario">6</div>
+                            <div class="dia-calendario">7</div>
+                            <div class="dia-calendario">8</div>
+                            <div class="dia-calendario">9</div>
+                            <div class="dia-calendario">10</div>
+                            <div class="dia-calendario">11</div>
+                            <div class="dia-calendario">12</div>
+                            <div class="dia-calendario">13</div>
+                            <div class="dia-calendario">14</div>
+                            <div class="dia-calendario dia-cita">15 <div class="indicador-cita"></div>
+                            </div>
+                            <div class="dia-calendario">16</div>
+                            <div class="dia-calendario">17</div>
+                            <!-- Día de hoy -->
+                            <div class="dia-calendario dia-hoy">18 <div class="indicador-cita"
+                                    style="background-color: var(--blanco-100);"></div>
+                            </div>
+                            <div class="dia-calendario">19</div>
+                            <div class="dia-calendario">20</div>
+                            <div class="dia-calendario">21</div>
+                            <div class="dia-calendario">22</div>
+                            <div class="dia-calendario">23</div>
+                            <div class="dia-calendario">24</div>
+                            <div class="dia-calendario">25</div>
+                            <div class="dia-calendario">26</div>
+                            <div class="dia-calendario">27</div>
+                            <div class="dia-calendario">28</div>
+                            <div class="dia-calendario">29</div>
+                            <div class="dia-calendario">30</div>
+                            <div class="dia-calendario">31</div>
+                        </div>
+                    </section>
+
+                    <!-- TABLA DE CITAS -->
+                    <section class="seccion-tabla">
+                        <div class="filtros-tabla">
+                            <h3>Citas Programadas</h3>
+                            <div class="filtros-acciones">
+                                <select class="select-filtro">
+                                    <option>Próximos 7 días</option>
+                                    <option>Hoy</option>
+                                    <option>Este mes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <table class="tabla-citas">
+                            <thead>
+                                <tr>
+                                    <th>ID Cita</th>
+                                    <th>Paciente</th>
+                                    <th>Fecha y Hora</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="id-cita">#HM-1024</td>
+                                    <td>Ana Lucía Gómez</td>
+                                    <td>
+                                        <strong>18 Oct 2026</strong><br>
+                                        <span style="font-size: 0.9rem; color: var(--texto-secundario);">10:00 AM -
+                                            Videollamada</span>
+                                    </td>
+                                    <td><span class="etiqueta-estado confirmada">Confirmada</span></td>
+                                    <td>
+                                        <div class="grupo-acciones">
+                                            <a href="#modal-historial" class="btn-texto-accion ver">Ver Historial</a>
+                                            <a href="#modal-confirmar" class="btn-texto-accion notificar">Confirmar</a>
+                                            <a href="#modal-reprogramar"
+                                                class="btn-texto-accion reprogramar">Reprogramar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="id-cita">#HM-1025</td>
+                                    <td>Carlos Ramírez</td>
+                                    <td>
+                                        <strong>18 Oct 2026</strong><br>
+                                        <span style="font-size: 0.9rem; color: var(--texto-secundario);">02:30 PM -
+                                            Presencial</span>
+                                    </td>
+                                    <td><span class="etiqueta-estado espera">En Espera</span></td>
+                                    <td>
+                                        <div class="grupo-acciones">
+                                            <a href="#modal-historial" class="btn-texto-accion ver">Ver Historial</a>
+                                            <a href="#modal-confirmar" class="btn-texto-accion notificar">Confirmar</a>
+                                            <a href="#modal-reprogramar"
+                                                class="btn-texto-accion reprogramar">Reprogramar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+
+    <!-- ================= MODAL: NUEVA CITA ================= -->
+    <div id="modal-nueva-cita" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Agendar Nueva Cita</h3>
+
+            <form class="formulario-modal" id="form-nueva-cita">
+                <div class="campo">
+                    <label>Nombre del Paciente</label>
+                    <input type="text" placeholder="Ej. Carlos Ramírez" required>
+                </div>
+
+                <div class="grid-2-col">
+                    <div class="campo">
+                        <label>Fecha de la Sesión</label>
+                        <!-- Asignamos un ID para bloquear fechas pasadas en JS -->
+                        <input type="date" required min="2026-10-18">
+                    </div>
+                    <div class="campo">
+                        <label>Hora</label>
+                        <input type="time" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Modalidad de atención</label>
+                    <select required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Videollamada">Videollamada (Online)</option>
+                        <option value="Presencial">Presencial (Consultorio)</option>
+                    </select>
+                </div>
+
+                <div class="grupo-acciones-modal">
+                    <a href="#" class="btn-secundario">Cancelar</a>
+                    <button type="submit" class="btn-primario">Agendar Cita</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- ================= MODALES (Iguales a los anteriores) ================= -->
+
+    <!-- Modal Reprogramar -->
+    <div id="modal-reprogramar" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Reprogramar Cita</h3>
+            <form class="formulario-modal" id="form-reprogramar">
+                <div class="grid-2-col">
+                    <div class="campo">
+                        <label>Nueva Fecha</label>
+                        <input type="date" id="fecha-reprogramar" required>
+                    </div>
+                    <div class="campo">
+                        <label>Nueva Hora</label>
+                        <input type="time" required>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Mensaje para el paciente (Opcional)</label>
+                    <textarea rows="3" placeholder="Ej. Hola, tuve un inconveniente médico..."></textarea>
+                </div>
+                <div class="grupo-acciones-modal">
+                    <a href="#" class="btn-secundario">Cancelar</a>
+                    <button type="submit" class="btn-primario" style="background-color: var(--naranja-500);">Confirmar y
+                        Enviar Correo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar -->
+    <div id="modal-confirmar" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Confirmar Cita</h3>
+            <div class="info-modal">
+                <p>¿Estás seguro de que deseas confirmar esta cita? El paciente recibirá una notificación indicando que
+                    lo estás esperando.</p>
+            </div>
+            <div class="grupo-acciones-modal">
+                <a href="#" class="btn-secundario">Cancelar</a>
+                <a href="#" class="btn-primario" style="background-color: var(--morado-500);">Sí, Confirmar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Historial -->
+    <div id="modal-historial" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Historial del Paciente</h3>
+            <div class="info-modal">
+                <p><strong>Paciente:</strong> Ana Lucía Gómez</p>
+                <p><strong>Última sesión:</strong> 15 de Octubre, 2026</p>
+                <p><strong>Notas:</strong> Paciente presenta avances significativos en el manejo de ansiedad.</p>
+            </div>
+            <div class="grupo-acciones-modal">
+                <a href="#" class="btn-secundario">Cerrar ventana</a>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+    <!-- SCRIPT DE VALIDACIÓN Y CIERRE DE MODALES -->
+    <script>
+        // Restricción de fecha mínima
+        const hoy = new Date();
+        const anio = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+        const dia = String(hoy.getDate()).padStart(2, '0');
+
+        const inputFecha = document.getElementById('fecha-reprogramar');
+        if (inputFecha) {
+            inputFecha.min = `${anio}-${mes}-${dia}`;
+        }
+
+        // Envío, limpieza y cierre del modal de reprogramación
+        const formulario = document.getElementById('form-reprogramar');
+        if (formulario) {
+            formulario.addEventListener('submit', function (evento) {
+                evento.preventDefault();
+                formulario.reset();
+                window.location.hash = '#';
+                alert("✅ La cita ha sido reprogramada exitosamente.");
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

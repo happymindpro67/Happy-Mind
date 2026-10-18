@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Psicólogo - Happy Mind</title>
-    <!-- Aquí vinculamos el archivo CSS -->
+    <!-- Aquí vinculamos el estilo global-->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Aquí vinculamos el estilo espeficico del modulo psicologo -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -24,10 +26,9 @@
             <nav class="navegacionIzq">
                 <ul>
                     <li><a href="#">Inicio / Dashboard</a></li>
-                    <li><a href="#">Mis Citas</a></li>
+                    <li class="activo"><a href="citas.html">Mis Citas</a></li>
                     <li><a href="#">Mis Pacientes</a></li>
                     <li class="activo"><a href="#">Mi Perfil</a></li>
-                    <li><a href="#">Horarios y Agenda</a></li>
                 </ul>
             </nav>
 
@@ -67,7 +68,6 @@
                         <p>Así es como te ven los pacientes en la plataforma.</p>
                     </div>
                     <div class="botones-modulo">
-                        <button class="btn-secundario">Vista Previa</button>
                         <!-- Cambiamos el <button> por un <a> apuntando al modal -->
                         <a href="#modal-editar-perfil" class="btn-primario">Editar Perfil</a>
                     </div>

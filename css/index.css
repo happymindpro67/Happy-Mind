@@ -1,0 +1,46 @@
+/* ================= DISEÑO ESPECÍFICO DEL PERFIL ================= */
+.grid-perfil { 
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: 32px; 
+}
+
+.info-basica { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px; 
+    border-right: 1px solid var(--borde); 
+    padding-right: 24px; 
+}
+
+.info-item strong { 
+    font-family: var(--font-descripcion); 
+    color: var(--texto-secundario); 
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.info-item p { 
+    font-size: 1.1rem; 
+    color: var(--negro-900); 
+    font-weight: 500;
+}
+
+.info-bio h3 { 
+    margin-bottom: 12px; 
+}
+
+.info-bio p { 
+    line-height: 1.7; 
+    color: var(--texto-secundario); 
+    font-size: 1.1rem; 
+    margin-bottom: 24px;
+}
+
+.info-bio ul { 
+    list-style-position: inside; 
+    color: var(--texto-secundario); 
+    line-height: 1.7; 
+    font-size: 1.1rem; 
+}
