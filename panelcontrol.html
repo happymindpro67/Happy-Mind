@@ -4,34 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Mind - Panel de Administración</title>
-    <link rel="stylesheet" href="./css/dashboard.css" />
+    <meta name="description" content="Consulta el resumen de citas, métricas y actividad reciente de Happy Mind.">
+    <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/panelcontrol.css" />
 </head>
 
 <body>
     <div class="ContenedorDb">
-        <!-- BARRA LATERAL UNIFICADA -->
+        <!-- BARRA LATERAL -->
         <aside class="barraIzq">
             <div class="logo">
-                <div class="logo-placeholder">HM</div>
+                <div class="logo-placeholder">
+                    <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+                </div>
                 <h1>Happy Mind</h1>
                 <span>Panel de Administración</span>
             </div>
 
             <nav class="navegacionIzq">
                 <ul>
-                    <li class="activo"><a href="dashboard.html">Panel de Control</a></li>
-                    <li><a href="#">Pacientes</a></li>
-                    <li><a href="#">Psicólogos</a></li>
+                    <li class="activo"><a href="panelcontrol.html">Panel de Control</a></li>
                     <li><a href="citas.html">Citas</a></li>
-                    <li><a href="#">Análisis</a></li>
-                    <li><a href="#">Ajustes</a></li>
                 </ul>
             </nav>
 
             <div class="perfilUsuario">
-                <div class="avatar-placeholder">K</div>
+                <div class="avatar-placeholder">A</div>
                 <div class="info-usuario">
-                    <span class="nombre">Kevin Arroyave</span>
+                    <span class="nombre">Admin</span>
                     <span class="rol">Administrador</span>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                     <div class="infoAdm">
                         <span class="tituloAdm">Administrador</span>
                     </div>
-                    <div class="avatar-placeholder admin">K</div>
+                    <div class="avatar-placeholder admin">A</div>
                 </div>
             </header>
 
@@ -63,27 +64,14 @@
                     <!-- TARJETAS DE MÉTRICAS -->
                     <div class="grid-metricas">
                         <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--azul-500)">Pacientes</span>
-                            <span class="tendencia-positiva">0%</span>
-                            <h3>Pacientes registrados</h3>
-                            <p class="valor">1,284</p>
-                        </article>
-
-                        <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--morado-500)">Psicólogos</span>
-                            <h3>Psicólogos registrados</h3>
-                            <p class="valor">48</p>
-                        </article>
-
-                        <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--naranja-500)">Citas</span>
-                            <h3>Citas pendientes</h3>
+                            <span class="icono" style="color: var(--naranja-texto)">Citas Pendientes</span>
+                            <h3>Citas por atender hoy</h3>
                             <p class="valor">24</p>
                         </article>
 
                         <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--azul-500)">Citas realizadas</span>
-                            <h3>Citas realizadas</h3>
+                            <span class="icono" style="color: var(--azul-500)">Citas Realizadas</span>
+                            <h3>Historial de citas exitosas</h3>
                             <p class="valor">892</p>
                         </article>
                     </div>
@@ -150,8 +138,6 @@
                                         <td>
                                             <div class="grupo-acciones">
                                                 <a href="#modal-ver" class="btn-accion ver">Ver</a>
-                                                <a href="#modal-editar" class="btn-accion editar">Editar</a>
-                                                <a href="#modal-eliminar" class="btn-accion eliminar">Eliminar</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -162,9 +148,7 @@
                                         <td><span class="etiqueta-estado espera">EN ESPERA</span></td>
                                         <td>
                                             <div class="grupo-acciones">
-                                                <a href="#modal-ver" class="btn-accion ver">Ver</a>
-                                                <a href="#modal-editar" class="btn-accion editar">Editar</a>
-                                                <a href="#modal-eliminar" class="btn-accion eliminar">Eliminar</a>
+                                                <a href="#modal-ver-2" class="btn-accion ver">Ver</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -177,68 +161,50 @@
         </main>
     </div>
 
-    <!-- ==================== MODALES (CSS PURO) ==================== -->
-
-    <!-- MODAL: VER -->
+    <!-- ==================== MODALES ==================== -->
     <div id="modal-ver" class="modal">
         <div class="modal-contenido">
             <a href="#" class="cerrar-modal">&times;</a>
-            <h3>Detalles de la Cita</h3>
+            <h3>Expediente de Cita #001</h3>
             <div class="info-modal">
-                <p><strong>Paciente:</strong> Ricardo Mendoza</p>
-                <p><strong>Psicólogo:</strong> Dra. Clara Soto</p>
-                <p><strong>Fecha y Hora:</strong> 24 May 2024, 09:00 AM</p>
-                <p><strong>Estado Actual:</strong> Confirmada</p>
-                <p><strong>Notas:</strong> Primera sesión de evaluación inicial.</p>
+                <p><strong>Paciente:</strong> Ricardo Mendoza (ID: 1098765432)</p>
+                <p><strong>Historial:</strong> Paciente recurrente (5 sesiones previas)</p>
+
+                <hr class="separador-modal">
+
+                <p><strong>Psicólogo:</strong> Dra. Clara Soto (Especialidad: Ansiedad)</p>
+                <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 09:00 AM</p>
+                <p><strong>Estado:</strong> <span class="etiqueta-estado confirmada">Confirmada</span></p>
+
+                <div class="nota-clinica">
+                    <p><strong>Nota Clínica Previa:</strong> El paciente reportó mejoría en los ejercicios de respiración. Revisar avances en la bitácora.</p>
+                </div>
             </div>
-            <a href="#" class="btn-accion ver modal-btn-centrado"
-            >Cerrar Información</a>
+            <a href="#" class="btn-secundario ancho-completo mt-10 text-center">Cerrar Expediente</a>
         </div>
     </div>
 
-    <!-- MODAL: EDITAR -->
-    <div id="modal-editar" class="modal">
+    <div id="modal-ver-2" class="modal">
         <div class="modal-contenido">
             <a href="#" class="cerrar-modal">&times;</a>
-        <h3>Editar Cita</h3>
-        <form class="formulario-modal">
-            <div class="campo">
-                <label>Fecha de la Cita</label>
-                <input type="date" />
-            </div>
-            <div class="campo">
-                <label>Hora</label>
-                <input type="time" />
-            </div>
-            <div class="campo">
-                <label>Estado</label>
-                <select>
-                    <option>Confirmada</option>
-                    <option>En Espera</option>
-                    <option>Reprogramada</option>
-                    <option>Cancelada</option>
-                </select>
-            </div>
+            <h3>Expediente de Cita #002</h3>
+            <div class="info-modal">
+                <p><strong>Paciente:</strong> Elena Luna (ID: 1056342890)</p>
+                <p><strong>Historial:</strong> Paciente de primer ingreso</p>
 
-            <a href="#" class="btn-accion editar modal-btn-centrado">Confirmar Cambios</a>
-        </form>
+                <hr class="separador-modal">
+
+                <p><strong>Psicólogo:</strong> Dr. Marcos Ruiz (Especialidad: Terapia de Pareja)</p>
+                <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 11:30 AM</p>
+                <p><strong>Estado:</strong> <span class="etiqueta-estado espera">Pendiente</span></p>
+
+                <div class="nota-admin">
+                    <p><strong>Nota Administrativa:</strong> Solicitar llenado de formulario de consentimiento informado antes de ingresar al consultorio.</p>
+                </div>
+            </div>
+            <a href="#" class="btn-secundario ancho-completo mt-10 text-center">Cerrar Expediente</a>
         </div>
     </div>
 
-    <!-- MODAL: ELIMINAR -->
-    <div id="modal-eliminar" class="modal">
-        <div class="modal-contenido">
-        <a href="#" class="cerrar-modal">&times;</a>
-        <h3>¿Eliminar Cita?</h3>
-        <p style="margin-bottom: 20px; color: var(--negro-900)">
-        Estás a punto de eliminar esta cita de forma permanente. Esta acción
-        no se puede deshacer.
-        </p>
-        <div class="grupo-acciones-modal">
-            <a href="#" class="btn-accion neutro">Cancelar</a>
-            <a href="#" class="btn-accion eliminar">Confirmar</a>
-        </div>
-        </div>
-    </div>
 </body>
 </html>

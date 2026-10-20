@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mind - Crear Cuenta</title>
+    <meta name="description" content="Crea tu cuenta de Happy Mind para comenzar tu proceso de acompañamiento psicológico.">
+    <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+    <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/registro.css">
 </head>
 <body>
-    <!-- ================= NAVBAR pendiente: colocar el logo porque el que teníamos está feo  ================= -->
     <header class="cabecera-principal">
         <div class="logo">
-            <span class="logo-icono">HM</span>
+            <span class="logo-icono"><img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
             <span class="logo-texto">Happy Mind</span>
         </div>
         
         <nav class="navegacion">
             <ul>
                 <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
+                <li><a href="panelcontrol.html">Citas</a></li>
                 <li><a href="#">Psicólogos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Pacientes</a></li>
             </ul>
         </nav>
 
@@ -35,7 +36,7 @@
             
             <!-- Contenedor central para la imagen -->
             <div class="contenedor-imagen">
-                <img src="./Imagenes/HMfondo.jpg" alt="Meditación Happy Mind" class="imagen-formulario">
+                <img src="./imagenes/HMfondo-registro-optimizado.jpg" alt="Meditación Happy Mind" class="imagen-formulario" width="480" height="264">
             </div>
 
             <div class="textos-cabecera">
@@ -48,10 +49,7 @@
                 
                 <div class="grupo-campo">
                     <label for="nombre">Nombre completo</label>
-                    <div class="input-con-icono">
-                        <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
-                        <span class="icono-check">&#10004;</span>
-                    </div>
+                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
                 </div>
 
                 <div class="grupo-campo">
@@ -107,12 +105,12 @@
                 </div>
 
                 <div class="grupo-campo">
-                    <label>Contraseña</label>
+                    <label for="pass">Contraseña</label>
                     <div class="input-con-icono">
                         <!-- Hack CSS: Checkbox oculto que controla la visibilidad -->
                         <input type="checkbox" id="toggle-pass" class="checkbox-ojito">
                         <!-- Input tipo text para poder manipularlo con CSS -->
-                        <input type="text" id="pass" class="input-pass" value="12345678" required>
+                        <input type="text" id="pass" class="input-pass" autocomplete="new-password" required>
                         <!-- El label funciona como botón para el checkbox -->
                         <label for="toggle-pass" class="icono-ojo">&#128065;</label>
                     </div>
@@ -124,7 +122,7 @@
                 </div>
 
                 <div class="grupo-campo">
-                    <label>Confirmar contraseña</label>
+                    <label for="pass_conf">Confirmar contraseña</label>
                     <div class="input-con-icono">
                         <input type="checkbox" id="toggle-pass-conf" class="checkbox-ojito">
                         <input type="text" id="pass_conf" class="input-pass" placeholder="Confirmar contraseña" required>
@@ -152,13 +150,14 @@
         <div class="footer-grid">
             <div class="footer-columna marca">
                 <div class="logo">
+                    <span class="logo-icono"><img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
                     <span class="logo-texto-morado">HM Happy Mind</span>
                 </div>
                 <p>Conectamos a las personas con el psicólogo que mejor se adapte a sus necesidades para contribuir a su bienestar emocional.</p>
             </div>
 
             <div class="footer-columna">
-                <h4>Compañía</h4>
+                <h3>Compañía</h3>
                 <ul>
                     <li><a href="#">Sobre nosotros</a></li>
                     <li><a href="#">Nosotros</a></li>
@@ -167,7 +166,7 @@
             </div>
 
             <div class="footer-columna">
-                <h4>Ayuda</h4>
+                <h3>Ayuda</h3>
                 <ul>
                     <li><a href="#">Preguntas Frecuentes</a></li>
                     <li><a href="#">Términos y Condiciones</a></li>
@@ -176,7 +175,7 @@
             </div>
 
             <div class="footer-columna contacto">
-                <h4>Contáctanos</h4>
+                <h3>Contáctanos</h3>
                 <div class="item-contacto">
                     <span>✉️</span> <a href="#">happymindpro67@gmail.com</a>
                 </div>

@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap');
-
 :root {
     --azul-100: #bad1fd;
-    --azul-500: #3076f9;
+    --azul-500: #1d4ed8;
+    --azul-texto: #1e3a8a;
     --naranja-500: #ff9800;
     --azul2-500: #dbf1fe;
     --morado-500: #7351ea;
-    --morado-100: #d0c5f8;
     --negro-900: #010101;
     --blanco-100: #ffffff;
     --borde: #cbd5e1;
@@ -27,21 +25,24 @@ a { text-decoration: none; }
 /* navbar */
 .cabecera-principal { display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; background-color: var(--blanco-100); box-shadow: 0 2px 10px rgba(0,0,0,0.02); position: sticky; top: 0; z-index: 100; }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-icono { background-color: var(--azul-500); color: var(--blanco-100); padding: 6px 10px; border-radius: 8px; font-family: var(--font-anuncio); font-size: 1rem; }
+.logo-icono { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; overflow: hidden; border-radius: 8px; }
+.logo-icono img { display: block; width: 100%; height: auto; max-height: 100%; object-fit: contain; border-radius: inherit; }
 .logo-texto { color: var(--azul-500); font-family: var(--font-anuncio); font-size: 1.3rem; }
 .navegacion ul { list-style: none; display: flex; gap: 32px; }
 .navegacion a { color: var(--negro-900); font-size: 1.1rem; transition: color 0.3s; }
 .navegacion a:hover, .navegacion a.activo { color: var(--azul-500); }
 .navegacion a.activo { border-bottom: 2px solid var(--azul-500); padding-bottom: 4px; }
 .acciones-auth { display: flex; align-items: center; gap: 20px; }
-.enlace-login { color: var(--azul-500); font-weight: bold; font-size: 1.1rem; }
-.btn-naranja { background-color: var(--naranja-500); color: var(--blanco-100); padding: 10px 24px; border-radius: 8px; font-weight: bold; font-family: var(--font-regular); font-size: 1.1rem; }
+.enlace-login { color: var(--azul-500); font-weight: bold; font-size: 1.1rem; transition: color 0.2s ease; }
+.enlace-login:hover { color: var(--morado-500); }
+.btn-naranja { background-color: var(--naranja-500); color: var(--negro-900); padding: 10px 24px; border-radius: 8px; font-weight: bold; font-family: var(--font-regular); font-size: 1.1rem; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.btn-naranja:hover { background-color: #f59e0b; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25); transform: translateY(-2px); }
 
 /* Contenedor y Textos */
 .contenedor-principal { flex: 1; display: flex; justify-content: center; padding: 0 20px 40px; }
 .contenedor-formulario { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 24px; }
 .contenedor-imagen { width: 100%; display: flex; justify-content: center; margin-bottom: 8px; }
-.imagen-formulario { width: 100%; max-width: 320px; border-radius: 12px; }
+.imagen-formulario { width: 100%; height: auto; max-width: 320px; border-radius: 12px; }
 .textos-cabecera { text-align: center; margin-bottom: 8px; }
 .textos-cabecera p { font-family: var(--font-descripcion); font-size: 0.9rem; color: var(--texto-secundario); }
 
@@ -55,7 +56,6 @@ a { text-decoration: none; }
 /* Iconos y Hacks CSS para el ojito  */
 .input-con-icono { position: relative; display: flex; align-items: center; width: 100%; }
 .input-con-icono input { padding-right: 40px; }
-.icono-check { position: absolute; right: 14px; color: var(--blanco-100); background: var(--azul-500); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
 .checkbox-ojito { display: none; }
 .input-pass { -webkit-text-security: disc; }
 .icono-ojo { position: absolute; right: 14px; color: var(--texto-secundario); font-size: 1.2rem; cursor: pointer; user-select: none; }
@@ -73,9 +73,12 @@ a { text-decoration: none; }
 .grupo-checkbox input { margin-top: 4px; width: 18px; height: 18px; }
 .grupo-checkbox label { font-family: var(--font-descripcion); font-size: 0.85rem; color: var(--texto-secundario); }
 .grupo-botones { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
-.btn-primario, .btn-secundario { padding: 14px; border-radius: 24px; font-family: var(--font-regular); font-size: 1.1rem; font-weight: bold; text-align: center; cursor: pointer; text-decoration: none; }
+.btn-primario, .btn-secundario { padding: 14px; border-radius: 24px; font-family: var(--font-regular); font-size: 1.1rem; font-weight: bold; text-align: center; cursor: pointer; text-decoration: none; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
 .btn-primario { background-color: var(--azul-500); color: var(--blanco-100); border: none; }
-.btn-secundario { background-color: transparent; color: var(--azul-500); border: 1px solid var(--azul-100); }
+.btn-primario:hover { background-color: var(--morado-500); box-shadow: 0 6px 14px rgba(115, 81, 234, 0.25); transform: translateY(-2px); }
+.btn-secundario { background-color: transparent; color: var(--azul-texto); border: 1px solid var(--azul-100); }
+.btn-secundario:hover { background-color: var(--naranja-500); border-color: var(--naranja-500); color: var(--negro-900); transform: translateY(-2px); }
+.enlace-login:focus-visible, .btn-naranja:focus-visible, .btn-primario:focus-visible, .btn-secundario:focus-visible { outline: 3px solid var(--morado-500); outline-offset: 3px; }
 
 /* Características */
 .seccion-caracteristicas { padding: 80px 5%; background-color: var(--gris-fondo); }
@@ -87,12 +90,31 @@ a { text-decoration: none; }
 .tarjeta-caracteristica { background-color: var(--blanco-100); padding: 32px 24px; border-radius: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
 .icono-tarjeta { font-size: 1.8rem; margin-bottom: 16px; }
 .tarjeta-caracteristica p { font-family: var(--font-descripcion); font-size: 0.9rem; color: var(--texto-secundario); line-height: 1.6; }
-.contenedor-centrado { text-align: center; }
-.btn-ancho { padding: 14px 40px; font-size: 1.2rem; }
-
 /* Footer */
 .pie-pagina { background-color: var(--blanco-100); padding: 60px 5% 40px; border-top: 1px solid #e2e8f0; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.marca .logo-icono { width: 40px; height: 40px; }
 .logo-texto-morado { font-family: var(--font-anuncio); color: var(--morado-500); font-size: 1.3rem; }
 .footer-columna p, .footer-columna a, .item-contacto a { font-family: var(--font-descripcion); color: var(--texto-secundario); font-size: 0.9rem; }
-.footer-columna h4 { font-family: var(--font-subtitulo); font-size: 1.2rem; margin-bottom: 20px; color: var(--negro-900); }
+.footer-columna h3 { font-family: var(--font-subtitulo); font-size: 1.2rem; margin-bottom: 20px; color: var(--negro-900); }
+
+@media (max-width: 900px) {
+    .cabecera-principal { flex-wrap: wrap; gap: 16px 24px; }
+    .navegacion { order: 3; flex-basis: 100%; }
+    .navegacion ul { justify-content: center; flex-wrap: wrap; gap: 12px 20px; }
+}
+
+@media (max-width: 600px) {
+    .cabecera-principal { padding: 12px 5%; }
+    .acciones-auth { gap: 12px; }
+    .btn-naranja { padding: 8px 14px; }
+    .contenedor-principal { padding: 0 16px 32px; }
+    .contenedor-formulario { gap: 18px; }
+    .imagen-formulario { max-width: 260px; }
+    .pie-pagina { padding: 40px 5% 28px; }
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+}
+
+@media (max-width: 420px) {
+    .footer-grid { grid-template-columns: 1fr; }
+}

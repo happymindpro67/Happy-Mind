@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/arvo-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/montserrat-semibold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Pragati Narrow';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/pragati-narrow-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Pridi';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/pridi-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Puritan';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/puritan-regular.woff2') format('woff2');
+}
