@@ -53,7 +53,7 @@ a { text-decoration: none; }
 .grupo-campo input, .grupo-campo select { width: 100%; padding: 12px 14px; border: 1px solid var(--borde); border-radius: 8px; background-color: var(--blanco-100); font-family: var(--font-regular); font-size: 1.1rem; outline: none; }
 .grupo-campo input:focus, .grupo-campo select:focus { border-color: var(--azul-500); }
 
-/* Iconos y Hacks CSS para el ojito  */
+/* Controles visuales de contraseña */
 .input-con-icono { position: relative; display: flex; align-items: center; width: 100%; }
 .input-con-icono input { padding-right: 40px; }
 .checkbox-ojito { display: none; }

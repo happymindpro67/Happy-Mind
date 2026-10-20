@@ -44,7 +44,7 @@
                 <p>Registra tus datos para comenzar tu proceso de acompañamiento psicológico.</p>
             </div>
 
-            <!-- El atributo required en los inputs evita que el form avance si están vacíos, pendiente: reducir el formulario por saturación de muchos campos -->
+            <!-- Los campos obligatorios usan validación nativa del navegador. -->
             <form action="#" class="formulario">
                 
                 <div class="grupo-campo">
@@ -107,14 +107,14 @@
                 <div class="grupo-campo">
                     <label for="pass">Contraseña</label>
                     <div class="input-con-icono">
-                        <!-- Hack CSS: Checkbox oculto que controla la visibilidad -->
+                        <!-- Checkbox que controla la visualización de la contraseña. -->
                         <input type="checkbox" id="toggle-pass" class="checkbox-ojito">
-                        <!-- Input tipo text para poder manipularlo con CSS -->
+                        <!-- El estilo de texto se alterna mediante CSS. -->
                         <input type="text" id="pass" class="input-pass" autocomplete="new-password" required>
                         <!-- El label funciona como botón para el checkbox -->
                         <label for="toggle-pass" class="icono-ojo">&#128065;</label>
                     </div>
-                    <!-- Barra de seguridad de contraseña No sirve pa nada pero decora :) -->
+                    <!-- Indicador visual estático para este prototipo. -->
                     <div class="medidor-password">
                         <div class="barra-progreso media"></div>
                         <span class="etiqueta-nivel">Media</span>
