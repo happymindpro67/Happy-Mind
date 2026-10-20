@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pacientes - Happy Mind</title>
+
+    <!-- 1. Estilos Globales -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 2. Estilos específicos de esta vista -->
+    <link rel="stylesheet" href="css/pacientes.css">
+</head>
+
+<body>
+    <div class="ContenedorDb">
+
+        <!-- BARRA LATERAL (Igual que en las otras vistas) -->
+        <aside class="barraIzq">
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="img/LogoHM.jpeg" alt="Logo Happy mind">
+                </div>
+                <h1>Happy Mind</h1>
+                <span>Panel Profesional</span>
+            </div>
+            <nav class="navegacionIzq">
+                <ul>
+                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="citas.html">Mis Citas</a></li>
+                    <li class="activo"><a href="pacientes.html">Mis Pacientes</a></li>
+                    <li><a href="index.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+            <div class="perfilUsuario">
+                <div class="avatar-placeholder">JM</div>
+                <div class="info-usuario">
+                    <span class="nombre">Dr. Juan Martínez</span>
+                    <span class="rol">Psicólogo Clínico</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="principal">
+            <div class="contenedor-interno">
+
+                <header class="superior">
+                    <div class="barraBusqueda">
+                        <input type="text" placeholder="Buscar por nombre, correo o ID...">
+                    </div>
+                    <div class="perfilAdm">
+                        <div class="infoAdm"><span class="tituloAdm">Hola, Dr. Juan</span></div>
+                        <div class="avatar-placeholder">JM</div>
+                    </div>
+                </header>
+
+                <div class="cabecera-modulo">
+                    <div>
+                        <h2>Mis Pacientes</h2>
+                        <p>Directorio de pacientes, historiales clínicos y valoraciones.</p>
+                    </div>
+                    <div class="botones-modulo">
+                        <!-- Cambiamos la etiqueta <button> por un <a> -->
+                        <a href="#modal-crear-paciente" class="btn-primario">+ Nuevo Paciente</a>
+                    </div>
+                </div>
+
+                <!-- CUADRÍCULA DE PACIENTES -->
+                <div class="grid-pacientes">
+
+                    <!-- Tarjeta Paciente 1 -->
+                    <div class="tarjeta-paciente">
+                        <div class="cabecera-tarjeta">
+                            <h3>Ana Lucía Gómez</h3>
+                            <div class="calificacion" title="Calificación">⭐ 4.8</div>
+                        </div>
+
+                        <div class="datos-basicos">
+                            <p><strong>ID:</strong> #HM-1024</p>
+                            <p><strong>Edad:</strong> 28 años</p>
+                            <p><strong>Teléfono:</strong> +57 300 123 4567</p>
+                        </div>
+
+                        <div class="subir-historia">
+                            <input type="file" id="pdf-paciente-1" accept=".pdf" class="input-oculto">
+                            <label for="pdf-paciente-1" class="btn-subir-pdf">
+                                📄 Subir Historia Clínica
+                            </label>
+                        </div>
+
+                        <!-- NUEVOS BOTONES VISUALES -->
+                        <div class="acciones-tarjeta">
+                            <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
+                            <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Paciente 2 -->
+                    <div class="tarjeta-paciente">
+                        <div class="cabecera-tarjeta">
+                            <h3>Carlos Ramírez</h3>
+                            <div class="calificacion">⭐ 4.5</div>
+                        </div>
+
+                        <div class="datos-basicos">
+                            <p><strong>ID:</strong> #HM-1025</p>
+                            <p><strong>Edad:</strong> 35 años</p>
+                            <p><strong>Teléfono:</strong> +57 312 987 6543</p>
+                        </div>
+
+                        <div class="subir-historia">
+                            <input type="file" id="pdf-paciente-2" accept=".pdf" class="input-oculto">
+                            <label for="pdf-paciente-2" class="btn-subir-pdf">
+                                📄 Subir Historia Clínica
+                            </label>
+                        </div>
+
+                        <!-- NUEVOS BOTONES VISUALES -->
+                        <div class="acciones-tarjeta">
+                            <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
+                            <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
+                        </div>
+                    </div>
+                    <div class="tarjeta-paciente">
+                        <div class="cabecera-tarjeta">
+                            <h3>Alfredo Morelos</h3>
+                            <div class="calificacion">⭐ 2.4</div>
+                        </div>
+
+                        <div class="datos-basicos">
+                            <p><strong>ID:</strong> #HM-1225</p>
+                            <p><strong>Edad:</strong> 28 años</p>
+                            <p><strong>Teléfono:</strong> +57 320 378 6543</p>
+                        </div>
+
+                        <div class="subir-historia">
+                            <input type="file" id="pdf-paciente-2" accept=".pdf" class="input-oculto">
+                            <label for="pdf-paciente-2" class="btn-subir-pdf">
+                                📄 Subir Historia Clínica
+                            </label>
+                        </div>
+
+                        <!-- NUEVOS BOTONES VISUALES -->
+                        <div class="acciones-tarjeta">
+                            <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
+                            <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-paciente">
+                        <div class="cabecera-tarjeta">
+                            <h3>Fabio Rangel</h3>
+                            <div class="calificacion">⭐ 4.0</div>
+                        </div>
+
+                        <div class="datos-basicos">
+                            <p><strong>ID:</strong> #HM-1125</p>
+                            <p><strong>Edad:</strong> 33 años</p>
+                            <p><strong>Teléfono:</strong> +57 320 123 6723</p>
+                        </div>
+
+                        <div class="subir-historia">
+                            <input type="file" id="pdf-paciente-2" accept=".pdf" class="input-oculto">
+                            <label for="pdf-paciente-2" class="btn-subir-pdf">
+                                📄 Subir Historia Clínica
+                            </label>
+                        </div>
+
+                        <!-- NUEVOS BOTONES VISUALES -->
+                        <div class="acciones-tarjeta">
+                            <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
+                            <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Puedes agregar más tarjetas copiando y pegando el bloque anterior -->
+            </div>
+        </main>
+    </div>
+
+
+
+
+    <!-- ================= MODAL VISUAL: CREAR NUEVO PACIENTE ================= -->
+
+    <div id="modal-crear-paciente" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Registrar Nuevo Paciente</h3>
+
+            <form class="formulario-modal">
+                <div class="campo">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Ej. María López" required>
+                </div>
+
+                <div class="grid-2-col">
+                    <div class="campo">
+                        <label>Edad</label>
+                        <input type="number" placeholder="Ej. 30" required>
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input type="tel" placeholder="Ej. +57 300 000 0000" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Correo Electrónico</label>
+                    <input type="email" placeholder="Ej. correo@ejemplo.com" required>
+                </div>
+
+                <div class="grupo-acciones-modal">
+                    <a href="#" class="btn-secundario">Cancelar</a>
+                    <!-- El enlace con href="#" cerrará el modal al hacer clic -->
+                    <a href="#" class="btn-primario">Registrar Paciente</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- ================= MODAL VISUAL: ACTUALIZAR PACIENTE ================= -->
+    <div id="modal-actualizar-paciente" class="modal">
+        <div class="modal-contenido">
+            <a href="#" class="cerrar-modal">&times;</a>
+            <h3>Actualizar Datos del Paciente</h3>
+
+            <form class="formulario-modal">
+                <div class="campo">
+                    <label>Nombre Completo</label>
+                    <!-- Al ser visual, le ponemos un valor por defecto de ejemplo -->
+                    <input type="text" value="Ana Lucía Gómez" required>
+                </div>
+
+                <div class="grid-2-col">
+                    <div class="campo">
+                        <label>Edad</label>
+                        <input type="number" value="28" required>
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input type="tel" value="+57 300 123 4567" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Calificación (1 a 5)</label>
+                    <input type="number" step="0.1" min="1" max="5" value="4.8" required>
+                </div>
+
+                <div class="grupo-acciones-modal">
+                    <a href="#" class="btn-secundario">Cancelar</a>
+                    <!-- El botón submit puede ser un enlace normal para que cierre el modal al instante -->
+                    <a href="#" class="btn-primario">Guardar Cambios</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
