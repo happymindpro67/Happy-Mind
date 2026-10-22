@@ -2,27 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Pacientes - Happy Mind</title>
+   <title>Gestión de Pacientes - Happy Mind</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
   
-  <!-- Carga de Fuentes -->
+
+  <!-- Fuentes del Sistema -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Hoja de Estilos Externa -->
   <link rel="stylesheet" href="./css/pacientes.css">
 </head>
 <body>
 
   <div class="ContenedorDb">
-    <!-- BARRA LATERAL -->
+    <!-- BARRA LATERAL (Solo Panel de Control y Pacientes) -->
     <aside class="barraIzq">
       <div class="logo">
-        <div class="logo-placeholder">HM</div>
+        <div class="logo-placeholder">
+                    <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+        </div>
         <h1>Happy Mind</h1>
         <span>Panel de Administración</span>
       </div>
@@ -31,17 +31,13 @@
         <ul>
           <li><a href="dashboard.html">Panel de Control</a></li>
           <li class="activo"><a href="pacientes.html">Pacientes</a></li>
-          <li><a href="psicologos.html">Psicólogos</a></li>
-          <li><a href="citas.html">Citas</a></li>
-          <li><a href="#">Análisis</a></li>
-          <li><a href="#">Ajustes</a></li>
         </ul>
       </nav>
 
       <div class="perfilUsuario">
-        <div class="avatar-placeholder">K</div>
+        <div class="avatar-placeholder admin-inferior">A</div>
         <div class="info-usuario">
-          <span class="nombre">Kevin Arroyave</span>
+          <span class="nombre">Admin</span>
           <span class="rol">Administrador</span>
         </div>
       </div>
@@ -49,8 +45,8 @@
 
     <!-- ÁREA PRINCIPAL -->
     <main class="principal">
-      
-      <!-- CABECERA SUPERIOR IDENTICA A LA IMAGEN -->
+
+      <!-- CABECERA SUPERIOR -->
       <header class="superior">
         <div class="barraBusqueda">
           <input type="text" placeholder="Buscar pacientes, psicólogos, IDs...">
@@ -67,13 +63,10 @@
           <h2>Gestión de Pacientes</h2>
           <p>Consulta, programa y administra la información de los pacientes.</p>
         </div>
-        <!-- RF-PAC-01: Botón de Registro -->
-        <a href="#modal-registrar-paciente" class="btn-primario">
-          + Nuevo Paciente
-        </a>
+        <a href="#modal-registrar-paciente" class="btn-primario">+ Nuevo Paciente</a>
       </section>
 
-      <!-- SECCIÓN DE TABLA (RF-PAC-02: Leer/mostrar información) -->
+      <!-- SECCIÓN DE TABLA -->
       <section class="seccion-tabla">
         <div class="filtros-tabla">
           <select class="select-filtro">
@@ -99,7 +92,7 @@
             </thead>
             <tbody>
               <tr>
-                <td class="id-cita">PAC-001</td>
+                <td class="id-cita">#001</td>
                 <td><strong>Laura Sofía Pérez</strong></td>
                 <td>CC 1.020.304.050</td>
                 <td>300 123 4567<br><small class="text-sec">laura@email.com</small></td>
@@ -110,14 +103,14 @@
                     <a href="#modal-ver-paciente" class="btn-texto-accion ver">Ver</a>
                     <a href="#modal-editar-paciente" class="btn-texto-accion editar">Editar</a>
                     <a href="#modal-registrar-avance" class="btn-texto-accion notificar">Avance</a>
-                    <a href="#modal-historial-avances" class="btn-texto-accion ver">Historial</a>
+                    <a href="#modal-historial-avances" class="btn-texto-accion historial">Historial</a>
                     <a href="#modal-eliminar-paciente" class="btn-texto-accion eliminar">Eliminar</a>
                   </div>
                 </td>
               </tr>
 
               <tr>
-                <td class="id-cita">PAC-002</td>
+                <td class="id-cita">#002</td>
                 <td><strong>Juan David Morales</strong></td>
                 <td>CC 1.098.765.432</td>
                 <td>311 987 6543<br><small class="text-sec">juan.morales@email.com</small></td>
@@ -128,7 +121,7 @@
                     <a href="#modal-ver-paciente" class="btn-texto-accion ver">Ver</a>
                     <a href="#modal-editar-paciente" class="btn-texto-accion editar">Editar</a>
                     <a href="#modal-registrar-avance" class="btn-texto-accion notificar">Avance</a>
-                    <a href="#modal-historial-avances" class="btn-texto-accion ver">Historial</a>
+                    <a href="#modal-historial-avances" class="btn-texto-accion historial">Historial</a>
                     <a href="#modal-eliminar-paciente" class="btn-texto-accion eliminar">Eliminar</a>
                   </div>
                 </td>
@@ -141,9 +134,7 @@
     </main>
   </div>
 
-  <!-- ==================== MODALES (CSS PURO) ==================== -->
-
-  <!-- MODAL: RF-PAC-01 - Registrar Paciente -->
+  <!-- MODALES CON CSS PURO (:target) -->
   <div id="modal-registrar-paciente" class="modal">
     <div class="modal-contenido">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -159,7 +150,6 @@
             <input type="text" placeholder="Ej: Restrepo Gómez" required>
           </div>
         </div>
-
         <div class="grid-2-col">
           <div class="campo">
             <label>Tipo Documento</label>
@@ -174,7 +164,6 @@
             <input type="text" placeholder="1020304050" required>
           </div>
         </div>
-
         <div class="grid-2-col">
           <div class="campo">
             <label>Teléfono</label>
@@ -185,12 +174,10 @@
             <input type="date" required>
           </div>
         </div>
-
         <div class="campo">
           <label>Correo Electrónico</label>
           <input type="email" placeholder="correo@ejemplo.com" required>
         </div>
-
         <div class="campo">
           <label>Psicólogo Asignado</label>
           <select required>
@@ -199,7 +186,6 @@
             <option value="2">Dr. Marcos Ruiz</option>
           </select>
         </div>
-
         <div class="grupo-acciones-modal">
           <a href="#" class="btn-secundario">Cancelar</a>
           <button type="submit" class="btn-primario">Guardar Paciente</button>
@@ -208,7 +194,6 @@
     </div>
   </div>
 
-  <!-- MODAL: RF-PAC-02 - Leer / Ver Detalle del Paciente -->
   <div id="modal-ver-paciente" class="modal">
     <div class="modal-contenido">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -228,7 +213,6 @@
     </div>
   </div>
 
-  <!-- MODAL: RF-PAC-03 - Actualizar Paciente -->
   <div id="modal-editar-paciente" class="modal">
     <div class="modal-contenido">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -244,7 +228,6 @@
             <input type="text" value="Pérez" required>
           </div>
         </div>
-
         <div class="grid-2-col">
           <div class="campo">
             <label>Teléfono</label>
@@ -258,12 +241,10 @@
             </select>
           </div>
         </div>
-
         <div class="campo">
           <label>Correo Electrónico</label>
           <input type="email" value="laura@email.com" required>
         </div>
-
         <div class="grupo-acciones-modal">
           <a href="#" class="btn-secundario">Cancelar</a>
           <button type="submit" class="btn-primario">Actualizar Cambios</button>
@@ -272,7 +253,6 @@
     </div>
   </div>
 
-  <!-- MODAL: RF-PAC-04 - Eliminar Paciente -->
   <div id="modal-eliminar-paciente" class="modal">
     <div class="modal-contenido modal-pequeno text-center">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -287,7 +267,6 @@
     </div>
   </div>
 
-  <!-- MODAL: RF-PAC-05 - Registrar Avance del Tratamiento -->
   <div id="modal-registrar-avance" class="modal">
     <div class="modal-contenido">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -305,17 +284,14 @@
             <input type="number" min="1" placeholder="Ej: 3" required>
           </div>
         </div>
-
         <div class="campo">
           <label>Objetivo de la Sesión</label>
           <input type="text" placeholder="Ej: Manejo de técnicas de respiración" required>
         </div>
-
         <div class="campo">
           <label>Evolución / Observaciones del Avance</label>
           <textarea rows="4" placeholder="Describa los avances presentados por el paciente..." required></textarea>
         </div>
-
         <div class="campo">
           <label>Nivel de Avance Estimado</label>
           <select required>
@@ -324,7 +300,6 @@
             <option value="satisfactorio">Satisfactorio / Alto</option>
           </select>
         </div>
-
         <div class="grupo-acciones-modal">
           <a href="#" class="btn-secundario">Cancelar</a>
           <button type="submit" class="btn-primario">Guardar Avance</button>
@@ -333,7 +308,6 @@
     </div>
   </div>
 
-  <!-- MODAL: RF-PAC-06 - Ver Historial de Avances (Historia Clínica) -->
   <div id="modal-historial-avances" class="modal">
     <div class="modal-contenido" style="max-width: 650px;">
       <a href="#" class="cerrar-modal">&times;</a>
@@ -341,7 +315,6 @@
       <p class="sub-modal">Paciente: <strong>Laura Sofía Pérez</strong> (CC 1.020.304.050)</p>
 
       <div class="contenedor-historial mt-10">
-        <!-- Tarjeta de Avance 1 -->
         <div class="tarjeta-avance">
           <div class="cabecera-avance">
             <span class="sesion-tag">Sesión #2</span>
@@ -352,7 +325,6 @@
           <span class="etiqueta-estado confirmada">Avance Medio</span>
         </div>
 
-        <!-- Tarjeta de Avance 2 -->
         <div class="tarjeta-avance">
           <div class="cabecera-avance">
             <span class="sesion-tag">Sesión #1</span>

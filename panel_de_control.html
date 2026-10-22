@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control - Happy Mind</title>
+
+  <!-- Carga de Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Montserrat:wght@600&family=Pragati+Narrow&family=Pridi&family=Puritan&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/panelcontrol.css">
+</head>
+<body>
+
+  <div class="ContenedorDb">
+    <!-- BARRA LATERAL (Solo Panel de Control y Pacientes) -->
+    <aside class="barraIzq">
+      <div class="logo">
+         <div class="logo-placeholder">
+                    <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+                </div>
+        <h1>Happy Mind</h1>
+        <span>Panel de Administración</span>
+      </div>
+
+      <nav class="navegacionIzq">
+        <ul>
+          <li class="activo"><a href="dashboard.html">Panel de Control</a></li>
+          <li><a href="pacientes.html">Pacientes</a></li>
+        </ul>
+      </nav>
+
+      <div class="perfilUsuario">
+        <div class="avatar-placeholder admin-inferior">A</div>
+        <div class="info-usuario">
+          <span class="nombre">Admin</span>
+          <span class="rol">Administrador</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="principal">
+
+      <!-- CABECERA SUPERIOR -->
+      <header class="superior">
+        <div class="barraBusqueda">
+          <input type="text" placeholder="Buscar pacientes, psicólogos, IDs...">
+        </div>
+        <div class="perfilAdm">
+          <span class="tituloAdm">Administrador</span>
+          <div class="avatar-placeholder admin">A</div>
+        </div>
+      </header>
+
+      <!-- CABECERA DE BIENVENIDA -->
+      <section class="cabecera-modulo">
+        <div>
+          <h2>Panel de Control</h2>
+          <p>Bienvenido de nuevo. Aquí tienes un resumen del estado de los pacientes en Happy Mind hoy.</p>
+        </div>
+      </section>
+
+      <!-- TARJETAS DE MÉTRICAS / RESUMEN -->
+      <section class="grid-metricas">
+        <div class="tarjeta-metrica">
+          <span class="subtitulo-metrica">Pacientes Activos</span>
+          <span class="desc-metrica">Pacientes en tratamiento activo</span>
+          <div class="valor-metrica">128</div>
+        </div>
+        <div class="tarjeta-metrica">
+          <span class="subtitulo-metrica azul">Total Registrados</span>
+          <span class="desc-metrica">Histórico global de pacientes</span>
+          <div class="valor-metrica">892</div>
+        </div>
+      </section>
+
+      <!-- GRÁFICOS DEL DASHBOARD -->
+      <section class="grid-graficos">
+        
+        <!-- BARRA: REGISTRO / SEGUIMIENTO DE PACIENTES -->
+        <div class="tarjeta-grafico">
+          <div class="cabecera-grafico">
+            <h3>Pacientes atendidos por día</h3>
+            <span class="filtro-badge">Últimos 7 días</span>
+          </div>
+          <div class="contenedor-barras">
+            <div class="columna-barra"><div class="barra" style="height: 35%;"></div></div>
+            <div class="columna-barra"><div class="barra" style="height: 55%;"></div></div>
+            <div class="columna-barra"><div class="barra" style="height: 80%;"></div></div>
+            <div class="columna-barra"><div class="barra" style="height: 45%;"></div></div>
+            <div class="columna-barra"><div class="barra destacado" style="height: 95%;"></div></div>
+            <div class="columna-barra"><div class="barra" style="height: 30%;"></div></div>
+            <div class="columna-barra"><div class="barra" style="height: 65%;"></div></div>
+          </div>
+        </div>
+
+        <!-- DONA: ESTADO DE TRATAMIENTOS -->
+        <div class="tarjeta-grafico">
+          <h3>Estado de los Pacientes</h3>
+          <div class="contenedor-dona">
+            <div class="grafico-dona">
+              <div class="centro-dona">
+                <span class="porcentaje">75%</span>
+                <span class="leyenda-dona">ACTIVOS</span>
+              </div>
+            </div>
+            <ul class="leyendas-lista">
+              <li><span class="dot azul"></span> Activos en Sesión (75%)</li>
+              <li><span class="dot naranja"></span> En Pausa / Inactivos (15%)</li>
+              <li><span class="dot morado"></span> De Alta Médica (10%)</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TABLA: PRÓXIMOS SEGUIMIENTOS DE PACIENTES -->
+      <section class="seccion-tabla mt-20">
+        <div class="cabecera-grafico" style="margin-bottom: 16px;">
+          <h3>Próximas consultas de pacientes</h3>
+          <a href="pacientes.html" class="enlace-ver-todas">Ver todos los pacientes &rarr;</a>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="tabla-citas">
+            <thead>
+              <tr>
+                <th>PACIENTE</th>
+                <th>PSICÓLOGO ASIGNADO</th>
+                <th>FECHA Y HORA</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="paciente-celda">
+                    <span class="avatar-tag azul">RM</span>
+                    <strong>Ricardo Mendoza</strong>
+                  </div>
+                </td>
+                <td>Dra. Clara Soto</td>
+                <td>Hoy, 24 May - 09:00 AM</td>
+                <td><span class="etiqueta-estado confirmada">ACTIVO</span></td>
+                <td><a href="pacientes.html#modal-ver-paciente" class="btn-texto-accion ver">Ver</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="paciente-celda">
+                    <span class="avatar-tag morado">EL</span>
+                    <strong>Elena Luna</strong>
+                  </div>
+                </td>
+                <td>Dr. Marcos Ruiz</td>
+                <td>Hoy, 24 May - 11:30 AM</td>
+                <td><span class="etiqueta-estado espera">EN ESPERA</span></td>
+                <td><a href="pacientes.html#modal-ver-paciente" class="btn-texto-accion ver">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
