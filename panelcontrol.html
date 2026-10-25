@@ -6,7 +6,6 @@
     <title>Happy Mind - Panel de Administración</title>
     <meta name="description" content="Consulta el resumen de citas, métricas y actividad reciente de Happy Mind.">
     <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
-    <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/panelcontrol.css" />
 </head>
 
@@ -24,6 +23,7 @@
 
             <nav class="navegacionIzq">
                 <ul>
+                    <li><a href="index.html">Inicio</a></li>
                     <li class="activo"><a href="panelcontrol.html">Panel de Control</a></li>
                     <li><a href="citas.html">Citas</a></li>
                 </ul>
@@ -64,13 +64,13 @@
                     <!-- TARJETAS DE MÉTRICAS -->
                     <div class="grid-metricas">
                         <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--naranja-texto)">Citas Pendientes</span>
+                            <span class="icono icono-pendientes">Citas Pendientes</span>
                             <h3>Citas por atender hoy</h3>
                             <p class="valor">24</p>
                         </article>
 
                         <article class="tarjeta-metrica">
-                            <span class="icono" style="color: var(--azul-500)">Citas Realizadas</span>
+                            <span class="icono icono-realizadas">Citas Realizadas</span>
                             <h3>Historial de citas exitosas</h3>
                             <p class="valor">892</p>
                         </article>
@@ -84,14 +84,36 @@
                                 <button class="btn-filtro">Últimos 7 días</button>
                             </header>
                             <div class="contenedor-grafico-barras">
-                                <div class="barra" style="--altura: 30%"></div>
-                                <div class="barra" style="--altura: 50%"></div>
-                                <div class="barra" style="--altura: 80%"></div>
-                                <div class="barra" style="--altura: 40%"></div>
-                                <div class="barra activa" style="--altura: 90%"></div>
-                                <div class="barra" style="--altura: 20%"></div>
-                                <div class="barra" style="--altura: 60%"></div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-30"></div>
+                                    <span class="etiqueta-dia">Lun</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-50"></div>
+                                    <span class="etiqueta-dia">Mar</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-80"></div>
+                                    <span class="etiqueta-dia">Mié</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-40"></div>
+                                    <span class="etiqueta-dia">Jue</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-90 activa"></div>
+                                    <span class="etiqueta-dia">Vie</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-20"></div>
+                                    <span class="etiqueta-dia">Sáb</span>
+                                </div>
+                                <div class="grupo-barra">
+                                    <div class="barra barra-60"></div>
+                                    <span class="etiqueta-dia">Dom</span>
+                                </div>
                             </div>
+                            <p class="subtitulo-grafico">Actividad de citas durante la semana</p>
                         </article>
 
                         <article class="tarjeta-grafico">
@@ -109,6 +131,7 @@
                                     <li><span class="punto bg-morado"></span>Ausentes (15%)</li>
                                 </ul>
                             </div>
+                            <p class="subtitulo-grafico">Distribución de citas del día</p>
                         </article>
                     </div>
 
@@ -118,7 +141,7 @@
                             <h3>Próximas citas del día</h3>
                             <a href="citas.html" class="enlace-ver-todas">Ver todas &rarr;</a>
                         </header>
-                        <div style="overflow-x: auto">
+                        <div class="contenedor-tabla">
                             <table class="tabla-citas">
                                 <thead>
                                     <tr>
