@@ -27,7 +27,7 @@
 
             <nav class="navegacionIzq">
                 <ul>
-                    <li><a href="#">Inicio / Dashboard</a></li>
+                    <li><a href="dashboard.html">Inicio / Dashboard</a></li>
                     <!-- Opcion Activa -->
                     <li class="activo"><a href="citas.html">Mis Citas</a></li>
                     <li><a href="pacientes.html">Mis Pacientes</a></li>
@@ -213,9 +213,6 @@
 
 
 
-
-
-
     <!-- ================= MODAL: NUEVA CITA ================= -->
     <div id="modal-nueva-cita" class="modal">
         <div class="modal-contenido">
@@ -261,14 +258,24 @@
 
 
 
-    <!-- ================= MODALES (Iguales a los anteriores) ================= -->
+    <!-- ================= MODALES  ================= -->
 
     <!-- Modal Reprogramar -->
+    <!-- ================= MODAL: REPROGRAMAR CITA ================= -->
     <div id="modal-reprogramar" class="modal">
         <div class="modal-contenido">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Reprogramar Cita</h3>
+
+            <p class="info-modal">
+                Al confirmar, se enviará un <strong>correo electrónico automático</strong> al paciente con los nuevos
+                detalles de la cita.
+            </p>
+
+            <!-- 1. Asegúrate de tener class="formulario-modal" aquí -->
             <form class="formulario-modal" id="form-reprogramar">
+
+                <!-- 2. Esta clase crea la cuadrícula de 2 columnas -->
                 <div class="grid-2-col">
                     <div class="campo">
                         <label>Nueva Fecha</label>
@@ -279,14 +286,20 @@
                         <input type="time" required>
                     </div>
                 </div>
+
+                <!-- 3. Cada input o textarea debe ir dentro de un div.campo -->
                 <div class="campo">
                     <label>Mensaje para el paciente (Opcional)</label>
-                    <textarea rows="3" placeholder="Ej. Hola, tuve un inconveniente médico..."></textarea>
+                    <br>
+                    <textarea class="texto" rows="3" style="width: 452px; height: 106px;"
+                        placeholder="Ej. Hola, tuve un inconveniente médico. ¿Te parece bien esta nueva fecha?"></textarea>
                 </div>
+
                 <div class="grupo-acciones-modal">
                     <a href="#" class="btn-secundario">Cancelar</a>
-                    <button type="submit" class="btn-primario" style="background-color: var(--naranja-500);">Confirmar y
-                        Enviar Correo</button>
+                    <a href="#" type="submit" class="btn-primario" style="background-color: #ff9800;">
+                        Confirmar y Enviar Correo
+                    </a>
                 </div>
             </form>
         </div>
@@ -325,34 +338,6 @@
     </div>
 
 
-
-
-    <!-- SCRIPT DE VALIDACIÓN Y CIERRE DE MODALES -->
-    <script>
-        // Restricción de fecha mínima
-        const hoy = new Date();
-        const anio = hoy.getFullYear();
-        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-        const dia = String(hoy.getDate()).padStart(2, '0');
-
-        const inputFecha = document.getElementById('fecha-reprogramar');
-        if (inputFecha) {
-            inputFecha.min = `${anio}-${mes}-${dia}`;
-        }
-
-        // Envío, limpieza y cierre del modal de reprogramación
-        const formulario = document.getElementById('form-reprogramar');
-        if (formulario) {
-            formulario.addEventListener('submit', function (evento) {
-                evento.preventDefault();
-                formulario.reset();
-                window.location.hash = '#';
-                alert("✅ La cita ha sido reprogramada exitosamente.");
-            });
-        }
-
-
-    </script>
 </body>
 
 </html>

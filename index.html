@@ -25,7 +25,7 @@
 
             <nav class="navegacionIzq">
                 <ul>
-                    <li><a href="#">Inicio / Dashboard</a></li>
+                    <li><a href="dashboard.html">Inicio / Dashboard</a></li>
                     <li><a href="citas.html">Mis Citas</a></li>
                     <li><a href="pacientes.html">Mis Pacientes</a></li>
                     <li class="activo"><a href="index.html">Mi Perfil</a></li>
@@ -249,7 +249,7 @@
                 <div class="grid-2-col">
                     <div class="campo">
                         <label>Nueva Fecha</label>
-                        <input type="date" id="fecha-reprogramar" required>
+                        <input type="date" id="fecha-reprogramar" min="2026-10-26" required>
                     </div>
                     <div class="campo">
                         <label>Nueva Hora</label>
@@ -265,8 +265,8 @@
 
                 <div class="grupo-acciones-modal">
                     <a href="#" class="btn-secundario">Cancelar</a>
-                    <button type="submit" class="btn-primario" style="background-color: var(--naranja-500);">Confirmar y
-                        Enviar Correo</button>
+                    <a href="#" class="btn-primario" style="background-color: var(--naranja-500);">Confirmar y
+                        Enviar Correo</a>
                 </div>
             </form>
         </div>
@@ -307,51 +307,6 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        // Obtener la fecha de hoy y darle el formato YYYY-MM-DD
-        const hoy = new Date();
-        const anio = hoy.getFullYear();
-        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-        const dia = String(hoy.getDate()).padStart(2, '0');
-
-        // Buscar el input de fecha y aplicarle el límite mínimo
-        const inputFecha = document.getElementById('fecha-reprogramar');
-        if (inputFecha) {
-            inputFecha.min = `${anio}-${mes}-${dia}`;
-        }
-
-        // 2. LÓGICA PARA BORRAR EL FORMULARIO Y CERRAR EL MODAL
-        const formulario = document.getElementById('form-reprogramar');
-
-        if (formulario) {
-            formulario.addEventListener('submit', function (evento) {
-                // Evita que la página intente recargarse al darle "Confirmar"
-                evento.preventDefault();
-
-                // Si el código llega aquí, significa que el usuario sí llenó la fecha y la hora
-
-                // Esto borra todos los datos escritos en este formulario
-                formulario.reset();
-
-                // Esto cierra el modal 
-                window.location.hash = '#';
-            });
-        }
-    </script>
 </body>
 
 </html>

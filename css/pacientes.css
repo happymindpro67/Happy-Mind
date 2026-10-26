@@ -149,3 +149,20 @@
     background-color: #ef4444;
     color: var(--blanco-100);
 }
+
+.avatar-paciente-foto {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--fondo-sitio);
+    border: 1px solid var(--borde);
+}
+
+.avatar-paciente-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen dentro del círculo */
+    display: block;
+}

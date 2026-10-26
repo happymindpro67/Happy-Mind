@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Happy Mind</title>
+    
+    <!-- 1. Estilos Globales -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 2. Estilos específicos del Dashboard -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="ContenedorDb">
+        
+        <!-- BARRA LATERAL -->
+        <aside class="barraIzq">
+            <div class="logo">
+                <div class="logo-placeholder">
+                    <img src="img/LogoHM.jpeg" alt="Logo Happy Mind">
+                </div>
+                <h1>Happy Mind</h1>
+                <span>Panel Profesional</span>
+            </div>
+            <nav class="navegacionIzq">
+                <ul>
+                    <li class="activo"><a href="dashboard.html">Inicio / Dashboard</a></li>
+                    <li><a href="citas.html">Mis Citas</a></li>
+                    <li><a href="pacientes.html">Mis Pacientes</a></li>
+                    <li><a href="index.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+            <div class="perfilUsuario">
+                <div class="avatar-placeholder">JM</div>
+                <div class="info-usuario">
+                    <span class="nombre">Dr. Juan Martínez</span>
+                    <span class="rol">Psicólogo Clínico</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="principal">
+            <div class="contenedor-interno">
+                
+                <header class="superior">
+                    <div class="barraBusqueda">
+                        <input type="text" placeholder="Buscar pacientes, citas o notas...">
+                    </div>
+                    <div class="perfilAdm">
+                        <div class="infoAdm"><span class="tituloAdm">Hola, Dr. Juan</span></div>
+                        <div class="avatar-placeholder">JM</div>
+                    </div>
+                </header>
+
+                <div class="cabecera-modulo">
+                    <div>
+                        <h2>Resumen General</h2>
+                        <p>Estadísticas clave sobre tus citas y rendimiento de este mes.</p>
+                    </div>
+                    <div class="botones-modulo">
+                        <a href="citas.html" class="btn-primario">+ Agendar Cita</a>
+                    </div>
+                </div>
+
+                <!-- 1. TARJETAS DE MÉTRICAS (KPIs) -->
+                <div class="grid-kpi">
+                    <div class="tarjeta-kpi">
+                        <div class="info-kpi">
+                            <span class="titulo-kpi">Total Citas (Mes)</span>
+                            <span class="valor-kpi">48</span>
+                            <span class="tendencia positiva">↑ 12% vs mes anterior</span>
+                        </div>
+                        <div class="icono-kpi azul">📅</div>
+                    </div>
+
+                    <div class="tarjeta-kpi">
+                        <div class="info-kpi">
+                            <span class="titulo-kpi">Citas Confirmadas</span>
+                            <span class="valor-kpi">36</span>
+                            <span class="subtexto-kpi">75% del total</span>
+                        </div>
+                        <div class="icono-kpi verde">✅</div>
+                    </div>
+
+                    <div class="tarjeta-kpi">
+                        <div class="info-kpi">
+                            <span class="titulo-kpi">En Espera / Pendientes</span>
+                            <span class="valor-kpi">8</span>
+                            <span class="subtexto-kpi">Requieren atención</span>
+                        </div>
+                        <div class="icono-kpi naranja">⏳</div>
+                    </div>
+
+                    <div class="tarjeta-kpi">
+                        <div class="info-kpi">
+                            <span class="titulo-kpi">Canceladas / Ausencias</span>
+                            <span class="valor-kpi">4</span>
+                            <span class="tendencia negativa">↓ 3% vs mes anterior</span>
+                        </div>
+                        <div class="icono-kpi rojo">🚫</div>
+                    </div>
+                </div>
+
+                <!-- 2. SECCIÓN DE ESTADÍSTICAS Y GRÁFICOS SIMULADOS -->
+                <div class="grid-analiticas">
+                    
+                    <!-- Distribución por Modalidad -->
+                    <div class="tarjeta-analitica">
+                        <h3>Modalidad de Sesiones</h3>
+                        <p class="subtitulo-seccion">Distribución de citas virtuales vs presenciales</p>
+
+                        <div class="barra-progreso-contenedor">
+                            <div class="info-progreso">
+                                <span>Online (Videollamada)</span>
+                                <strong>65% (31 citas)</strong>
+                            </div>
+                            <div class="barra-base">
+                                <div class="barra-relleno azul" style="width: 65%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="barra-progreso-contenedor">
+                            <div class="info-progreso">
+                                <span>Presencial (Consultorio)</span>
+                                <strong>35% (17 citas)</strong>
+                            </div>
+                            <div class="barra-base">
+                                <div class="barra-relleno morado" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasa de Asistencia -->
+                    <div class="tarjeta-analitica">
+                        <h3>Rendimiento y Cumplimiento</h3>
+                        <p class="subtitulo-seccion">Métricas de puntualidad y retención</p>
+
+                        <div class="metricas-rapidas">
+                            <div class="bloque-metrica">
+                                <span class="numero-grande">92%</span>
+                                <span class="etiqueta-metrica">Tasa de Asistencia</span>
+                            </div>
+                            <div class="bloque-metrica">
+                                <span class="numero-grande">4.8 ⭐</span>
+                                <span class="etiqueta-metrica">Promedio Pacientes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 3. TABLA: PRÓXIMAS CITAS DEL DÍA -->
+                <section class="seccion-tabla">
+                    <div class="filtros-tabla">
+                        <h3>Próximas Citas de Hoy</h3>
+                        <a href="citas.html" class="btn-secundario">Ver Agenda Completa</a>
+                    </div>
+
+                    <table class="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>ID CITA</th>
+                                <th>PACIENTE</th>
+                                <th>HORA</th>
+                                <th>MODALIDAD</th>
+                                <th>ESTADO</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="id-cita">#HM-1024</span></td>
+                                <td>Ana Lucía Gómez</td>
+                                <td><strong>10:00 AM</strong></td>
+                                <td>Videollamada</td>
+                                <td><span class="etiqueta-estado confirmada">Confirmada</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="citas.html" class="btn-texto-accion ver">Ver Detalle</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="id-cita">#HM-1025</span></td>
+                                <td>Carlos Ramírez</td>
+                                <td><strong>02:30 PM</strong></td>
+                                <td>Presencial</td>
+                                <td><span class="etiqueta-estado espera">En Espera</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="citas.html" class="btn-texto-accion reprogramar">Atender</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

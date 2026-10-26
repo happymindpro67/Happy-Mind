@@ -26,7 +26,7 @@
             </div>
             <nav class="navegacionIzq">
                 <ul>
-                    <li><a href="index.html">Inicio / Dashboard</a></li>
+                    <li><a href="dashboard.html">Inicio / Dashboard</a></li>
                     <li><a href="citas.html">Mis Citas</a></li>
                     <li class="activo"><a href="pacientes.html">Mis Pacientes</a></li>
                     <li><a href="index.html">Mi Perfil</a></li>
@@ -72,7 +72,15 @@
                     <!-- Tarjeta Paciente 1 -->
                     <div class="tarjeta-paciente">
                         <div class="cabecera-tarjeta">
-                            <h3>Ana Lucía Gómez</h3>
+                            <div class="perfil-paciente-info">
+                                <div class="avatar-paciente-foto">
+                                    <img src="img/user.png" alt="Foto por defecto">
+                                </div>
+                                <div>
+                                    <h3>Ana Lucía Gómez</h3>
+                                    <span class="etiqueta-paciente-sub">Paciente Activo</span>
+                                </div>
+                            </div>
                             <div class="calificacion" title="Calificación">⭐ 4.8</div>
                         </div>
 
@@ -89,7 +97,6 @@
                             </label>
                         </div>
 
-                        <!-- NUEVOS BOTONES VISUALES -->
                         <div class="acciones-tarjeta">
                             <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
                             <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
@@ -99,8 +106,16 @@
                     <!-- Tarjeta Paciente 2 -->
                     <div class="tarjeta-paciente">
                         <div class="cabecera-tarjeta">
-                            <h3>Carlos Ramírez</h3>
-                            <div class="calificacion">⭐ 4.5</div>
+                            <div class="perfil-paciente-info">
+                                <div class="avatar-paciente-foto">
+                                    <img src="img/user.png" alt="Foto por defecto">
+                                </div>
+                                <div>
+                                    <h3>Carlos Ramírez</h3>
+                                    <span class="etiqueta-paciente-sub">Paciente Activo</span>
+                                </div>
+                            </div>
+                            <div class="calificacion" title="Calificación">⭐ 4.5</div>
                         </div>
 
                         <div class="datos-basicos">
@@ -116,16 +131,25 @@
                             </label>
                         </div>
 
-                        <!-- NUEVOS BOTONES VISUALES -->
                         <div class="acciones-tarjeta">
                             <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
                             <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
                         </div>
                     </div>
+
+                    <!-- Tarjeta Paciente 3 -->
                     <div class="tarjeta-paciente">
                         <div class="cabecera-tarjeta">
-                            <h3>Alfredo Morelos</h3>
-                            <div class="calificacion">⭐ 2.4</div>
+                            <div class="perfil-paciente-info">
+                                <div class="avatar-paciente-foto">
+                                    <img src="img/user.png" alt="Foto por defecto">
+                                </div>
+                                <div>
+                                    <h3>Alfredo Morelos</h3>
+                                    <span class="etiqueta-paciente-sub">Paciente Activo</span>
+                                </div>
+                            </div>
+                            <div class="calificacion" title="Calificación">⭐ 2.4</div>
                         </div>
 
                         <div class="datos-basicos">
@@ -135,44 +159,18 @@
                         </div>
 
                         <div class="subir-historia">
-                            <input type="file" id="pdf-paciente-2" accept=".pdf" class="input-oculto">
-                            <label for="pdf-paciente-2" class="btn-subir-pdf">
+                            <input type="file" id="pdf-paciente-3" accept=".pdf" class="input-oculto">
+                            <label for="pdf-paciente-3" class="btn-subir-pdf">
                                 📄 Subir Historia Clínica
                             </label>
                         </div>
 
-                        <!-- NUEVOS BOTONES VISUALES -->
                         <div class="acciones-tarjeta">
                             <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
                             <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
                         </div>
                     </div>
 
-                    <div class="tarjeta-paciente">
-                        <div class="cabecera-tarjeta">
-                            <h3>Fabio Rangel</h3>
-                            <div class="calificacion">⭐ 4.0</div>
-                        </div>
-
-                        <div class="datos-basicos">
-                            <p><strong>ID:</strong> #HM-1125</p>
-                            <p><strong>Edad:</strong> 33 años</p>
-                            <p><strong>Teléfono:</strong> +57 320 123 6723</p>
-                        </div>
-
-                        <div class="subir-historia">
-                            <input type="file" id="pdf-paciente-2" accept=".pdf" class="input-oculto">
-                            <label for="pdf-paciente-2" class="btn-subir-pdf">
-                                📄 Subir Historia Clínica
-                            </label>
-                        </div>
-
-                        <!-- NUEVOS BOTONES VISUALES -->
-                        <div class="acciones-tarjeta">
-                            <a href="#modal-actualizar-paciente" class="btn-icono btn-editar">✏️ Actualizar</a>
-                            <button class="btn-icono btn-eliminar">🚫 Desactivar</button>
-                        </div>
-                    </div>
                 </div>
                 <!-- Puedes agregar más tarjetas copiando y pegando el bloque anterior -->
             </div>
