@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administración de usuarios de Happy Mind.">
+    <link rel="icon" type="image/jpeg" href="./img/LogoHM-optimizado.jpg">
+    <title>Usuarios - Happy Mind</title>
+    <link rel="stylesheet" href="./css/pacientes.css">
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="lateral">
+            <div class="logo">
+                <img src="./img/LogoHM-optimizado.jpg" alt="Logo Happy Mind" class="logo-imagen">
+                <h1>Happy Mind</h1>
+                <span>Panel de Administración</span>
+            </div>
+
+            <nav class="menu-lateral menu-admin">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="dashboard-citas.html">Dashboard citas</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="dashboard-pacientes.html">Dashboard pacientes</a></li>
+                    <li><a href="pacientes.html">Pacientes</a></li>
+                    <li><a href="dashboard-psicologos.html">Dashboard psicólogos</a></li>
+                    <li><a href="psicologos.html">Psicólogos</a></li>
+                    <li class="activo"><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="auditoria.html">Auditoría</a></li>
+                </ul>
+            </nav>
+
+            <div class="pie-lateral">
+                <div class="perfil-admin">
+                    <div class="avatar admin-inferior">A</div>
+                    <div class="info-usuario">
+                        <span class="nombre">Admin</span>
+                        <span class="rol">Administrador</span>
+                    </div>
+                </div>
+                <a class="cerrar-sesion" href="login.html">Cerrar Sesión</a>
+            </div>
+        </aside>
+
+        <main class="principal">
+            <section id="usuarios" class="encabezado">
+                <div>
+                    <h2>Gestión de Usuarios</h2>
+                    <p>Consulta y administra las cuentas registradas en Happy Mind.</p>
+                </div>
+                <a href="#modal-crear" class="btn-primario">+ Nuevo Usuario</a>
+            </section>
+
+            <section class="seccion-tabla">
+                <div class="tabla-scroll">
+                    <table class="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>CORREO</th>
+                                <th>ROL</th>
+                                <th>ESTADO</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="id-cita">#001</td>
+                                <td><strong>Laura Sofía Pérez</strong></td>
+                                <td>laura@email.com</td>
+                                <td><span class="rol-usuario rol-paciente">Paciente</span></td>
+                                <td><span class="estado confirmada">ACTIVO</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="#ver-laura" class="accion ver">Ver</a>
+                                        <a href="#modal-editar" class="accion editar">Editar</a>
+                                        <a href="#modal-eliminar" class="accion eliminar">Eliminar</a>
+                                        <a href="#modal-deshabilitar" class="accion ver">Deshabilitar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="id-cita">#002</td>
+                                <td><strong>Dra. Clara Soto</strong></td>
+                                <td>clara.soto@email.com</td>
+                                <td><span class="rol-usuario rol-psicologo">Psicólogo</span></td>
+                                <td><span class="estado confirmada">ACTIVO</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="#ver-clara" class="accion ver">Ver</a>
+                                        <a href="#modal-editar" class="accion editar">Editar</a>
+                                        <a href="#modal-eliminar" class="accion eliminar">Eliminar</a>
+                                        <a href="#modal-deshabilitar" class="accion ver">Deshabilitar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="id-cita">#003</td>
+                                <td><strong>Juan David Morales</strong></td>
+                                <td>juan.morales@email.com</td>
+                                <td><span class="rol-usuario rol-paciente">Paciente</span></td>
+                                <td><span class="estado espera">INACTIVO</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="#ver-juan" class="accion ver">Ver</a>
+                                        <a href="#modal-editar" class="accion editar">Editar</a>
+                                        <a href="#modal-eliminar" class="accion eliminar">Eliminar</a>
+                                        <a href="#modal-deshabilitar" class="accion ver">Deshabilitar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="id-cita">#004</td>
+                                <td><strong>Dr. Marcos Ruiz</strong></td>
+                                <td>marcos.ruiz@email.com</td>
+                                <td><span class="rol-usuario rol-psicologo">Psicólogo</span></td>
+                                <td><span class="estado confirmada">ACTIVO</span></td>
+                                <td>
+                                    <div class="grupo-acciones">
+                                        <a href="#ver-marcos" class="accion ver">Ver</a>
+                                        <a href="#modal-editar" class="accion editar">Editar</a>
+                                        <a href="#modal-eliminar" class="accion eliminar">Eliminar</a>
+                                        <a href="#modal-deshabilitar" class="accion ver">Deshabilitar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="ver-laura" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil de Laura Sofía Pérez</h3>
+            <div class="info-modal">
+                <p><strong>ID:</strong> USR-001</p>
+                <p><strong>Rol:</strong> Paciente</p>
+                <p><strong>Documento:</strong> CC 1.020.304.050</p>
+                <p><strong>Teléfono:</strong> 300 123 4567</p>
+                <p><strong>Correo:</strong> laura@email.com</p>
+                <p><strong>Psicólogo asignado:</strong> Dra. Clara Soto</p>
+                <p><strong>Estado:</strong> <span class="estado confirmada">Activo</span></p>
+            </div>
+            <div class="acciones-modal mt-10">
+                <a href="#usuarios" class="btn-secundario">Cerrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ver-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil de la Dra. Clara Soto</h3>
+            <div class="info-modal">
+                <p><strong>ID:</strong> USR-002</p>
+                <p><strong>Rol:</strong> Psicólogo</p>
+                <p><strong>Correo:</strong> clara.soto@email.com</p>
+                <p><strong>Especialidad:</strong> Ansiedad</p>
+                <p><strong>Paciente asignado:</strong> Ricardo Mendoza</p>
+                <p><strong>Horario:</strong> Lunes, miércoles y sábado, de 09:00 a 13:00.</p>
+                <p><strong>Estado:</strong> <span class="estado confirmada">Activo</span></p>
+            </div>
+            <div class="acciones-modal mt-10">
+                <a href="#usuarios" class="btn-secundario">Cerrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ver-juan" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil de Juan David Morales</h3>
+            <div class="info-modal">
+                <p><strong>ID:</strong> USR-003</p>
+                <p><strong>Rol:</strong> Paciente</p>
+                <p><strong>Documento:</strong> CC 1.098.765.432</p>
+                <p><strong>Teléfono:</strong> 311 987 6543</p>
+                <p><strong>Correo:</strong> juan.morales@email.com</p>
+                <p><strong>Psicólogo asignado:</strong> Dr. Marcos Ruiz</p>
+                <p><strong>Estado:</strong> <span class="estado espera">Inactivo</span></p>
+            </div>
+            <div class="acciones-modal mt-10">
+                <a href="#usuarios" class="btn-secundario">Cerrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ver-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil del Dr. Marcos Ruiz</h3>
+            <div class="info-modal">
+                <p><strong>ID:</strong> USR-004</p>
+                <p><strong>Rol:</strong> Psicólogo</p>
+                <p><strong>Correo:</strong> marcos.ruiz@email.com</p>
+                <p><strong>Especialidad:</strong> Terapia de Pareja</p>
+                <p><strong>Paciente asignado:</strong> Elena Luna</p>
+                <p><strong>Horario:</strong> Martes, jueves y sábado, de 10:00 a 14:00.</p>
+                <p><strong>Estado:</strong> <span class="estado confirmada">Activo</span></p>
+            </div>
+            <div class="acciones-modal mt-10">
+                <a href="#usuarios" class="btn-secundario">Cerrar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-crear" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Registrar Nuevo Usuario</h3>
+            <form class="formulario-modal" action="#" method="POST">
+                <div class="campo">
+                    <label for="nuevo-nombre">Nombre completo</label>
+                    <input id="nuevo-nombre" type="text" placeholder="Ej: Ana María Restrepo" required>
+                </div>
+                <div class="campo">
+                    <label for="nuevo-correo">Correo electrónico</label>
+                    <input id="nuevo-correo" type="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="nuevo-rol">Rol</label>
+                    <select id="nuevo-rol" required>
+                        <option value="">Seleccione un rol</option>
+                        <option>Paciente</option>
+                        <option>Psicólogo</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="nuevo-estado">Estado</label>
+                    <select id="nuevo-estado" required>
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="acciones-modal">
+                    <a href="#usuarios" class="btn-secundario">Cancelar</a>
+                    <button type="submit" class="btn-primario">Guardar Usuario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-editar" class="modal">
+        <div class="caja-modal">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Actualizar Información del Usuario</h3>
+            <form class="formulario-modal" action="#" method="POST">
+                <div class="campo">
+                    <label for="editar-nombre">Nombre completo</label>
+                    <input id="editar-nombre" type="text" value="Laura Sofía Pérez" required>
+                </div>
+                <div class="campo">
+                    <label for="editar-correo">Correo electrónico</label>
+                    <input id="editar-correo" type="email" value="laura@email.com" required>
+                </div>
+                <div class="campo">
+                    <label for="editar-rol">Rol</label>
+                    <select id="editar-rol" required>
+                        <option selected>Paciente</option>
+                        <option>Psicólogo</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="editar-estado">Estado</label>
+                    <select id="editar-estado" required>
+                        <option selected>Activo</option>
+                        <option>Inactivo</option>
+                    </select>
+                </div>
+                <div class="acciones-modal">
+                    <a href="#usuarios" class="btn-secundario">Cancelar</a>
+                    <button type="submit" class="btn-primario">Actualizar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-eliminar" class="modal">
+        <div class="caja-modal modal-pequeno text-center">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3 class="titulo-eliminar">¿Eliminar Usuario?</h3>
+            <p class="texto-eliminar">Esta acción eliminará la cuenta y no se podrá deshacer.</p>
+            <div class="acciones-modal centrar">
+                <a href="#usuarios" class="btn-secundario">Cancelar</a>
+                <a href="#usuarios" class="btn-eliminar">Sí, Eliminar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-deshabilitar" class="modal">
+        <div class="caja-modal modal-pequeno text-center">
+            <a href="#usuarios" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>¿Deshabilitar Usuario?</h3>
+            <p class="texto-eliminar">El usuario no podrá acceder mientras su cuenta esté inactiva.</p>
+            <div class="acciones-modal centrar">
+                <a href="#usuarios" class="btn-secundario">Cancelar</a>
+                <a href="#usuarios" class="btn-primario">Deshabilitar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -177,6 +177,34 @@ h3 {
     border-top: 1px solid var(--borde);
 }
 
+.pie-lateral {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--borde);
+}
+
+.pie-lateral .perfil-admin {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.cerrar-sesion {
+    display: block;
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #b91c1c;
+    background: #fee2e2;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cerrar-sesion:hover {
+    color: var(--blanco-100);
+    background: #b91c1c;
+}
+
 .avatar {
     width: 40px;
     height: 40px;
@@ -704,6 +732,15 @@ h3 {
     .perfil-admin {
         margin-top: 16px;
         padding-top: 12px;
+    }
+
+    .pie-lateral {
+        margin-top: 16px;
+    }
+
+    .pie-lateral .perfil-admin {
+        margin-top: 0;
+        padding-top: 0;
     }
 
     .principal {

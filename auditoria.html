@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registro de auditoría y respaldos de Happy Mind.">
+    <link rel="icon" type="image/jpeg" href="./img/LogoHM-optimizado.jpg">
+    <title>Auditoría - Happy Mind</title>
+    <link rel="stylesheet" href="./css/pacientes.css">
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="lateral">
+            <div class="logo">
+                <img src="./img/LogoHM-optimizado.jpg" alt="Logo Happy Mind" class="logo-imagen">
+                <h1>Happy Mind</h1>
+                <span>Panel de Administración</span>
+            </div>
+
+            <nav class="menu-lateral menu-admin">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="dashboard-citas.html">Dashboard citas</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="dashboard-pacientes.html">Dashboard pacientes</a></li>
+                    <li><a href="pacientes.html">Pacientes</a></li>
+                    <li><a href="dashboard-psicologos.html">Dashboard psicólogos</a></li>
+                    <li><a href="psicologos.html">Psicólogos</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li class="activo"><a href="auditoria.html">Auditoría</a></li>
+                </ul>
+            </nav>
+
+            <div class="pie-lateral">
+                <div class="perfil-admin">
+                    <div class="avatar admin-inferior">A</div>
+                    <div class="info-usuario">
+                        <span class="nombre">Admin</span>
+                        <span class="rol">Administrador</span>
+                    </div>
+                </div>
+                <a class="cerrar-sesion" href="login.html">Cerrar Sesión</a>
+            </div>
+        </aside>
+
+        <main class="principal">
+            <section id="auditoria" class="encabezado">
+                <div>
+                    <h2>Auditoría</h2>
+                    <p>Consulta la actividad reciente y administra las copias de seguridad.</p>
+                </div>
+                <div class="grupo-acciones">
+                    <a class="btn-primario" href="#modal-backup">Generar Backup</a>
+                    <a class="btn-secundario" href="#modal-restaurar">Restablecer Copia</a>
+                </div>
+            </section>
+
+            <section class="seccion-tabla">
+                <div class="tabla-scroll">
+                    <table class="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>FECHA/HORA</th>
+                                <th>USUARIO</th>
+                                <th>ACCIÓN REALIZADA</th>
+                                <th>IP/ORIGEN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>26/10/2026 09:14</td>
+                                <td><strong>Admin Happy Mind</strong></td>
+                                <td>Actualizó el perfil de un paciente</td>
+                                <td>192.168.1.24</td>
+                            </tr>
+                            <tr>
+                                <td>26/10/2026 08:52</td>
+                                <td><strong>Clara Soto</strong></td>
+                                <td>Registró una nota de seguimiento</td>
+                                <td>Portal web</td>
+                            </tr>
+                            <tr>
+                                <td>25/10/2026 16:37</td>
+                                <td><strong>Admin Happy Mind</strong></td>
+                                <td>Creó una cuenta de usuario</td>
+                                <td>192.168.1.24</td>
+                            </tr>
+                            <tr>
+                                <td>25/10/2026 14:06</td>
+                                <td><strong>Laura Pérez</strong></td>
+                                <td>Solicitó una cita</td>
+                                <td>Portal web</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="modal-backup" class="modal">
+        <div class="caja-modal modal-pequeno">
+            <a href="#auditoria" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Generar Copia de Seguridad</h3>
+            <div class="info-modal">
+                <p>Se creará una copia de seguridad con la información actual del sistema.</p>
+            </div>
+            <div class="acciones-modal">
+                <a href="#auditoria" class="btn-secundario">Cancelar</a>
+                <a href="#auditoria" class="btn-primario">Generar Backup</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-restaurar" class="modal">
+        <div class="caja-modal">
+            <a href="#auditoria" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Restablecer Copia de Seguridad</h3>
+            <form class="formulario-modal" action="#" method="POST">
+                <div class="campo">
+                    <label for="copia-seguridad">Selecciona una copia</label>
+                    <select id="copia-seguridad" required>
+                        <option value="">Seleccione una fecha</option>
+                        <option>26/10/2026 - 08:00</option>
+                        <option>25/10/2026 - 08:00</option>
+                        <option>24/10/2026 - 08:00</option>
+                    </select>
+                </div>
+                <div class="acciones-modal">
+                    <a href="#auditoria" class="btn-secundario">Cancelar</a>
+                    <button type="submit" class="btn-primario">Restablecer Copia</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

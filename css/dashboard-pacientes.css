@@ -95,6 +95,10 @@ h3 { font-family: var(--font-subtitulo); font-size: 1.3rem; }
 .menu-lateral .activo a { background-color: var(--azul2-500); color: var(--azul-500); font-weight: bold; }
 
 .perfil-admin { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--borde); }
+.pie-lateral { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--borde); }
+.pie-lateral .perfil-admin { margin-top: 0; padding-top: 0; border-top: 0; }
+.cerrar-sesion { display: block; margin-top: 12px; padding: 8px 12px; border-radius: 8px; color: #b91c1c; background: #fee2e2; font-weight: bold; text-align: center; }
+.cerrar-sesion:hover { color: var(--blanco-100); background: #b91c1c; }
 .avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: var(--font-anuncio); font-weight: bold; }
 .avatar.admin-inferior { background-color: #bfdbfe; color: #1d4ed8; }
 .info-usuario .nombre { font-size: 1.05rem; font-weight: bold; display: block; color: var(--negro-900); }
@@ -242,4 +246,46 @@ h3 { font-family: var(--font-subtitulo); font-size: 1.3rem; }
 
 .info-paciente strong {
   color: var(--negro-900);
+}
+
+@media (max-width: 800px) {
+  .contenedor {
+      height: auto;
+      min-height: 100vh;
+      overflow: visible;
+      flex-direction: column;
+  }
+
+  .lateral {
+      width: 100%;
+      flex: none;
+      padding: 16px 20px;
+      border-right: 0;
+      border-bottom: 1px solid var(--borde);
+  }
+
+  .logo {
+      margin-bottom: 16px;
+  }
+
+  .menu-lateral ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .pie-lateral {
+      margin-top: 16px;
+  }
+
+  .pie-lateral .perfil-admin {
+      margin-top: 0;
+      padding-top: 0;
+  }
+
+  .principal {
+      min-width: 0;
+      overflow: visible;
+      padding: 20px;
+  }
 }
