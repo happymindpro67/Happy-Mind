@@ -393,7 +393,7 @@ h3 {
 }
 
 .banner-imagen {
-    background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('../imagenes/HMfondo3-optimizado.jpg');
+    background-image: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('../img/HMfondo3-optimizado.jpg');
     background-size: cover;
     border-radius: 24px;
     padding: 60px 80px;
