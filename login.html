@@ -12,23 +12,24 @@
 </head>
 <body>
 
-  <header>
-    <a href="index.html" class="marca-logo" aria-label="Happy Mind, inicio">
-      <img src="./img/LogoHM-optimizado.jpg" alt="" class="brand-logo" width="42" height="42">
-      <span class="brand-name">Happy Mind</span>
-    </a>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icono"><img src="./img/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
+      <span class="logo-texto">Happy Mind</span>
+    </div>
 
-    <nav class="nav-central">
-      <a href="index.html" class="activo">Inicio</a>
-      <a href="index.html#servicios">Servicios</a>
-      <a href="psicologos.html">Psicólogos</a>
-      <a href="index.html#nosotros">Nosotros</a>
-      <a href="index.html#contacto">Contacto</a>
+    <nav class="navegacion">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="dashboard-citas.html">Citas</a></li>
+        <li><a href="psicologos.html">Psicólogos</a></li>
+        <li><a href="dashboard-pacientes.html">Pacientes</a></li>
+      </ul>
     </nav>
 
-    <div class="nav-actions">
-      <a href="login.html" class="btn-link" aria-current="page">Iniciar sesión</a>
-      <a href="registro.html" class="btn-orange-nav">Registrarse</a>
+    <div class="acciones-auth">
+      <a href="login.html" class="enlace-login" aria-current="page">Iniciar sesión</a>
+      <a href="registro.html" class="btn-naranja">Registrarse</a>
     </div>
   </header>
 
@@ -100,13 +101,43 @@
     </div>
   </main>
 
-  <footer>
-    <div>© 2026 Happy Mind. Claridad empática para el crecimiento mental.</div>
-    <div class="footer-links">
-      <span>Privacidad</span>
-      <span>Términos</span>
-      <a href="mailto:happymindpro67@gmail.com">Soporte</a>
-      <span>Accesibilidad</span>
+  <footer class="pie-pagina">
+    <div class="footer-grid">
+      <div class="footer-columna marca">
+        <div class="logo">
+          <span class="logo-icono"><img src="./img/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
+          <span class="logo-texto">Happy Mind</span>
+        </div>
+        <p>Conectamos a las personas con el psicólogo que mejor se adapte a sus necesidades para contribuir a su bienestar emocional.</p>
+      </div>
+
+      <div class="footer-columna" id="nosotros">
+        <h3>Compañía</h3>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-columna">
+        <h3>Ayuda</h3>
+        <ul>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-columna contacto" id="contacto">
+        <h3>Contáctanos</h3>
+        <div class="item-contacto">
+          <a href="mailto:happymindpro67@gmail.com">happymindpro67@gmail.com</a>
+        </div>
+        <div class="item-contacto">
+          <a href="tel:+573000000000">+57 300 000 0000</a>
+        </div>
+      </div>
     </div>
   </footer>
 
