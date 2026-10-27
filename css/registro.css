@@ -82,7 +82,7 @@ a {
 }
 
 /* navbar */
-.cabecera-principal {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -182,14 +182,14 @@ a {
 }
 
 /* Contenedor y Textos */
-.contenedor-principal {
+.pagina {
     flex: 1;
     display: flex;
     justify-content: center;
     padding: 0 20px 40px;
 }
 
-.contenedor-formulario {
+.formulario-box {
     width: 100%;
     max-width: 420px;
     display: flex;
@@ -197,26 +197,26 @@ a {
     gap: 24px;
 }
 
-.contenedor-imagen {
+.imagen-box {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 8px;
 }
 
-.imagen-formulario {
+.imagen-form {
     width: 100%;
     height: auto;
     max-width: 320px;
     border-radius: 12px;
 }
 
-.textos-cabecera {
+.textos-header {
     text-align: center;
     margin-bottom: 8px;
 }
 
-.textos-cabecera p {
+.textos-header p {
     font-family: var(--font-descripcion);
     font-size: 0.9rem;
     color: var(--texto-secundario);
@@ -259,14 +259,14 @@ a {
 }
 
 /* Controles visuales de contraseña */
-.input-con-icono {
+.input-campo {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.input-con-icono input {
+.input-campo input {
     padding-right: 40px;
 }
 
@@ -296,7 +296,7 @@ a {
 }
 
 /* Medidor Password */
-.medidor-password {
+.medidor {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -330,20 +330,20 @@ a {
 }
 
 /* Checkbox y Botones */
-.grupo-checkbox {
+.checks {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     margin: 10px 0;
 }
 
-.grupo-checkbox input {
+.checks input {
     margin-top: 4px;
     width: 18px;
     height: 18px;
 }
 
-.grupo-checkbox label {
+.checks label {
     font-family: var(--font-descripcion);
     font-size: 0.85rem;
     color: var(--texto-secundario);
@@ -398,61 +398,6 @@ a {
     outline-offset: 3px;
 }
 
-/* Características */
-.seccion-caracteristicas {
-    padding: 80px 5%;
-    background-color: var(--gris-fondo);
-}
-
-.cabecera-caracteristicas {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 60px;
-}
-
-.cabecera-caracteristicas h2 {
-    font-size: 2.4rem;
-    margin-bottom: 16px;
-    font-family: var(--font-titulo);
-}
-
-.texto-azul {
-    color: var(--azul-500);
-    font-family: var(--font-titulo);
-}
-
-.cabecera-caracteristicas p {
-    font-family: var(--font-descripcion);
-    color: var(--texto-secundario);
-    font-size: 1rem;
-}
-
-.grid-caracteristicas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-bottom: 40px;
-}
-
-.tarjeta-caracteristica {
-    background-color: var(--blanco-100);
-    padding: 32px 24px;
-    border-radius: 24px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-
-.icono-tarjeta {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-}
-
-.tarjeta-caracteristica p {
-    font-family: var(--font-descripcion);
-    font-size: 0.9rem;
-    color: var(--texto-secundario);
-    line-height: 1.6;
-}
-
 /* Footer */
 .pie-pagina {
     background-color: var(--blanco-100);
@@ -491,7 +436,7 @@ a {
 }
 
 @media (max-width: 900px) {
-    .cabecera-principal {
+    .header {
         flex-wrap: wrap;
         gap: 16px 24px;
     }
@@ -509,7 +454,7 @@ a {
 }
 
 @media (max-width: 600px) {
-    .cabecera-principal {
+    .header {
         padding: 12px 5%;
     }
 
@@ -521,15 +466,15 @@ a {
         padding: 8px 14px;
     }
 
-    .contenedor-principal {
+    .pagina {
         padding: 0 16px 32px;
     }
 
-    .contenedor-formulario {
+    .formulario-box {
         gap: 18px;
     }
 
-    .imagen-formulario {
+    .imagen-form {
         max-width: 260px;
     }
 

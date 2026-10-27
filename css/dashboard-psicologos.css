@@ -1,0 +1,123 @@
+.grid-graficos {
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+}
+
+.grafico {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: auto 0;
+    padding: 28px 0;
+}
+
+.fila-grafico {
+    display: grid;
+    grid-template-columns: minmax(110px, 1fr) minmax(80px, 2fr) 28px;
+    align-items: center;
+    gap: 12px;
+}
+
+.fila-grafico > span {
+    color: var(--texto-secundario);
+}
+
+.fila-grafico strong {
+    text-align: right;
+}
+
+.barra-fondo {
+    height: 16px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--fondo-sitio);
+}
+
+.barra-profesional {
+    height: 100%;
+    border-radius: inherit;
+}
+
+.barra-profesional.clara {
+    width: 96%;
+    background: var(--azul-500);
+}
+
+.barra-profesional.marcos {
+    width: 90%;
+    background: var(--morado-500);
+}
+
+.dona-psicologos {
+    width: 160px;
+    height: 160px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: conic-gradient(var(--azul-500) 0 93%, var(--borde) 93% 100%);
+}
+
+.dona-psicologos .centro-dona {
+    width: 110px;
+    height: 110px;
+}
+
+.tabla-muestra {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-muestra th {
+    padding: 0 10px 14px;
+    border-bottom: 2px solid var(--borde);
+    color: var(--texto-secundario);
+    font-family: var(--font-descripcion);
+    font-size: 0.85rem;
+}
+
+.tabla-muestra td {
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--fondo-sitio);
+}
+
+.tabla-muestra tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.form-cerrar {
+    margin-top: 16px;
+}
+
+.btn-cerrar {
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--negro-900);
+    background: var(--fondo-sitio);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.info-modal strong {
+    color: var(--negro-900);
+}
+
+@media (max-width: 800px) {
+    .grid-graficos {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-muestra {
+        min-width: 540px;
+    }
+}
+
+@media (max-width: 520px) {
+    .fila-grafico {
+        grid-template-columns: 1fr 2fr 24px;
+        gap: 8px;
+    }
+}

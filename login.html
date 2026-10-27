@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+  <title>Happy Mind - Iniciar Sesión</title>
+  
+  <!-- Iconos de la interfaz -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="marca-logo" aria-label="Happy Mind, inicio">
+      <img src="./imagenes/LogoHM-optimizado.jpg" alt="" class="brand-logo" width="42" height="42">
+      <span class="brand-name">Happy Mind</span>
+    </a>
+
+    <nav class="nav-central">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="psicologos.html">Psicólogos</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn-link" aria-current="page">Iniciar sesión</a>
+      <a href="registro.html" class="btn-orange-nav">Registrarse</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="login-card">
+      <div class="ilustracion">
+        <img src="./imagenes/HMfondo3-optimizado.jpg" alt="Sesión de acompañamiento psicológico" width="1024" height="341">
+      </div>
+
+      <div class="form-panel">
+        <h1>Bienvenido</h1>
+        <p class="subtitle">Un espacio seguro para tu crecimiento personal.</p>
+
+        <form action="#" method="POST">
+          
+          <div class="campo-login">
+            <label for="username">Usuario</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user icon-left"></i>
+              <input type="text" id="username" placeholder="tu_usuario" required>
+            </div>
+          </div>
+
+          <div class="campo-login">
+            <label for="password">Contraseña</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock icon-left"></i>
+              <input type="password" id="password" autocomplete="current-password" required>
+              <i class="fa-regular fa-eye icon-right"></i>
+            </div>
+          </div>
+
+          <div class="forgot-link">
+            <a href="mailto:happymindpro67@gmail.com?subject=Recuperar%20acceso">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn-login">
+            Iniciar sesión <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>Continúa con</span>
+        </div>
+
+        <div class="social-login">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn instagram" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn linkedin" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="social-btn google" title="Google">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" class="social-btn github" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <div class="register-text">
+          ¿No tienes una cuenta? <a href="registro.html">Crear una cuenta</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2026 Happy Mind. Claridad empática para el crecimiento mental.</div>
+    <div class="footer-links">
+      <span>Privacidad</span>
+      <span>Términos</span>
+      <a href="mailto:happymindpro67@gmail.com">Soporte</a>
+      <span>Accesibilidad</span>
+    </div>
+  </footer>
+
+</body>
+</html>

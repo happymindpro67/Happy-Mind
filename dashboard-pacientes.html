@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+  <title>Panel de Control - Happy Mind</title>
+  <link rel="stylesheet" href="./css/dashboard-pacientes.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <aside class="lateral">
+      <div class="logo">
+         <div class="logo-box">
+          <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+                </div>
+        <h1>Happy Mind</h1>
+        <span>Panel de Administración</span>
+      </div>
+
+      <nav class="menu-lateral">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li class="activo"><a href="dashboard-pacientes.html" aria-current="page">Panel de Control</a></li>
+          <li><a href="pacientes.html">Pacientes</a></li>
+        </ul>
+      </nav>
+
+      <div class="perfil-admin">
+        <div class="avatar admin-inferior">A</div>
+        <div class="info-usuario">
+          <span class="nombre">Admin</span>
+          <span class="rol">Administrador</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="principal">
+      <section class="encabezado">
+        <div>
+          <h2>Panel de Control</h2>
+          <p>Bienvenido de nuevo. Aquí tienes un resumen del estado de los pacientes en Happy Mind hoy.</p>
+        </div>
+      </section>
+
+      <section class="grid-metricas">
+        <div class="tarjeta-metrica">
+          <span class="etiqueta-metrica">Pacientes Activos</span>
+          <span class="desc-metrica">Pacientes en tratamiento activo</span>
+          <div class="valor-metrica">128</div>
+        </div>
+        <div class="tarjeta-metrica">
+          <span class="etiqueta-metrica azul">Total Registrados</span>
+          <span class="desc-metrica">Histórico global de pacientes</span>
+          <div class="valor-metrica">892</div>
+        </div>
+      </section>
+
+      <section class="grid-graficos">
+        <div class="tarjeta-grafico">
+          <div class="cabecera-grafico">
+            <h3>Pacientes atendidos por día</h3>
+            <span class="filtro-badge">Últimos 7 días</span>
+          </div>
+          <div class="barras">
+            <div class="columna-barra"><div class="barra barra-35"></div></div>
+            <div class="columna-barra"><div class="barra barra-55"></div></div>
+            <div class="columna-barra"><div class="barra barra-80"></div></div>
+            <div class="columna-barra"><div class="barra barra-45"></div></div>
+            <div class="columna-barra"><div class="barra barra-95 destacado"></div></div>
+            <div class="columna-barra"><div class="barra barra-30"></div></div>
+            <div class="columna-barra"><div class="barra barra-65"></div></div>
+          </div>
+        </div>
+
+        <div class="tarjeta-grafico">
+          <h3>Estado de los Pacientes</h3>
+          <div class="contenedor-dona">
+            <div class="grafico-dona">
+              <div class="centro-dona">
+                <span class="porcentaje">75%</span>
+                <span class="leyenda-dona">ACTIVOS</span>
+              </div>
+            </div>
+            <ul class="leyendas-lista">
+              <li><span class="dot azul"></span> Activos en Sesión (75%)</li>
+              <li><span class="dot naranja"></span> En Pausa / Inactivos (15%)</li>
+              <li><span class="dot morado"></span> De Alta Médica (10%)</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="seccion-tabla mt-20">
+        <div class="cabecera-grafico titulo-tabla">
+          <h3>Próximas consultas de pacientes</h3>
+          <a href="pacientes.html" class="ver-todas">Ver todos los pacientes &rarr;</a>
+        </div>
+
+        <div class="tabla-scroll">
+          <table class="tabla-citas">
+            <thead>
+              <tr>
+                <th>PACIENTE</th>
+                <th>PSICÓLOGO ASIGNADO</th>
+                <th>FECHA Y HORA</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="paciente-celda">
+                    <span class="avatar-tag azul">LP</span>
+                    <strong>Laura Sofía Pérez</strong>
+                  </div>
+                </td>
+                <td>Dra. Clara Soto</td>
+                <td>Hoy, 24 May - 09:00 AM</td>
+                <td><span class="estado confirmada">ACTIVO</span></td>
+                <td><a href="#ver-laura" class="accion ver">Ver</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="paciente-celda">
+                    <span class="avatar-tag morado">JM</span>
+                    <strong>Juan David Morales</strong>
+                  </div>
+                </td>
+                <td>Dr. Marcos Ruiz</td>
+                <td>Hoy, 24 May - 11:30 AM</td>
+                <td><span class="estado espera">INACTIVO</span></td>
+                <td><a href="#ver-juan" class="accion ver">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="ver-laura" class="modal">
+    <div class="caja-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-laura">
+      <a href="#" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+      <h3 id="titulo-laura">Detalles del Paciente</h3>
+      <div class="info-paciente">
+        <p><strong>ID:</strong> PAC-001</p>
+        <p><strong>Nombre:</strong> Laura Sofía Pérez</p>
+        <p><strong>Documento:</strong> CC 1.020.304.050</p>
+        <p><strong>Teléfono:</strong> 300 123 4567</p>
+        <p><strong>Correo:</strong> laura@email.com</p>
+        <p><strong>Psicólogo asignado:</strong> Dra. Clara Soto</p>
+        <p><strong>Estado:</strong> Activo</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="ver-juan" class="modal">
+    <div class="caja-modal" role="dialog" aria-modal="true" aria-labelledby="titulo-juan">
+      <a href="#" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+      <h3 id="titulo-juan">Detalles del Paciente</h3>
+      <div class="info-paciente">
+        <p><strong>ID:</strong> PAC-002</p>
+        <p><strong>Nombre:</strong> Juan David Morales</p>
+        <p><strong>Documento:</strong> CC 1.098.765.432</p>
+        <p><strong>Teléfono:</strong> 311 987 6543</p>
+        <p><strong>Correo:</strong> juan.morales@email.com</p>
+        <p><strong>Psicólogo asignado:</strong> Dr. Marcos Ruiz</p>
+        <p><strong>Estado:</strong> Inactivo</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

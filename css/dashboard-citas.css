@@ -88,7 +88,7 @@ h3 {
 }
 
 /* --- BARRA LATERAL  --- */
-.logo-placeholder img {
+.logo-box img {
     width: 100%;
     height: auto;
     max-height: 100%;
@@ -96,13 +96,13 @@ h3 {
     border-radius: 12px;
 }
 
-.ContenedorDb {
+.contenedor {
     display: flex;
     height: 100vh;
     overflow: hidden;
 }
 
-.barraIzq {
+.lateral {
     width: 260px;
     background-color: var(--blanco-100);
     border-right: 1px solid var(--borde);
@@ -116,7 +116,7 @@ h3 {
     margin-bottom: 40px;
 }
 
-.logo-placeholder {
+.logo-box {
     width: 50px;
     height: 50px;
     border-radius: 12px;
@@ -141,14 +141,14 @@ h3 {
     color: var(--texto-secundario);
 }
 
-.navegacionIzq ul {
+.menu-lateral ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.navegacionIzq a {
+.menu-lateral a {
     font-size: 1.1rem;
     color: var(--texto-secundario);
     padding: 12px 16px;
@@ -157,18 +157,18 @@ h3 {
     transition: all 0.2s;
 }
 
-.navegacionIzq a:hover {
+.menu-lateral a:hover {
     background-color: var(--azul-100);
     color: var(--azul-500);
 }
 
-.navegacionIzq .activo a {
+.menu-lateral .activo a {
     background-color: var(--azul2-500);
     color: var(--azul-500);
     font-weight: bold;
 }
 
-.perfilUsuario {
+.perfil-admin {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -177,7 +177,7 @@ h3 {
     border-top: 1px solid var(--borde);
 }
 
-.avatar-placeholder {
+.avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -211,36 +211,12 @@ h3 {
     overflow-y: auto;
 }
 
-.superior {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: var(--blanco-100);
-    padding: 16px 24px;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    margin-bottom: 24px;
-}
-
-.perfilAdm {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.infoAdm .tituloAdm {
-    font-family: var(--font-subtitulo);
-    color: var(--morado-500);
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 /* --- CONTENIDO DASHBOARD --- */
-.cuerpoDb {
+.contenido {
     display: flex;
 }
 
-.columna-central {
+.columna {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -276,11 +252,11 @@ h3 {
     margin-bottom: 12px;
 }
 
-.icono-pendientes {
+.pendiente {
     color: var(--naranja-texto);
 }
 
-.icono-realizadas {
+.realizada {
     color: var(--azul-500);
 }
 
@@ -332,7 +308,7 @@ h3 {
     color: var(--negro-900);
 }
 
-.contenedor-grafico-barras {
+.grafico-barras {
     height: 200px;
     display: flex;
     align-items: stretch;
@@ -398,7 +374,7 @@ h3 {
     line-height: 1;
 }
 
-.subtitulo-grafico {
+.subtitulo {
     margin-top: 12px;
     color: var(--texto-secundario);
     font-family: var(--font-descripcion);
@@ -469,7 +445,7 @@ h3 {
     background-color: var(--morado-500);
 }
 
-.contenedor-tabla {
+.tabla-scroll {
     overflow-x: auto;
 }
 
@@ -488,7 +464,7 @@ h3 {
     margin-bottom: 16px;
 }
 
-.enlace-ver-todas {
+.ver-todas {
     font-family: var(--font-regular);
     color: var(--azul-500);
     font-weight: bold;
@@ -528,7 +504,7 @@ h3 {
     font-weight: bold;
 }
 
-.etiqueta-estado {
+.estado {
     font-family: var(--font-descripcion);
     font-size: 0.75rem;
     padding: 6px 16px;
@@ -599,7 +575,7 @@ h3 {
     display: flex;
 }
 
-.modal-contenido {
+.caja-modal {
     background: var(--blanco-100);
     width: 90%;
     max-width: 450px;
@@ -609,7 +585,7 @@ h3 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.modal-contenido h3 {
+.caja-modal h3 {
     font-family: var(--font-subtitulo);
     margin-bottom: 20px;
     color: var(--negro-900);
@@ -632,13 +608,7 @@ h3 {
     font-family: var(--font-regular);
 }
 
-.grupo-acciones-modal {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-}
-
-.separador-modal {
+.separador {
     border: 0;
     border-top: 1px solid var(--borde);
     margin: 10px 0;
@@ -706,14 +676,14 @@ h3 {
 }
 
 @media (max-width: 800px) {
-    .ContenedorDb {
+    .contenedor {
         height: auto;
         min-height: 100vh;
         overflow: visible;
         flex-direction: column;
     }
 
-    .barraIzq {
+    .lateral {
         width: 100%;
         flex: none;
         padding: 16px 20px;
@@ -725,13 +695,13 @@ h3 {
         margin-bottom: 16px;
     }
 
-    .navegacionIzq ul {
+    .menu-lateral ul {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .perfilUsuario {
+    .perfil-admin {
         margin-top: 16px;
         padding-top: 12px;
     }
@@ -742,14 +712,9 @@ h3 {
         padding: 20px;
     }
 
-    .cuerpoDb, .columna-central {
+    .contenido, .columna {
         min-width: 0;
         width: 100%;
-    }
-
-    .superior {
-        flex-wrap: wrap;
-        gap: 12px;
     }
 
     .cabecera-grafico {
@@ -757,7 +722,7 @@ h3 {
         gap: 8px;
     }
 
-    .modal-contenido {
+    .caja-modal {
         max-height: calc(100vh - 32px);
         overflow-y: auto;
     }
@@ -766,10 +731,6 @@ h3 {
 @media (max-width: 520px) {
     .principal {
         padding: 16px 12px;
-    }
-
-    .superior {
-        padding: 14px;
     }
 
     .seccion-tabla {
@@ -784,11 +745,12 @@ h3 {
         gap: 16px;
     }
 
-    .contenedor-grafico-barras {
+    .grafico-barras {
         gap: 6px;
     }
 
-    .modal-contenido {
+    .caja-modal {
         padding: 20px;
     }
+
 }

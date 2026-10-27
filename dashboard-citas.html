@@ -6,31 +6,31 @@
     <title>Happy Mind - Panel de Administración</title>
     <meta name="description" content="Consulta el resumen de citas, métricas y actividad reciente de Happy Mind.">
     <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
-    <link rel="stylesheet" href="./css/panelcontrol.css" />
+    <link rel="stylesheet" href="./css/dashboard-citas.css">
 </head>
 
 <body>
-    <div class="ContenedorDb">
+    <div class="contenedor">
         <!-- BARRA LATERAL -->
-        <aside class="barraIzq">
+        <aside class="lateral">
             <div class="logo">
-                <div class="logo-placeholder">
+                <div class="logo-box">
                     <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
                 </div>
                 <h1>Happy Mind</h1>
                 <span>Panel de Administración</span>
             </div>
 
-            <nav class="navegacionIzq">
+            <nav class="menu-lateral">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li class="activo"><a href="panelcontrol.html">Panel de Control</a></li>
+                    <li class="activo"><a href="#panel-principal">Panel Principal</a></li>
                     <li><a href="citas.html">Citas</a></li>
                 </ul>
             </nav>
 
-            <div class="perfilUsuario">
-                <div class="avatar-placeholder">A</div>
+            <div class="perfil-admin">
+                <div class="avatar">A</div>
                 <div class="info-usuario">
                     <span class="nombre">Admin</span>
                     <span class="rol">Administrador</span>
@@ -40,33 +40,23 @@
 
         <!-- ÁREA PRINCIPAL -->
         <main class="principal">
-            <!-- CABECERA SUPERIOR UNIFICADA -->
-            <header class="superior">
-                <div class="perfilAdm">
-                    <div class="infoAdm">
-                        <span class="tituloAdm">Administrador</span>
-                    </div>
-                    <div class="avatar-placeholder admin">A</div>
-                </div>
-            </header>
-
-            <div class="cuerpoDb">
-                <section class="columna-central">
+            <div class="contenido">
+                <section id="panel-principal" class="columna">
                     <div class="bienvenida">
-                        <h2>Panel de Control</h2>
+                        <h2>Panel Principal</h2>
                         <p>Bienvenido de nuevo. Aquí tienes un resumen del estado de Happy Mind hoy.</p>
                     </div>
 
                     <!-- TARJETAS DE MÉTRICAS -->
                     <div class="grid-metricas">
                         <article class="tarjeta-metrica">
-                            <span class="icono icono-pendientes">Citas Pendientes</span>
+                            <span class="icono pendiente">Citas Pendientes</span>
                             <h3>Citas por atender hoy</h3>
-                            <p class="valor">24</p>
+                            <p class="valor">1</p>
                         </article>
 
                         <article class="tarjeta-metrica">
-                            <span class="icono icono-realizadas">Citas Realizadas</span>
+                            <span class="icono realizada">Citas Realizadas</span>
                             <h3>Historial de citas exitosas</h3>
                             <p class="valor">892</p>
                         </article>
@@ -79,7 +69,7 @@
                                 <h3>Citas por día</h3>
                                 <button class="btn-filtro">Últimos 7 días</button>
                             </header>
-                            <div class="contenedor-grafico-barras">
+                            <div class="grafico-barras">
                                 <div class="grupo-barra">
                                     <div class="barra barra-30"></div>
                                     <span class="etiqueta-dia">Lun</span>
@@ -109,7 +99,7 @@
                                     <span class="etiqueta-dia">Dom</span>
                                 </div>
                             </div>
-                            <p class="subtitulo-grafico">Actividad de citas durante la semana</p>
+                            <p class="subtitulo">Actividad de citas durante la semana</p>
                         </article>
 
                         <article class="tarjeta-grafico">
@@ -127,7 +117,7 @@
                                     <li><span class="punto bg-morado"></span>Ausentes (15%)</li>
                                 </ul>
                             </div>
-                            <p class="subtitulo-grafico">Distribución de citas del día</p>
+                            <p class="subtitulo">Distribución de citas del día</p>
                         </article>
                     </div>
 
@@ -135,9 +125,9 @@
                     <section class="seccion-tabla">
                         <header class="cabecera-tabla">
                             <h3>Próximas citas del día</h3>
-                            <a href="citas.html" class="enlace-ver-todas">Ver todas &rarr;</a>
+                            <a href="citas.html" class="ver-todas">Ver todas &rarr;</a>
                         </header>
-                        <div class="contenedor-tabla">
+                        <div class="tabla-scroll">
                             <table class="tabla-citas">
                                 <thead>
                                     <tr>
@@ -153,7 +143,7 @@
                                         <td><span class="iniciales">RM</span> Ricardo Mendoza</td>
                                         <td>Dra. Clara Soto</td>
                                         <td>Hoy, 24 May - 09:00 AM</td>
-                                        <td><span class="etiqueta-estado confirmada">CONFIRMADA</span></td>
+                                        <td><span class="estado confirmada">CONFIRMADA</span></td>
                                         <td>
                                             <div class="grupo-acciones">
                                                 <a href="#modal-ver" class="btn-accion ver">Ver</a>
@@ -164,7 +154,7 @@
                                         <td><span class="iniciales">EL</span> Elena Luna</td>
                                         <td>Dr. Marcos Ruiz</td>
                                         <td>Hoy, 24 May - 11:30 AM</td>
-                                        <td><span class="etiqueta-estado espera">EN ESPERA</span></td>
+                                        <td><span class="estado espera">EN ESPERA</span></td>
                                         <td>
                                             <div class="grupo-acciones">
                                                 <a href="#modal-ver-2" class="btn-accion ver">Ver</a>
@@ -176,24 +166,25 @@
                         </div>
                     </section>
                 </section>
+
             </div>
         </main>
     </div>
 
     <!-- ==================== MODALES ==================== -->
     <div id="modal-ver" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #001</h3>
             <div class="info-modal">
                 <p><strong>Paciente:</strong> Ricardo Mendoza (ID: 1098765432)</p>
                 <p><strong>Historial:</strong> Paciente recurrente (5 sesiones previas)</p>
 
-                <hr class="separador-modal">
+                <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dra. Clara Soto (Especialidad: Ansiedad)</p>
                 <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 09:00 AM</p>
-                <p><strong>Estado:</strong> <span class="etiqueta-estado confirmada">Confirmada</span></p>
+                <p><strong>Estado:</strong> <span class="estado confirmada">Confirmada</span></p>
 
                 <div class="nota-clinica">
                     <p><strong>Nota Clínica Previa:</strong> El paciente reportó mejoría en los ejercicios de respiración. Revisar avances en la bitácora.</p>
@@ -204,18 +195,18 @@
     </div>
 
     <div id="modal-ver-2" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #002</h3>
             <div class="info-modal">
                 <p><strong>Paciente:</strong> Elena Luna (ID: 1056342890)</p>
                 <p><strong>Historial:</strong> Paciente de primer ingreso</p>
 
-                <hr class="separador-modal">
+                <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dr. Marcos Ruiz (Especialidad: Terapia de Pareja)</p>
                 <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 11:30 AM</p>
-                <p><strong>Estado:</strong> <span class="etiqueta-estado espera">Pendiente</span></p>
+                <p><strong>Estado:</strong> <span class="estado espera">Pendiente</span></p>
 
                 <div class="nota-admin">
                     <p><strong>Nota Administrativa:</strong> Solicitar llenado de formulario de consentimiento informado antes de ingresar al consultorio.</p>

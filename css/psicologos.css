@@ -1,0 +1,116 @@
+.encabezado {
+    margin-bottom: 0;
+}
+
+.tabla-profesionales {
+    width: 100%;
+    min-width: 1180px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-profesionales th {
+    padding: 0 10px 14px;
+    border-bottom: 2px solid var(--borde);
+    color: var(--texto-secundario);
+    font-family: var(--font-descripcion);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.tabla-profesionales td {
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--fondo-sitio);
+    vertical-align: middle;
+}
+
+.tabla-profesionales tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.tabla-profesionales td strong {
+    font-family: var(--font-descripcion);
+}
+
+.tabla-profesionales .grupo-acciones {
+    flex-wrap: nowrap;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.tabla-profesionales .btn-accion {
+    padding: 5px 8px;
+    font-size: 0.82rem;
+}
+
+.btn-primario {
+    display: inline-block;
+    background: var(--azul-500);
+    color: var(--blanco-100);
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 8px;
+    font-family: var(--font-regular);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-secundario {
+    display: inline-block;
+    background: var(--fondo-sitio);
+    color: var(--negro-900);
+    padding: 10px 20px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal-pequeno {
+    max-width: 400px;
+}
+
+.formulario-modal .campo {
+    margin-bottom: 16px;
+}
+
+.formulario-modal label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--negro-900);
+    font-family: var(--font-descripcion);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.formulario-modal input,
+.formulario-modal select,
+.formulario-modal textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--fondo-sitio);
+    font-family: var(--font-regular);
+    font-size: 1.1rem;
+}
+
+.info-modal strong {
+    color: var(--negro-900);
+}
+
+@media (max-width: 640px) {
+    .cabecera-tabla {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cabecera-tabla .btn-primario {
+        width: 100%;
+    }
+
+    .acciones-modal {
+        flex-wrap: wrap;
+    }
+}

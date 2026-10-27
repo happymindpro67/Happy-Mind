@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+  <title>Gestión de Pacientes - Happy Mind</title>
+
+  <link rel="stylesheet" href="./css/pacientes.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <aside class="lateral">
+      <div class="logo">
+        <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" class="logo-imagen">
+        <h1>Happy Mind</h1>
+        <span>Panel de Administración</span>
+      </div>
+
+      <nav class="menu-lateral">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="dashboard-pacientes.html">Panel de Control</a></li>
+          <li class="activo"><a href="pacientes.html">Pacientes</a></li>
+        </ul>
+      </nav>
+
+      <div class="perfil-admin">
+        <div class="avatar admin-inferior">A</div>
+        <div class="info-usuario">
+          <span class="nombre">Admin</span>
+          <span class="rol">Administrador</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="principal">
+      <section class="encabezado">
+        <div>
+          <h2>Gestión de Pacientes</h2>
+          <p>Consulta, programa y administra la información de los pacientes.</p>
+        </div>
+        <a href="#modal-registrar-paciente" class="btn-primario">+ Nuevo Paciente</a>
+      </section>
+
+      <section class="seccion-tabla">
+        <div class="tabla-scroll">
+          <table class="tabla-citas">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>PACIENTE</th>
+                <th>DOCUMENTO</th>
+                <th>TELÉFONO / CORREO</th>
+                <th>PSICÓLOGO ASIGNADO</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="id-cita">#001</td>
+                <td><strong>Laura Sofía Pérez</strong></td>
+                <td>CC 1.020.304.050</td>
+                <td>300 123 4567<br><small class="text-sec">laura@email.com</small></td>
+                <td>Dra. Clara Soto</td>
+                <td><span class="estado confirmada">ACTIVO</span></td>
+                <td>
+                  <div class="grupo-acciones">
+                    <a href="#modal-ver-paciente" class="accion ver">Ver</a>
+                    <a href="#modal-editar-paciente" class="accion editar">Editar</a>
+                    <a href="#modal-registrar-avance" class="accion notificar">Avance</a>
+                    <a href="#modal-historial-avances" class="accion historial">Historial</a>
+                    <a href="#modal-eliminar-paciente" class="accion eliminar">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="id-cita">#002</td>
+                <td><strong>Juan David Morales</strong></td>
+                <td>CC 1.098.765.432</td>
+                <td>311 987 6543<br><small class="text-sec">juan.morales@email.com</small></td>
+                <td>Dr. Marcos Ruiz</td>
+                <td><span class="estado espera">INACTIVO</span></td>
+                <td>
+                  <div class="grupo-acciones">
+                    <a href="#modal-ver-paciente" class="accion ver">Ver</a>
+                    <a href="#modal-editar-paciente" class="accion editar">Editar</a>
+                    <a href="#modal-registrar-avance" class="accion notificar">Avance</a>
+                    <a href="#modal-historial-avances" class="accion historial">Historial</a>
+                    <a href="#modal-eliminar-paciente" class="accion eliminar">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="modal-registrar-paciente" class="modal">
+    <div class="caja-modal">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Registrar Nuevo Paciente</h3>
+      <form class="formulario-modal" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Nombres</label>
+            <input type="text" placeholder="Ej: Ana María" required>
+          </div>
+          <div class="campo">
+            <label>Apellidos</label>
+            <input type="text" placeholder="Ej: Restrepo Gómez" required>
+          </div>
+        </div>
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Tipo Documento</label>
+            <select required>
+              <option value="CC">Cédula de Ciudadanía</option>
+              <option value="TI">Tarjeta de Identidad</option>
+              <option value="CE">Cédula de Extranjería</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label>Número Documento</label>
+            <input type="text" placeholder="1020304050" required>
+          </div>
+        </div>
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="3001234567" required>
+          </div>
+          <div class="campo">
+            <label>Fecha de Nacimiento</label>
+            <input type="date" required>
+          </div>
+        </div>
+        <div class="campo">
+          <label>Correo Electrónico</label>
+          <input type="email" placeholder="correo@ejemplo.com" required>
+        </div>
+        <div class="campo">
+          <label>Psicólogo Asignado</label>
+          <select required>
+            <option value="">Seleccione un Psicólogo</option>
+            <option value="1">Dra. Clara Soto</option>
+            <option value="2">Dr. Marcos Ruiz</option>
+          </select>
+        </div>
+        <div class="acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Guardar Paciente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-ver-paciente" class="modal">
+    <div class="caja-modal">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Detalles del Paciente</h3>
+      <div class="info-modal">
+        <p><strong>ID:</strong> PAC-001</p>
+        <p><strong>Nombre:</strong> Laura Sofía Pérez</p>
+        <p><strong>Documento:</strong> CC 1.020.304.050</p>
+        <p><strong>Teléfono:</strong> 300 123 4567</p>
+        <p><strong>Correo:</strong> laura@email.com</p>
+        <p><strong>Psicólogo Asignado:</strong> Dra. Clara Soto</p>
+        <p><strong>Estado:</strong> <span class="estado confirmada">Activo</span></p>
+      </div>
+      <div class="acciones-modal mt-10">
+        <a href="#" class="btn-secundario">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-editar-paciente" class="modal">
+    <div class="caja-modal">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Actualizar Información del Paciente</h3>
+      <form class="formulario-modal" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Nombres</label>
+            <input type="text" value="Laura Sofía" required>
+          </div>
+          <div class="campo">
+            <label>Apellidos</label>
+            <input type="text" value="Pérez" required>
+          </div>
+        </div>
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Teléfono</label>
+            <input type="tel" value="3001234567" required>
+          </div>
+          <div class="campo">
+            <label>Estado</label>
+            <select>
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+        <div class="campo">
+          <label>Correo Electrónico</label>
+          <input type="email" value="laura@email.com" required>
+        </div>
+        <div class="acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Actualizar Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-eliminar-paciente" class="modal">
+    <div class="caja-modal modal-pequeno text-center">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3 class="titulo-eliminar">¿Eliminar Paciente?</h3>
+      <p class="texto-eliminar">
+        Esta acción eliminará la información del paciente y no se podrá deshacer.
+      </p>
+      <div class="acciones-modal centrar">
+        <a href="#" class="btn-secundario">Cancelar</a>
+        <button type="submit" class="btn-eliminar">Sí, Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-registrar-avance" class="modal">
+    <div class="caja-modal">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Registrar Avance de Tratamiento</h3>
+      <p class="sub-modal">Paciente: <strong>Laura Sofía Pérez</strong></p>
+      
+      <form class="formulario-modal mt-10" action="#" method="POST">
+        <div class="grid-2-col">
+          <div class="campo">
+            <label>Fecha de Sesión</label>
+            <input type="date" required>
+          </div>
+          <div class="campo">
+            <label>N° de Sesión</label>
+            <input type="number" min="1" placeholder="Ej: 3" required>
+          </div>
+        </div>
+        <div class="campo">
+          <label>Objetivo de la Sesión</label>
+          <input type="text" placeholder="Ej: Manejo de técnicas de respiración" required>
+        </div>
+        <div class="campo">
+          <label>Evolución / Observaciones del Avance</label>
+          <textarea rows="4" placeholder="Describa los avances presentados por el paciente..." required></textarea>
+        </div>
+        <div class="campo">
+          <label>Nivel de Avance Estimado</label>
+          <select required>
+            <option value="inicial">Inicial / Bajo</option>
+            <option value="en_proceso" selected>En Proceso / Medio</option>
+            <option value="satisfactorio">Satisfactorio / Alto</option>
+          </select>
+        </div>
+        <div class="acciones-modal">
+          <a href="#" class="btn-secundario">Cancelar</a>
+          <button type="submit" class="btn-primario">Guardar Avance</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-historial-avances" class="modal">
+    <div class="caja-modal modal-ancho">
+      <a href="#" class="cerrar-modal">&times;</a>
+      <h3>Historial de Avances Clínicos</h3>
+      <p class="sub-modal">Paciente: <strong>Laura Sofía Pérez</strong> (CC 1.020.304.050)</p>
+
+      <div class="lista-historial mt-10">
+        <div class="tarjeta-avance">
+          <div class="titulo-avance">
+            <span class="sesion-tag">Sesión #2</span>
+            <span class="fecha-avance">10 de Octubre, 2026</span>
+          </div>
+          <p class="objetivo"><strong>Objetivo:</strong> Identificación de disparadores de ansiedad.</p>
+          <p class="desc-avance">La paciente logró reconocer situaciones estresantes en el ámbito laboral y aplicó la técnica de reestructuración cognitiva.</p>
+          <span class="estado confirmada">Avance Medio</span>
+        </div>
+
+        <div class="tarjeta-avance">
+          <div class="titulo-avance">
+            <span class="sesion-tag">Sesión #1</span>
+            <span class="fecha-avance">28 de Septiembre, 2026</span>
+          </div>
+          <p class="objetivo"><strong>Objetivo:</strong> Evaluación inicial y establecimiento de rapport.</p>
+          <p class="desc-avance">Se realizó entrevista inicial. Paciente presenta síntomas leves de insomnio y ansiedad generalizada.</p>
+          <span class="estado espera">Avance Inicial</span>
+        </div>
+      </div>
+
+      <div class="acciones-modal mt-10">
+        <a href="#" class="btn-secundario">Cerrar Historial</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

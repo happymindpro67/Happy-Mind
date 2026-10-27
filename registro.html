@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/registro.css">
 </head>
 <body>
-    <header class="cabecera-principal">
+    <header class="header">
         <div class="logo">
             <span class="logo-icono"><img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
             <span class="logo-texto">Happy Mind</span>
@@ -18,27 +18,27 @@
         <nav class="navegacion">
             <ul>
                 <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="panelcontrol.html">Citas</a></li>
-                <li><a href="#">Psicólogos</a></li>
-                <li><a href="#">Pacientes</a></li>
+                <li><a href="citas.html">Citas</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li>
+                <li><a href="dashboard-pacientes.html">Pacientes</a></li>
             </ul>
         </nav>
 
         <div class="acciones-auth">
-            <a href="#" class="enlace-login">Iniciar sesión</a>
+            <a href="login.html" class="enlace-login">Iniciar sesión</a>
             <a href="registro.html" class="btn-naranja">Registrarse</a>
         </div>
     </header>
 
-    <main class="contenedor-principal">
-        <div class="contenedor-formulario">
+    <main class="pagina">
+        <div class="formulario-box">
             
             <!-- Contenedor central para la imagen -->
-            <div class="contenedor-imagen">
-                <img src="./imagenes/HMfondo-registro-optimizado.jpg" alt="Meditación Happy Mind" class="imagen-formulario" width="480" height="264">
+            <div class="imagen-box">
+                <img src="./imagenes/HMfondo-registro-optimizado.jpg" alt="Meditación Happy Mind" class="imagen-form" width="480" height="264">
             </div>
 
-            <div class="textos-cabecera">
+            <div class="textos-header">
                 <h2>Crear cuenta</h2>
                 <p>Registra tus datos para comenzar tu proceso de acompañamiento psicológico.</p>
             </div>
@@ -105,7 +105,7 @@
 
                 <div class="grupo-campo">
                     <label for="pass">Contraseña</label>
-                    <div class="input-con-icono">
+                    <div class="input-campo">
                         <!-- Checkbox que controla la visualización de la contraseña. -->
                         <input type="checkbox" id="toggle-pass" class="checkbox-ojito">
                         <!-- El estilo de texto se alterna mediante CSS. -->
@@ -114,7 +114,7 @@
                         <label for="toggle-pass" class="icono-ojo">&#128065;</label>
                     </div>
                     <!-- Indicador visual estático para este prototipo. -->
-                    <div class="medidor-password">
+                    <div class="medidor">
                         <div class="barra-progreso media"></div>
                         <span class="etiqueta-nivel">Media</span>
                     </div>
@@ -122,14 +122,14 @@
 
                 <div class="grupo-campo">
                     <label for="pass_conf">Confirmar contraseña</label>
-                    <div class="input-con-icono">
+                    <div class="input-campo">
                         <input type="checkbox" id="toggle-pass-conf" class="checkbox-ojito">
                         <input type="text" id="pass_conf" class="input-pass" placeholder="Confirmar contraseña" required>
                         <label for="toggle-pass-conf" class="icono-ojo">&#128065;</label>
                     </div>
                 </div>
 
-                <div class="grupo-checkbox">
+                <div class="checks">
                     <input type="checkbox" id="terminos" required>
                     <label for="terminos">
                         Acepto términos y condiciones y el tratamiento de mis datos personales según la política de privacidad.
@@ -138,7 +138,7 @@
 
                 <div class="grupo-botones">
                     <button type="submit" class="btn-primario">Crear cuenta</button>
-                    <a href="#" class="btn-secundario">Volver al inicio de sesión</a>
+                    <a href="login.html" class="btn-secundario">Volver al inicio de sesión</a>
                 </div>
 
             </form>

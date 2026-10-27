@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mind - Psicólogos</title>
+    <meta name="description" content="Directorio y administración de psicólogos de Happy Mind.">
+    <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+    <link rel="stylesheet" href="./css/dashboard-citas.css">
+    <link rel="stylesheet" href="./css/psicologos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="lateral">
+            <div class="logo">
+                <div class="logo-box">
+                    <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+                </div>
+                <h1>Happy Mind</h1>
+                <span>Panel de Administración</span>
+            </div>
+            <nav class="menu-lateral">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="dashboard-psicologos.html">Panel de control</a></li>
+                    <li class="activo"><a href="psicologos.html" aria-current="page">Psicólogos</a></li>
+                </ul>
+            </nav>
+            <div class="perfil-admin">
+                <div class="avatar">A</div>
+                <div class="info-usuario">
+                    <span class="nombre">Admin</span>
+                    <span class="rol">Administrador</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="principal">
+            <div class="contenido">
+                <section id="directorio" class="columna">
+                    <header class="encabezado">
+                        <h2>Psicólogos</h2>
+                    </header>
+
+                    <section class="seccion-tabla">
+                        <header class="cabecera-tabla">
+                            <h3>Directorio de profesionales</h3>
+                            <a href="#registrar" class="btn-primario">+ Nuevo Psicólogo</a>
+                        </header>
+                        <div class="tabla-scroll">
+                            <table class="tabla-profesionales">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">PSICÓLOGO</th>
+                                        <th scope="col">ESPECIALIDAD</th>
+                                        <th scope="col">PACIENTE ASIGNADO</th>
+                                        <th scope="col">ACCIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Dra. Clara Soto</strong></td>
+                                        <td>Ansiedad</td>
+                                        <td>Ricardo Mendoza</td>
+                                        <td>
+                                            <div class="grupo-acciones">
+                                                <a href="#ver-clara" class="btn-accion ver">Ver</a>
+                                                <a href="#editar-clara" class="btn-accion editar">Editar</a>
+                                                <a href="#eliminar-clara" class="btn-accion eliminar">Eliminar</a>
+                                                <a href="#horario-clara" class="btn-accion editar">Horario</a>
+                                                <a href="#calificaciones-clara" class="btn-accion ver">Calificaciones</a>
+                                                <a href="#calificar-clara" class="btn-accion editar">Calificar</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dr. Marcos Ruiz</strong></td>
+                                        <td>Terapia de Pareja</td>
+                                        <td>Elena Luna</td>
+                                        <td>
+                                            <div class="grupo-acciones">
+                                                <a href="#ver-marcos" class="btn-accion ver">Ver</a>
+                                                <a href="#editar-marcos" class="btn-accion editar">Editar</a>
+                                                <a href="#eliminar-marcos" class="btn-accion eliminar">Eliminar</a>
+                                                <a href="#horario-marcos" class="btn-accion editar">Horario</a>
+                                                <a href="#calificaciones-marcos" class="btn-accion ver">Calificaciones</a>
+                                                <a href="#calificar-marcos" class="btn-accion editar">Calificar</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="registrar" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Registrar psicólogo</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="nuevo-nombre">Nombre completo</label><input id="nuevo-nombre" type="text" required></div>
+                <div class="campo"><label for="nueva-especialidad">Especialidad</label><input id="nueva-especialidad" type="text" required></div>
+                <div class="campo"><label for="nuevo-correo">Correo electrónico</label><input id="nuevo-correo" type="email" required></div>
+                <div class="campo"><label for="nuevo-telefono">Teléfono</label><input id="nuevo-telefono" type="tel" required></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Registrar profesional</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ver-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil de la Dra. Clara Soto</h3>
+            <div class="info-modal">
+                <p><strong>Especialidad:</strong> Ansiedad</p>
+                <p><strong>Paciente asignado en citas:</strong> Ricardo Mendoza</p>
+                <p><strong>Horario de ejemplo:</strong> Lunes, miércoles y sábado, de 09:00 a 13:00.</p>
+                <p><strong>Calificación promedio de ejemplo:</strong> 4.8 / 5</p>
+                <p><strong>Estado:</strong> Activa</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ver-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil del Dr. Marcos Ruiz</h3>
+            <div class="info-modal">
+                <p><strong>Especialidad:</strong> Terapia de Pareja</p>
+                <p><strong>Paciente asignado en citas:</strong> Elena Luna</p>
+                <p><strong>Horario de ejemplo:</strong> Martes, jueves y sábado, de 10:00 a 14:00.</p>
+                <p><strong>Calificación promedio de ejemplo:</strong> 4.5 / 5</p>
+                <p><strong>Estado:</strong> Activo</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="editar-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Actualizar a la Dra. Clara Soto</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="editar-nombre-clara">Nombre completo</label><input id="editar-nombre-clara" type="text" value="Dra. Clara Soto" required></div>
+                <div class="campo"><label for="editar-especialidad-clara">Especialidad</label><input id="editar-especialidad-clara" type="text" value="Ansiedad" required></div>
+                <div class="campo"><label for="editar-correo-clara">Correo electrónico</label><input id="editar-correo-clara" type="email"></div>
+                <div class="campo"><label for="editar-telefono-clara">Teléfono</label><input id="editar-telefono-clara" type="tel"></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editar-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Actualizar al Dr. Marcos Ruiz</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="editar-nombre-marcos">Nombre completo</label><input id="editar-nombre-marcos" type="text" value="Dr. Marcos Ruiz" required></div>
+                <div class="campo"><label for="editar-especialidad-marcos">Especialidad</label><input id="editar-especialidad-marcos" type="text" value="Terapia de Pareja" required></div>
+                <div class="campo"><label for="editar-correo-marcos">Correo electrónico</label><input id="editar-correo-marcos" type="email"></div>
+                <div class="campo"><label for="editar-telefono-marcos">Teléfono</label><input id="editar-telefono-marcos" type="tel"></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="horario-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Horario de la Dra. Clara Soto</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="dias-clara">Días de atención</label><input id="dias-clara" type="text" value="Lunes, miércoles y sábado" required></div>
+                <div class="campo"><label for="inicio-clara">Hora de inicio</label><input id="inicio-clara" type="time" value="09:00" required></div>
+                <div class="campo"><label for="fin-clara">Hora de fin</label><input id="fin-clara" type="time" value="13:00" required></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar horario</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="horario-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Horario del Dr. Marcos Ruiz</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="dias-marcos">Días de atención</label><input id="dias-marcos" type="text" value="Martes, jueves y sábado" required></div>
+                <div class="campo"><label for="inicio-marcos">Hora de inicio</label><input id="inicio-marcos" type="time" value="10:00" required></div>
+                <div class="campo"><label for="fin-marcos">Hora de fin</label><input id="fin-marcos" type="time" value="14:00" required></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar horario</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="calificaciones-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Calificaciones de la Dra. Clara Soto</h3>
+            <div class="info-modal">
+                <p><strong>Promedio de ejemplo:</strong> 4.8 / 5</p>
+                <p><strong>Paciente vinculado en citas:</strong> Ricardo Mendoza</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="calificaciones-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Calificaciones del Dr. Marcos Ruiz</h3>
+            <div class="info-modal">
+                <p><strong>Promedio de ejemplo:</strong> 4.5 / 5</p>
+                <p><strong>Paciente vinculado en citas:</strong> Elena Luna</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="calificar-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Registrar calificación para la Dra. Clara Soto</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="paciente-clara">Paciente asignado</label><select id="paciente-clara" required><option selected>Ricardo Mendoza</option></select></div>
+                <div class="campo"><label for="calificacion-clara">Calificación (1 a 5)</label><input id="calificacion-clara" type="number" min="1" max="5" step="0.1" required></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar calificación</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="calificar-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Registrar calificación para el Dr. Marcos Ruiz</h3>
+            <form action="#" class="formulario-modal">
+                <div class="campo"><label for="paciente-marcos">Paciente asignado</label><select id="paciente-marcos" required><option selected>Elena Luna</option></select></div>
+                <div class="campo"><label for="calificacion-marcos">Calificación (1 a 5)</label><input id="calificacion-marcos" type="number" min="1" max="5" step="0.1" required></div>
+                <button type="submit" class="btn-primario ancho-completo mt-10">Guardar calificación</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="eliminar-clara" class="modal">
+        <div class="caja-modal modal-pequeno">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>¿Eliminar a la Dra. Clara Soto?</h3>
+            <p>Ricardo Mendoza tiene una cita asignada con esta profesional. Reasigna la cita antes de eliminar el perfil.</p>
+            <div class="acciones-modal">
+                <a href="#directorio" class="btn-secundario">Cancelar</a>
+                <a href="#directorio" class="btn-eliminar">Eliminar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="eliminar-marcos" class="modal">
+        <div class="caja-modal modal-pequeno">
+            <a href="#directorio" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>¿Eliminar al Dr. Marcos Ruiz?</h3>
+            <p>Elena Luna tiene una cita asignada con este profesional. Reasigna la cita antes de eliminar el perfil.</p>
+            <div class="acciones-modal">
+                <a href="#directorio" class="btn-secundario">Cancelar</a>
+                <a href="#directorio" class="btn-eliminar">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

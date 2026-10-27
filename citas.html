@@ -9,27 +9,27 @@
     <link rel="stylesheet" href="./css/citas.css">
 </head>
 <body>
-    <div class="ContenedorDb">
+    <div class="contenedor">
         <!-- BARRA LATERAL UNIFICADA -->
-        <aside class="barraIzq">
+        <aside class="lateral">
             <div class="logo">
-                <div class="logo-placeholder">
+                <div class="logo-box">
                     <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
                 </div>
                 <h1>Happy Mind</h1>
                 <span>Panel de Administración</span>
             </div>
 
-            <nav class="navegacionIzq">
+            <nav class="menu-lateral">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="panelcontrol.html">Panel de Control</a></li>
+                    <li><a href="dashboard-citas.html">Panel Principal</a></li>
                     <li class="activo"><a href="citas.html">Citas</a></li>
                 </ul>
             </nav>
 
-            <div class="perfilUsuario">
-                <div class="avatar-placeholder">A</div>
+            <div class="perfil-admin">
+                <div class="avatar">A</div>
                 <div class="info-usuario">
                     <span class="nombre">Admin</span>
                     <span class="rol">Administrador</span>
@@ -39,19 +39,9 @@
 
         <!-- ÁREA PRINCIPAL -->
         <main class="principal">
-            <!-- CABECERA SUPERIOR UNIFICADA -->
-            <header class="superior">
-                <div class="perfilAdm">
-                    <div class="infoAdm">
-                        <span class="tituloAdm">Administrador</span>
-                    </div>
-                    <div class="avatar-placeholder admin">A</div>
-                </div>
-            </header>
-
-            <div class="cuerpoDb">
-                <section class="columna-central">
-                    <div class="cabecera-modulo">
+            <div class="contenido">
+                <section class="columna">
+                    <div class="encabezado">
                         <div>
                             <h2>Gestión de Citas</h2>
                             <p>Consulta, programa y administra las citas del centro.</p>
@@ -61,15 +51,6 @@
 
                     <!-- TABLA DE CITAS -->
                     <section class="seccion-tabla">
-                        <div class="filtros-tabla">
-                            <select class="select-filtro" aria-label="Filtrar citas por estado">
-                                <option>Todos los estados</option>
-                                <option>Confirmadas</option>
-                                <option>Pendientes</option>
-                            </select>
-                            <input type="date" class="input-fecha-filtro" aria-label="Filtrar citas por fecha">
-                        </div>
-
                         <div style="overflow-x: auto;">
                             <table class="tabla-citas">
                                 <thead>
@@ -88,13 +69,13 @@
                                         <td><strong>Ricardo Mendoza</strong></td>
                                         <td>Dra. Clara Soto</td>
                                         <td>24 Oct 2026 - 09:00 AM</td>
-                                        <td><span class="etiqueta-estado confirmada">CONFIRMADA</span></td>
+                                        <td><span class="estado confirmada">CONFIRMADA</span></td>
                                         <td>
                                             <div class="grupo-acciones">
-                                                <a href="#modal-ver" class="btn-texto-accion ver">Ver</a>
-                                                <a href="#modal-editar" class="btn-texto-accion editar">Editar</a>
-                                                <a href="#modal-eliminar" class="btn-texto-accion eliminar">Eliminar</a>
-                                                <a href="#modal-notificar" class="btn-texto-accion notificar">Notificar</a>
+                                                <a href="#modal-ver" class="accion ver">Ver</a>
+                                                <a href="#modal-editar" class="accion editar">Editar</a>
+                                                <a href="#modal-eliminar" class="accion eliminar">Eliminar</a>
+                                                <a href="#modal-notificar" class="accion notificar">Notificar</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -103,13 +84,13 @@
                                         <td><strong>Elena Luna</strong></td>
                                         <td>Dr. Marcos Ruiz</td>
                                         <td>24 Oct 2026 - 11:30 AM</td>
-                                        <td><span class="etiqueta-estado espera">PENDIENTE</span></td>
+                                        <td><span class="estado espera">PENDIENTE</span></td>
                                         <td>
                                             <div class="grupo-acciones">
-                                                <a href="#modal-ver-2" class="btn-texto-accion ver">Ver</a>
-                                                <a href="#modal-editar-2" class="btn-texto-accion editar">Editar</a>
-                                                <a href="#modal-eliminar-2" class="btn-texto-accion eliminar">Eliminar</a>
-                                                <a href="#modal-notificar-2" class="btn-texto-accion notificar">Notificar</a>
+                                                <a href="#modal-ver-2" class="accion ver">Ver</a>
+                                                <a href="#modal-editar-2" class="accion editar">Editar</a>
+                                                <a href="#modal-eliminar-2" class="accion eliminar">Eliminar</a>
+                                                <a href="#modal-notificar-2" class="accion notificar">Notificar</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -124,7 +105,7 @@
 <!-- ==================== MODALES ==================== -->
 
     <div id="modal-crear" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Programar Nueva Cita</h3>
             <form action="#" class="formulario-modal">
@@ -160,18 +141,18 @@
     </div>
 
     <div id="modal-ver" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #001</h3>
             <div class="info-modal">
                 <p><strong>Paciente:</strong> Ricardo Mendoza (ID: 1098765432)</p>
                 <p><strong>Historial:</strong> Paciente recurrente (5 sesiones previas)</p>
 
-                <hr class="separador-modal">
+                <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dra. Clara Soto (Especialidad: Ansiedad)</p>
                 <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 09:00 AM</p>
-                <p><strong>Estado:</strong> <span class="etiqueta-estado confirmada">Confirmada</span></p>
+                <p><strong>Estado:</strong> <span class="estado confirmada">Confirmada</span></p>
 
                 <div class="nota-clinica">
                     <p><strong>Nota Clínica Previa:</strong> El paciente reportó mejoría en los ejercicios de respiración. Revisar avances en la bitácora.</p>
@@ -181,7 +162,7 @@
         </div>
     </div>
     <div id="modal-editar" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Reprogramar Cita #001</h3>
             <form action="#" class="formulario-modal">
@@ -211,42 +192,42 @@
         </div>
     </div>
     <div id="modal-eliminar" class="modal">
-        <div class="modal-contenido modal-pequeno">
+        <div class="caja-modal modal-pequeno">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>¿Eliminar cita?</h3>
             <p>
                 Estás a punto de cancelar y eliminar esta cita del sistema. Esta acción no se puede deshacer.
             </p>
-            <div class="grupo-acciones-modal">
+            <div class="acciones-modal">
                 <a href="#" class="btn-secundario">Cancelar</a>
-                <a href="#" class="btn-eliminar-confirmar">Sí, eliminar</a>
+                <a href="#" class="btn-eliminar">Sí, eliminar</a>
             </div>
         </div>
     </div>
     <div id="modal-notificar" class="modal">
-        <div class="modal-contenido modal-toast text-center">
+        <div class="caja-modal modal-toast text-center">
             <div class="icono-correo">@</div>
             <h3>Notificación Enviada</h3>
             <p>
                 Se ha enviado un correo a:<br>
                 <strong>ricardo.mendoza@email.com</strong>
             </p>
-            <a href="#" class="btn-primario btn-notificar-confirmar ancho-completo text-center">Aceptar</a>
+            <a href="#" class="btn-primario btn-notificar ancho-completo text-center">Aceptar</a>
         </div>
     </div>
     <div id="modal-ver-2" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #002</h3>
             <div class="info-modal">
                 <p><strong>Paciente:</strong> Elena Luna (ID: 1056342890)</p>
                 <p><strong>Historial:</strong> Paciente de primer ingreso</p>
 
-                <hr class="separador-modal">
+                <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dr. Marcos Ruiz (Especialidad: Terapia de Pareja)</p>
                 <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 11:30 AM</p>
-                <p><strong>Estado:</strong> <span class="etiqueta-estado espera">Pendiente</span></p>
+                <p><strong>Estado:</strong> <span class="estado espera">Pendiente</span></p>
 
                 <div class="nota-admin">
                     <p><strong>Nota Administrativa:</strong> Solicitar llenado de formulario de consentimiento informado antes de ingresar al consultorio.</p>
@@ -256,7 +237,7 @@
         </div>
     </div>
     <div id="modal-editar-2" class="modal">
-        <div class="modal-contenido">
+        <div class="caja-modal">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Reprogramar Cita #002</h3>
             <form action="#" class="formulario-modal">
@@ -286,27 +267,27 @@
         </div>
     </div>
     <div id="modal-eliminar-2" class="modal">
-        <div class="modal-contenido modal-pequeno">
+        <div class="caja-modal modal-pequeno">
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>¿Eliminar cita de Elena?</h3>
             <p>
                 Estás a punto de cancelar y eliminar esta cita del sistema. Esta acción no se puede deshacer.
             </p>
-            <div class="grupo-acciones-modal">
+            <div class="acciones-modal">
                 <a href="#" class="btn-secundario">Cancelar</a>
-                <a href="#" class="btn-eliminar-confirmar">Sí, eliminar</a>
+                <a href="#" class="btn-eliminar">Sí, eliminar</a>
             </div>
         </div>
     </div>
     <div id="modal-notificar-2" class="modal">
-        <div class="modal-contenido modal-toast text-center">
+        <div class="caja-modal modal-toast text-center">
             <div class="icono-correo">@</div>
             <h3>Notificación Enviada</h3>
             <p>
                 Se ha enviado un correo a:<br>
                 <strong>elena.luna@email.com</strong>
             </p>
-            <a href="#" class="btn-primario btn-notificar-confirmar ancho-completo text-center">Aceptar</a>
+            <a href="#" class="btn-primario btn-notificar ancho-completo text-center">Aceptar</a>
         </div>
     </div>
 </body>

@@ -11,7 +11,7 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <header class="cabecera-principal">
+    <header class="header">
         <div class="logo">
             <span class="logo-icono"><img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113"></span>
             <span class="logo-texto">Happy Mind</span>
@@ -20,34 +20,34 @@
         <nav class="navegacion">
             <ul>
                 <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="panelcontrol.html">Citas</a></li>
-                <li><a href="#">Psicólogos</a></li>
-                <li><a href="#">Pacientes</a></li>
+                <li><a href="dashboard-citas.html">Citas</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li>
+                <li><a href="dashboard-pacientes.html">Pacientes</a></li>
             </ul>
         </nav>
 
         <div class="acciones-auth">
-            <a href="#" class="enlace-login">Iniciar sesión</a>
+            <a href="login.html" class="enlace-login">Iniciar sesión</a>
             <a href="registro.html" class="btn-naranja">Registrarse</a>
         </div>
     </header>
 
     <main>
         <!-- ================= SECCIÓN HERO ================= -->
-        <section class="contenedor-hero">
-            <div class="hero-caja-azul">
+        <section class="hero">
+            <div class="caja-hero">
                 
-                <div class="hero-contenido">
+                <div class="contenido-hero">
                     <h1 class="hero-titulo">Tu bienestar emocional comienza hoy</h1>
                     <p class="hero-texto">Da el primer paso hacia una mente más tranquila y una vida más plena. Conecta con profesionales dispuestos a escucharte y guiarte en tu proceso.</p>
                     
                     <div class="hero-botones">
-                        <a href="panelcontrol.html" class="btn-azul">Agendar una cita</a>
-                        <a href="#" class="btn-borde-naranja">Conocer más</a>
+                        <a href="citas.html" class="btn-azul">Agendar una cita</a>
+                        <a href="#servicios" class="btn-naranja-borde">Conocer más</a>
                     </div>
 
                     <!-- Mini tarjetas informativas -->
-                    <div class="grid-mini-tarjetas">
+                    <div class="grid-mini">
                         <div class="mini-tarjeta">
                             <span>Psicólogos certificados</span>
                         </div>
@@ -65,7 +65,7 @@
 
                 <div class="hero-imagen">
                     <!-- Espacio para la imagen -->
-                    <div class="placeholder-imagen-hero">
+                    <div class="imagen-placeholder">
                         <img src="./imagenes/HMfondo2.jpg" alt="Espacio seguro para sanar" width="874" height="878" fetchpriority="high">
                     </div>
                 </div>
@@ -74,47 +74,47 @@
         </section>
 
         <!-- ================= SECCIÓN POR QUÉ ELEGIRNOS ================= -->
-        <section class="seccion-caracteristicas">
-            <div class="cabecera-caracteristicas">
+        <section class="servicios" id="servicios">
+            <div class="titulo-servicios">
                 <h2>¿Por qué elegir <span class="texto-azul">Happy Mind</span>?</h2>
                 <p>Nuestra plataforma facilita el acceso a la atención psicológica mediante una experiencia segura, cómoda y diseñada para tu bienestar emocional.</p>
             </div>
 
         <!-- Tarjetas de características -->
-            <div class="grid-caracteristicas">
-                <article class="tarjeta-caracteristica">
+            <div class="grid-servicios">
+                <article class="tarjeta-servicio">
                     <h3>Psicólogos certificados</h3>
                     <p>Profesionales experimentados y cualificados para acompañarte en tu proceso personal.</p>
                 </article>
 
-                <article class="tarjeta-caracteristica">
+                <article class="tarjeta-servicio">
                     <h3>Agenda fácil y rápida</h3>
                     <p>Reserva tus citas en pocos pasos a través de nuestra plataforma, sin complicaciones ni demoras.</p>
                 </article>
 
-                <article class="tarjeta-caracteristica">
+                <article class="tarjeta-servicio">
                     <h3>Privacidad garantizada</h3>
                     <p>Tus datos personales y sesiones son estrictamente confidenciales, manteniendo un espacio seguro.</p>
                 </article>
 
-                <article class="tarjeta-caracteristica">
+                <article class="tarjeta-servicio">
                     <h3>Seguimiento personalizado</h3>
                     <p>Monitorea tu evolución, notas y plan de trabajo directamente desde tu panel de usuario.</p>
                 </article>
 
-                <article class="tarjeta-caracteristica">
+                <article class="tarjeta-servicio">
                     <h3>Disponibilidad flexible</h3>
                     <p>Encuentra horarios que se adapten a tu rutina, con opciones de fines de semana.</p>
                 </article>
 
-                <article class="tarjeta-caracteristica">
+                <article class="tarjeta-servicio">
                     <h3>Bienestar integral</h3>
                     <p>Herramientas exclusivas para apoyarte y mejorar tu salud mental dentro y fuera de la consulta.</p>
                 </article>
             </div>
 
-            <div class="contenedor-centrado">
-                <a href="#" class="btn-azul btn-ancho">Explorar servicios</a>
+            <div class="centrado">
+                <a href="citas.html" class="btn-azul btn-ancho">Explorar servicios</a>
             </div>
         </section>
 
@@ -122,7 +122,7 @@
         <section class="seccion-banner">
             <div class="banner-imagen">
                 <!-- Este es el contenido del banner -->
-                <div class="banner-contenido">
+                <div class="texto-banner">
                     <h2>Tu espacio seguro comienza aquí...</h2>
                     <p>Únete a Happy Mind y da el paso hacia una vida emocionalmente más equilibrada.</p>
                 </div>
@@ -141,7 +141,7 @@
                 <p>Conectamos a las personas con el psicólogo que mejor se adapte a sus necesidades para contribuir a su bienestar emocional.</p>
             </div>
 
-            <div class="footer-columna">
+            <div class="footer-columna" id="nosotros">
                 <h3>Compañía</h3>
                 <ul>
                     <li><a href="#">Sobre nosotros</a></li>
@@ -159,13 +159,13 @@
                 </ul>
             </div>
 
-            <div class="footer-columna contacto">
+            <div class="footer-columna contacto" id="contacto">
                 <h3>Contáctanos</h3>
                 <div class="item-contacto">
-                    <a href="#">happymindpro67@gmail.com</a>
+                    <a href="mailto:happymindpro67@gmail.com">happymindpro67@gmail.com</a>
                 </div>
                 <div class="item-contacto">
-                    <a href="#">+57 300 000 0000</a>
+                    <a href="tel:+573000000000">+57 300 000 0000</a>
                 </div>
             </div>
         </div>

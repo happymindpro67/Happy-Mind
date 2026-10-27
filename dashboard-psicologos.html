@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mind - Dashboard de Psicólogos</title>
+    <meta name="description" content="Resumen de actividad, citas y calificaciones de psicólogos.">
+    <link rel="icon" type="image/jpeg" href="./imagenes/LogoHM-optimizado.jpg">
+    <link rel="stylesheet" href="./css/dashboard-citas.css">
+    <link rel="stylesheet" href="./css/dashboard-psicologos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <aside class="lateral">
+            <div class="logo">
+                <div class="logo-box">
+                    <img src="./imagenes/LogoHM-optimizado.jpg" alt="Logo Happy Mind" width="128" height="113">
+                </div>
+                <h1>Happy Mind</h1>
+                <span>Panel de Administración</span>
+            </div>
+            <nav class="menu-lateral">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="activo"><a href="dashboard-psicologos.html">Dashboard psicólogos</a></li>
+                    <li><a href="psicologos.html">Psicólogos</a></li>
+                </ul>
+            </nav>
+            <div class="perfil-admin">
+                <div class="avatar">A</div>
+                <div class="info-usuario">
+                    <span class="nombre">Admin</span>
+                    <span class="rol">Administrador</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="principal">
+            <div class="contenido">
+                <section class="columna">
+                    <header class="bienvenida">
+                        <h2>Dashboard de Psicólogos</h2>
+                    </header>
+
+                    <div class="grid-metricas">
+                        <article class="tarjeta-metrica">
+                            <span class="icono pendiente">Psicólogos activos</span>
+                            <p class="valor">2</p>
+                        </article>
+                        <article class="tarjeta-metrica">
+                            <span class="icono realizada">Calificación promedio</span>
+                            <p class="valor">4.7</p>
+                        </article>
+                    </div>
+
+                    <div class="grid-graficos">
+                        <article class="tarjeta-grafico">
+                            <header class="cabecera-grafico">
+                                <h3>Calificación por psicólogo</h3>
+                            </header>
+                            <div class="grafico">
+                                <div class="fila-grafico">
+                                    <span>Dra. Clara Soto</span>
+                                    <div class="barra-fondo"><div class="barra-profesional clara"></div></div>
+                                    <strong>4.8 / 5</strong>
+                                </div>
+                                <div class="fila-grafico">
+                                    <span>Dr. Marcos Ruiz</span>
+                                    <div class="barra-fondo"><div class="barra-profesional marcos"></div></div>
+                                    <strong>4.5 / 5</strong>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-grafico">
+                            <h3>Calificaciones</h3>
+                            <div class="dona-psicologos">
+                                <div class="centro-dona">
+                                    <span class="porcentaje">4.7</span>
+                                    <span class="etiqueta">PROMEDIO</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <section class="seccion-tabla muestra" aria-labelledby="titulo-muestra">
+                        <header class="cabecera-tabla">
+                            <div>
+                                <h3 id="titulo-muestra">Psicólogos</h3>
+                            </div>
+                            <a href="psicologos.html" class="ver-todas">Ver más &rarr;</a>
+                        </header>
+                        <div class="tabla-scroll">
+                            <table class="tabla-muestra">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">PSICÓLOGO</th>
+                                        <th scope="col">ESPECIALIDAD</th>
+                                        <th scope="col">CALIFICACIÓN</th>
+                                        <th scope="col">ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dra. Clara Soto</td>
+                                        <td>Ansiedad</td>
+                                        <td>4.8 / 5</td>
+                                        <td><a href="#ver-clara" class="btn-accion ver">Ver</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Marcos Ruiz</td>
+                                        <td>Terapia de Pareja</td>
+                                        <td>4.5 / 5</td>
+                                        <td><a href="#ver-marcos" class="btn-accion ver">Ver</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="ver-clara" class="modal">
+        <div class="caja-modal">
+            <a href="#" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil de la Dra. Clara Soto</h3>
+            <div class="info-modal">
+                <p><strong>Especialidad:</strong> Ansiedad</p>
+                <p><strong>Paciente asignado en citas:</strong> Ricardo Mendoza</p>
+                <p><strong>Horario de ejemplo:</strong> Lunes, miércoles y sábado, de 09:00 a 13:00.</p>
+                <p><strong>Calificación promedio:</strong> 4.8 / 5</p>
+            </div>
+            <form action="#titulo-muestra" class="form-cerrar">
+                <button type="submit" class="btn-cerrar">Cerrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ver-marcos" class="modal">
+        <div class="caja-modal">
+            <a href="#" class="cerrar-modal" aria-label="Cerrar">&times;</a>
+            <h3>Perfil del Dr. Marcos Ruiz</h3>
+            <div class="info-modal">
+                <p><strong>Especialidad:</strong> Terapia de Pareja</p>
+                <p><strong>Paciente asignado en citas:</strong> Elena Luna</p>
+                <p><strong>Horario de ejemplo:</strong> Martes, jueves y sábado, de 10:00 a 14:00.</p>
+                <p><strong>Calificación promedio:</strong> 4.5 / 5</p>
+            </div>
+            <form action="#titulo-muestra" class="form-cerrar">
+                <button type="submit" class="btn-cerrar">Cerrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -91,7 +91,7 @@ h3 {
 }
 
 /* navbar */
-.cabecera-principal {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -194,11 +194,11 @@ h3 {
 }
 
 /* Hero */
-.contenedor-hero {
+.hero {
     padding: 40px 5%;
 }
 
-.hero-caja-azul {
+.caja-hero {
     background-color: var(--azul-300);
     border-radius: 32px;
     display: flex;
@@ -208,7 +208,7 @@ h3 {
     gap: 40px;
 }
 
-.hero-contenido {
+.contenido-hero {
     flex: 1;
     max-width: 550px;
 }
@@ -235,7 +235,7 @@ h3 {
     margin-bottom: 40px;
 }
 
-.btn-azul, .btn-borde-naranja {
+.btn-azul, .btn-naranja-borde {
     display: inline-block;
     padding: 12px 28px;
     border-radius: 8px;
@@ -256,25 +256,25 @@ h3 {
     transform: translateY(-2px);
 }
 
-.btn-borde-naranja {
+.btn-naranja-borde {
     background-color: transparent;
     color: var(--naranja-texto);
     border: 2px solid var(--naranja-500);
 }
 
-.btn-borde-naranja:hover {
+.btn-naranja-borde:hover {
     background-color: var(--naranja-500);
     color: var(--negro-900);
     transform: translateY(-2px);
 }
 
-.enlace-login:focus-visible, .btn-naranja:focus-visible, .btn-azul:focus-visible, .btn-borde-naranja:focus-visible {
+.enlace-login:focus-visible, .btn-naranja:focus-visible, .btn-azul:focus-visible, .btn-naranja-borde:focus-visible {
     outline: 3px solid var(--morado-500);
     outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
-    .cabecera-principal {
+    .header {
         flex-wrap: wrap;
         gap: 16px 24px;
     }
@@ -294,7 +294,7 @@ h3 {
     }
 }
 
-.grid-mini-tarjetas {
+.grid-mini {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -319,7 +319,7 @@ h3 {
     justify-content: flex-end;
 }
 
-.placeholder-imagen-hero img {
+.imagen-placeholder img {
     width: 100%;
     height: auto;
     max-width: 450px;
@@ -328,18 +328,18 @@ h3 {
 }
 
 /* Características */
-.seccion-caracteristicas {
+.servicios {
     padding: 80px 5%;
     background-color: var(--gris-fondo);
 }
 
-.cabecera-caracteristicas {
+.titulo-servicios {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 60px;
 }
 
-.cabecera-caracteristicas h2 {
+.titulo-servicios h2 {
     font-size: 2.4rem;
     margin-bottom: 16px;
     font-family: var(--font-titulo);
@@ -350,34 +350,34 @@ h3 {
     font-family: var(--font-titulo);
 }
 
-.cabecera-caracteristicas p {
+.titulo-servicios p {
     font-family: var(--font-descripcion);
     color: var(--texto-secundario);
     font-size: 1rem;
 }
 
-.grid-caracteristicas {
+.grid-servicios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-bottom: 40px;
 }
 
-.tarjeta-caracteristica {
+.tarjeta-servicio {
     background-color: var(--blanco-100);
     padding: 32px 24px;
     border-radius: 24px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-.tarjeta-caracteristica p {
+.tarjeta-servicio p {
     font-family: var(--font-descripcion);
     font-size: 0.9rem;
     color: var(--texto-secundario);
     line-height: 1.6;
 }
 
-.contenedor-centrado {
+.centrado {
     text-align: center;
 }
 
@@ -403,7 +403,7 @@ h3 {
     min-height: 550px;
 }
 
-.banner-contenido h2 {
+.texto-banner h2 {
     font-family: var(--font-titulo);
     font-size: 2.4rem;
     margin-bottom: 10px;
@@ -441,13 +441,13 @@ h3 {
 }
 
 @media (max-width: 760px) {
-    .hero-caja-azul {
+    .caja-hero {
         flex-direction: column;
         align-items: stretch;
         padding: 40px 32px;
     }
 
-    .hero-contenido {
+    .contenido-hero {
         max-width: none;
     }
 
@@ -459,7 +459,7 @@ h3 {
         justify-content: center;
     }
 
-    .placeholder-imagen-hero img {
+    .imagen-placeholder img {
         max-width: 100%;
     }
 
@@ -476,7 +476,7 @@ h3 {
 }
 
 @media (max-width: 520px) {
-    .cabecera-principal {
+    .header {
         padding: 12px 5%;
     }
 
@@ -493,11 +493,11 @@ h3 {
         gap: 12px 20px;
     }
 
-    .contenedor-hero {
+    .hero {
         padding: 20px 4%;
     }
 
-    .hero-caja-azul {
+    .caja-hero {
         padding: 28px 20px;
         border-radius: 20px;
     }
@@ -511,19 +511,19 @@ h3 {
         text-align: center;
     }
 
-    .grid-mini-tarjetas {
+    .grid-mini {
         grid-template-columns: 1fr;
     }
 
-    .seccion-caracteristicas {
+    .servicios {
         padding: 56px 5%;
     }
 
-    .cabecera-caracteristicas {
+    .titulo-servicios {
         margin-bottom: 36px;
     }
 
-    .grid-caracteristicas {
+    .grid-servicios {
         grid-template-columns: 1fr;
     }
 
@@ -532,7 +532,7 @@ h3 {
         padding: 28px 24px;
     }
 
-    .banner-contenido h2 {
+    .texto-banner h2 {
         font-size: 1.8rem;
     }
 
