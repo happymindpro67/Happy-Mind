@@ -1,69 +1,3 @@
-@font-face {
-    font-family: 'Arvo';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/arvo-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('../fonts/montserrat-semibold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Pragati Narrow';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/pragati-narrow-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Pridi';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/pridi-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Puritan';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/puritan-regular.woff2') format('woff2');
-}
-
-:root {
-    --azul-100: #bad1fd;
-    --azul-300: #e0edff;
-    --azul-500: #1d4ed8;
-    --naranja-500: #ff9800;
-    --naranja-texto: #9a3412;
-    --morado-500: #7351ea;
-    --negro-900: #010101;
-    --blanco-100: #ffffff;
-    --gris-fondo: #f8fafc;
-    --texto-secundario: #475569;
-    --font-titulo: 'Arvo', serif;
-    --font-subtitulo: 'Puritan', sans-serif;
-    --font-regular: 'Pragati Narrow', sans-serif;
-    --font-descripcion: 'Pridi', serif;
-    --font-anuncio: 'Montserrat', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-regular);
-    font-size: 1rem;
-}
-
 body {
     background-color: var(--blanco-100);
     color: var(--negro-900);
@@ -71,23 +5,9 @@ body {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-}
-
 h1 {
     font-family: var(--font-titulo);
     font-size: 2.4rem;
-}
-
-h2 {
-    font-family: var(--font-subtitulo);
-    font-size: 1.9rem;
-}
-
-h3 {
-    font-family: var(--font-subtitulo);
-    font-size: 1.5rem;
 }
 
 /* navbar */
@@ -547,8 +467,13 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+    html:root:root {
+        scroll-behavior: auto;
+    }
+
+    :root:root *,
+    :root:root *::before,
+    :root:root *::after {
+        transition-duration: 0.01ms;
     }
 }

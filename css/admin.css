@@ -1,107 +1,9 @@
-@font-face {
-    font-family: Arvo;
-    src: url("../fonts/arvo-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Montserrat;
-    src: url("../fonts/montserrat-semibold.woff2") format("woff2");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Pragati Narrow';
-    src: url("../fonts/pragati-narrow-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Pridi;
-    src: url("../fonts/pridi-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Puritan;
-    src: url("../fonts/puritan-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-:root {
-    /* Tipografía y colores */
-    --azul-100: #bad1fd;
-    --azul-500: #1d4ed8;
-    --azul-texto: #1e3a8a;
-    --naranja-500: #ff9800;
-    --naranja-texto: #9a3412;
-    --naranja-100: #fff4e6;
-    --azul2-500: #dbf1fe;
-    --morado-500: #7351ea;
-    --morado-100: #d0c5f8;
-    --morado-texto: #4c1d95;
-    --negro-900: #010101;
-    --blanco-100: #ffffff;
-    --fondo-sitio: #f8fafc;
-    --borde: #e2e8f0;
-    --texto-secundario: #64748b;
-
-    --font-titulo: 'Arvo', serif;
-    --font-subtitulo: 'Puritan', sans-serif;
-    --font-regular: 'Pragati Narrow', sans-serif;
-    --font-descripcion: 'Pridi', serif;
-    --font-anuncio: 'Montserrat', sans-serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-regular); font-size: 1rem; }
-body { background-color: var(--fondo-sitio); color: var(--negro-900); }
-a { text-decoration: none; }
-h2 { font-family: var(--font-subtitulo); font-size: 1.9rem; }
-h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
-
-/* --- BARRA LATERAL --- */
-.contenedor { display: flex; height: 100vh; overflow: hidden; }
-.lateral { width: 260px; background-color: var(--blanco-100); border-right: 1px solid var(--borde); display: flex; flex-direction: column; padding: 24px; }
-.logo { text-align: center; margin-bottom: 40px; }
-.logo-imagen { display: block; width: 50px; height: 50px; margin: 0 auto 10px; border-radius: 12px; object-fit: contain; }
-.logo h1 { font-family: var(--font-titulo); font-size: 1.5rem; color: var(--negro-900); }
-.logo span { font-family: var(--font-descripcion); font-size: 0.8rem; color: var(--texto-secundario); }
-
-.menu-lateral ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.menu-lateral a { font-size: 1.1rem; color: var(--texto-secundario); padding: 12px 16px; border-radius: 8px; display: block; transition: all 0.2s; }
-.menu-lateral a:hover { background-color: var(--azul-100); color: var(--azul-500); }
-.menu-lateral .activo a { background-color: var(--azul2-500); color: var(--azul-500); font-weight: bold; }
-.menu-admin { flex: 1; display: flex; flex-direction: column; }
-.menu-admin ul { flex: 1; }
-
-.perfil-admin { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--borde); }
-.pie-lateral { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--borde); }
-.pie-lateral .perfil-admin { margin-top: 0; padding-top: 0; border-top: 0; }
-.cerrar-sesion { display: block; margin-top: 12px; padding: 8px 12px; border-radius: 8px; color: #b91c1c; background: #fee2e2; font-weight: bold; text-align: center; }
-.cerrar-sesion:hover { color: var(--blanco-100); background: #b91c1c; }
-.avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: var(--font-anuncio); background-color: var(--azul-100); color: var(--azul-texto); }
-.info-usuario .nombre { font-size: 1.1rem; font-weight: bold; display: block; color: var(--negro-900); }
-.info-usuario .rol { font-family: var(--font-descripcion); font-size: 0.8rem; color: var(--texto-secundario); }
-
-/* --- ÁREA PRINCIPAL Y CABECERA --- */
-.principal { flex: 1; display: flex; flex-direction: column; padding: 24px; overflow-y: auto; }
-
-/* Módulo de pacientes */
+/* Estilos compartidos de las páginas administrativas */
 .encabezado { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
 .encabezado h2 { font-family: var(--font-titulo); font-size: 2.4rem; color: var(--negro-900); }
 .encabezado p { font-family: var(--font-descripcion); font-size: 0.95rem; color: var(--texto-secundario); }
 
-/* Tabla de pacientes */
+/* Tablas administrativas */
 .seccion-tabla { background: var(--blanco-100); padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .tabla-scroll { overflow-x: auto; }
 .titulo-eliminar { color: var(--naranja-500); }
@@ -120,7 +22,7 @@ h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
 .rol-psicologo { background: var(--naranja-100); color: var(--naranja-texto); }
 .rol-admin { background: var(--morado-100); color: var(--morado-texto); }
 
-/* Acciones de pacientes */
+/* Acciones de tabla */
 .grupo-acciones { display: flex; gap: 6px; }
 .accion { font-family: var(--font-regular); padding: 6px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid var(--borde); transition: 0.2s; cursor: pointer; }
 .accion.ver { color: var(--texto-secundario); background: var(--fondo-sitio); }
@@ -156,13 +58,7 @@ h3 { font-family: var(--font-subtitulo); font-size: 1.5rem; }
 @media (max-width: 800px) {
     .contenedor { height: auto; min-height: 100vh; overflow: visible; flex-direction: column; }
     .lateral { width: 100%; flex: none; padding: 16px 20px; border-right: 0; border-bottom: 1px solid var(--borde); }
-    .logo { margin-bottom: 16px; }
-    .menu-lateral ul { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .menu-admin { flex: none; }
     .menu-admin .cerrar-sesion { margin-top: 0; }
-    .perfil-admin { margin-top: 16px; padding-top: 12px; }
-    .pie-lateral { margin-top: 16px; }
-    .pie-lateral .perfil-admin { margin-top: 0; padding-top: 0; }
     .principal { min-width: 0; overflow: visible; padding: 20px; }
     .encabezado { flex-wrap: wrap; gap: 16px; }
     .encabezado h2 { font-size: 2rem; }

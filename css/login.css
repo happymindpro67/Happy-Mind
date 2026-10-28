@@ -1,79 +1,9 @@
-@font-face {
-  font-family: Arvo;
-  src: url("../fonts/arvo-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Montserrat;
-  src: url("../fonts/montserrat-semibold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pragati Narrow";
-  src: url("../fonts/pragati-narrow-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Pridi;
-  src: url("../fonts/pridi-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Puritan;
-  src: url("../fonts/puritan-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --azul-100: #bad1fd;
-  --azul-500: #3076f9;
-  --naranja-500: #ff9800;
-  --naranja-100: #fff4e6;
-  --azul2-500: #dbf1fe;
-  --morado-100: #d0c5f8;
-  --negro-900: #010101;
-  --blanco-100: #ffffff;
-  --fondo-sitio: #f8fafc;
-  --borde: #e2e8f0;
-  --texto-secundario: #64748b;
-  --font-titulo: "Arvo", serif;
-  --font-subtitulo: "Puritan", sans-serif;
-  --font-regular: "Pragati Narrow", sans-serif;
-  --font-descripcion: "Pridi", serif;
-  --font-anuncio: "Montserrat", sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-regular);
-}
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   color: var(--negro-900);
   background-color: var(--fondo-sitio);
-}
-
-a {
-  text-decoration: none;
 }
 
 .header {

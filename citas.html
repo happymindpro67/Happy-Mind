@@ -6,6 +6,7 @@
     <title>Gestión de Citas - Happy Mind</title>
     <meta name="description" content="Consulta y administra las citas de Happy Mind, revisa sus estados y gestiona los horarios de atención.">
     <link rel="icon" type="image/jpeg" href="./img/LogoHM-optimizado.jpg">
+    <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/citas.css">
 </head>
 <body>
@@ -60,7 +61,7 @@
 
                     <!-- TABLA DE CITAS -->
                     <section class="seccion-tabla">
-                        <div style="overflow-x: auto;">
+                        <div class="tabla-scroll">
                             <table class="tabla-citas">
                                 <thead>
                                     <tr>
@@ -75,9 +76,9 @@
                                 <tbody>
                                     <tr>
                                         <td>#001</td>
-                                        <td><strong>Ricardo Mendoza</strong></td>
+                                        <td><strong>Laura Sofía Pérez</strong></td>
                                         <td>Dra. Clara Soto</td>
-                                        <td>24 Oct 2026 - 09:00 AM</td>
+                                        <td>28 Oct 2026 - 09:00 AM</td>
                                         <td><span class="estado confirmada">CONFIRMADA</span></td>
                                         <td>
                                             <div class="grupo-acciones">
@@ -90,9 +91,9 @@
                                     </tr>
                                     <tr>
                                         <td>#002</td>
-                                        <td><strong>Elena Luna</strong></td>
+                                        <td><strong>Juan David Morales</strong></td>
                                         <td>Dr. Marcos Ruiz</td>
-                                        <td>24 Oct 2026 - 11:30 AM</td>
+                                        <td>28 Oct 2026 - 11:30 AM</td>
                                         <td><span class="estado espera">PENDIENTE</span></td>
                                         <td>
                                             <div class="grupo-acciones">
@@ -122,8 +123,8 @@
                     <label>Paciente</label>
                     <select required>
                         <option value="" disabled selected>Seleccione un paciente</option>
-                        <option>Ricardo Mendoza</option>
-                        <option>Elena Luna</option>
+                        <option>Laura Sofía Pérez</option>
+                        <option>Juan David Morales</option>
                     </select>
                 </div>
                 <div class="campo">
@@ -137,7 +138,7 @@
 
                 <div class="campo">
                     <label>Fecha y Hora</label>
-                    <input type="datetime-local" min="2026-10-25T00:00" required>
+                    <input type="datetime-local" min="2026-10-28T00:00" required>
                 </div>
 
                 <div class="campo">
@@ -154,13 +155,13 @@
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #001</h3>
             <div class="info-modal">
-                <p><strong>Paciente:</strong> Ricardo Mendoza (ID: 1098765432)</p>
+                <p><strong>Paciente:</strong> Laura Sofía Pérez (Documento: CC 1.020.304.050)</p>
                 <p><strong>Historial:</strong> Paciente recurrente (5 sesiones previas)</p>
 
                 <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dra. Clara Soto (Especialidad: Ansiedad)</p>
-                <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 09:00 AM</p>
+                <p><strong>Fecha y Hora:</strong> 28 Oct 2026, 09:00 AM</p>
                 <p><strong>Estado:</strong> <span class="estado confirmada">Confirmada</span></p>
 
                 <div class="nota-clinica">
@@ -185,7 +186,7 @@
 
                 <div class="campo">
                     <label>Nueva Fecha y Hora</label>
-                    <input type="datetime-local" min="2026-10-25T00:00">
+                    <input type="datetime-local" min="2026-10-28T00:00">
                 </div>
 
                 <div class="campo">
@@ -229,13 +230,13 @@
             <a href="#" class="cerrar-modal">&times;</a>
             <h3>Expediente de Cita #002</h3>
             <div class="info-modal">
-                <p><strong>Paciente:</strong> Elena Luna (ID: 1056342890)</p>
+                <p><strong>Paciente:</strong> Juan David Morales (Documento: CC 1.098.765.432)</p>
                 <p><strong>Historial:</strong> Paciente de primer ingreso</p>
 
                 <hr class="separador">
 
                 <p><strong>Psicólogo:</strong> Dr. Marcos Ruiz (Especialidad: Terapia de Pareja)</p>
-                <p><strong>Fecha y Hora:</strong> 24 Oct 2026, 11:30 AM</p>
+                <p><strong>Fecha y Hora:</strong> 28 Oct 2026, 11:30 AM</p>
                 <p><strong>Estado:</strong> <span class="estado espera">Pendiente</span></p>
 
                 <div class="nota-admin">
@@ -260,7 +261,7 @@
 
                 <div class="campo">
                     <label>Nueva Fecha y Hora</label>
-                    <input type="datetime-local" min="2026-10-25T00:00">
+                    <input type="datetime-local" min="2026-10-28T00:00">
                 </div>
 
                 <div class="campo">
